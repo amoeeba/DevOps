@@ -1,0 +1,197 @@
+::-------------------------------UPDATES SECTION----------------------------------------
+:: Updates:   UID    Date       - Explanation
+::	     usgpyv  2014-06-18 - Added USG-iLytics deploy process.
+::           usgezr  2012-03-22 - Changed error handling as a flag file was not being deleted after successful deployment.
+::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
+::	     kahezr  2010-11-29 - Re-prioritize environments to make PROD first.
+::	     kahezr  2010-06-23 - Added iLytics deploy process.
+::-------------------------------END UPDATES SECTION------------------------------------
+
+:begin
+ECHO Process Log started at:  > J:\SCMtools\Logs\iLytics_deploy.log
+Date /t  >> J:\SCMtools\Logs\iLytics_deploy.log
+Time /t  >> J:\SCMtools\Logs\iLytics_deploy.log
+ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+
+set who=USGITSCMTeam@unitrin.com
+::set who=erasmussen@eKemper.com,ihunley@ekemper.com
+set SCMBROKER=usgjaxscm45
+set DEPLOYSERVER=usgdeploymentserver
+
+:setenv
+::-----------------------------
+if exist J:\SCMtools\Scripts\Deploy\PROD\*.iLytics (
+	set STATE=PROD
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\UAT\*.iLytics (
+	set STATE=UAT
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\INT\*.iLytics (
+	set STATE=INT
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\DEV\*.iLytics (
+	set STATE=DEV
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\BASE\*.iLytics (
+	set STATE=BASE
+	goto setapp
+) else goto ProgramEnd
+
+:: Legend: 
+::  LC = The Harvest Life cycle name
+::  RP = The Harvest Life cycle repository
+::  ARTNM = The artifact name, i.e. rpw_app.ear.
+::  TYPE = They type of artifact, i.e. .ear, .war, .jar, .zip, etc.
+::  DPLYACTION = The respective action to call on the Deploy server, i.e. Was, Copy, Sonic, etc.
+::  MAIL = The app team mail group
+
+:setapp
+::-----------------------------
+::Copying this file allows us to send an email if there is a problem with the script:
+xcopy /r /y "J:\SCMtools\Scripts\Deploy\Development\iLyticsdeploy.txt" "J:\SCMtools\Scripts"
+
+::Obtain date and time to create process logs:
+set datestr=%date:~-4,4%%date:~-10,2%%date:~-7,2%
+set hr=%time:~-11,2%
+if %hr% lss 10 set hr=0%time:~-10,1%
+set mn=%time:~-8,2%
+if %mn% lss 10 set mn=0%time:~-7,1%
+set sc=%time:~-5,2%
+if %sc% lss 10 set sc=0%time:~-4,1%
+set ms=%time:~-2,2%
+::set timestr=%hr%%mn%%sc%%ms%
+set timestr=%hr%%mn%%sc%
+@echo %datestr%-%timestr%
+
+if exist J:\SCMtools\Scripts\Deploy\%STATE%\iLytics.iLytics           	(
+::----------------------------- USG-iLyticsUpdates -----------------------------::
+  set LC=USG-iLyticsUpdates
+  set RP=USG-iLyticsUpdates
+  set ARTNM=iLytics
+  set TYPE=iLytics
+  set ArtifactVar=!ARTNM!.!TYPE!
+  set DPLYACTION=iLytics
+  set MAIL=USGITPolicyBillingServices@unitrin.com
+  ::Delete trigger file for respective state:
+  attrib -r J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
+  Del /q J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
+  ::This log documents each step in the process so the results can easily be seen in one log file.
+  ECHO Begin deploy of !LC! in %STATE%: >> J:\SCMtools\Logs\iLytics_deploy.log
+  Echo Deploy Log started at:  > J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  Date /t  >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  Time /t  >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  Echo Processing !LC! in %STATE%: >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log 
+  ECHO ************************* >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  goto VisBuildDeploy
+  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\iLytic.iLytics           	(
+::----------------------------- USG-iLytics -----------------------------::
+  set LC=USG-iLytics
+  set RP=USG-iLytics
+  set ARTNM=iLytic
+  set TYPE=iLytics
+  set ArtifactVar=!ARTNM!.!TYPE!
+  set DPLYACTION=iLytics
+  set MAIL=USGITPolicyBillingServices@unitrin.com
+  ::Delete trigger file for respective state:
+  attrib -r J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
+  Del /q J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
+  ::This log documents each step in the process so the results can easily be seen in one log file.
+  ECHO Begin deploy of !LC! in %STATE%: >> J:\SCMtools\Logs\iLytics_deploy.log
+  Echo Deploy Log started at:  > J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  Date /t  >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  Time /t  >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  Echo Processing !LC! in %STATE%: >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log 
+  ECHO ************************* >> J:\SCMtools\Logs\%STATE%\!LC!-iLyticsDeploy-%datestr%-%timestr%.log
+  goto VisBuildDeploy
+ ) else (
+:: If a trigger exists but is not configured in the script, send a message and get out...
+ECHO No Automation configured for trigger file in J:\SCMtools\Scripts\Deploy\%STATE%! >> J:\SCMtools\Logs\iLytics_deploy.log
+ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+goto ProgramEnd
+)
+::-----------------------------[end of setapp routine]-----------------------------::
+
+
+:VisBuildDeploy
+::*START DEPLOY HERE*
+ECHO Begin VisBuildPro deploy process... >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+ECHO Pre-deploy error level is: %errorlevel% >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+J:\VisBuildPro7\VisBuildCmd.exe "env=%STATE%%DPLYACTION%" "app=%ArtifactVar%" /b J:\promotion\bin\RemoteDeploy.bld > J:\SCMtools\Logs\%STATE%\%LC%-VisBuild-%datestr%-%timestr%.log
+ECHO Post-deploy error level is: %errorlevel% >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+if errorlevel 1 (
+	goto VisBuildFailed
+) else (
+	goto VisBuildSuccess
+)
+
+:VisBuildFailed
+	Echo %LC% Deploy FAILED in %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	ECHO Process finished at: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Time /t  >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Echo %LC% Deploy FAILED in %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\iLytics_deploy.log
+	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\iLytics_deploy.log
+	Echo Checking for more deploy requests... >> J:\SCMtools\Logs\iLytics_deploy.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+	::This next command tells the script to send SCM an email when a deployment occurs.
+	xcopy /Y J:\SCMtools\Scripts\Deploy\Development\iLyticsdeploy.txt J:\SCMtools\Scripts\Deploy\eMail
+	
+	::Upon deploy completion, send email to teams with link to log file.
+	ECHO FYI… >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO A deploy FAILED for %LC% into %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO *** DO NOT REPLY TO THIS MESSAGE.  THIS MAILBOX NOT MONITORED FOR REPLIES. *** >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	J:\SCMtools\email\tcmail -s "%LC% Deploy FAILED in %STATE%" %MAIL% < J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	Del /q J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	goto setenv ;
+	
+:VisBuildSuccess
+	Echo %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	ECHO Process finished at: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Time /t  >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Echo %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\iLytics_deploy.log
+	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\iLytics_deploy.log
+	Echo Checking for more deploy requests... >> J:\SCMtools\Logs\iLytics_deploy.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+	::This next command tells the script to send SCM an email when a deployment occurs.
+	xcopy /Y J:\SCMtools\Scripts\Deploy\Development\iLyticsdeployend.txt J:\SCMtools\Scripts\Deploy\eMail
+	Del /q J:\SCMtools\Scripts\iLyticsdeploy.txt
+	
+	::Upon deploy completion, send email to teams with link to log file.
+	ECHO FYI… >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO *** DO NOT REPLY TO THIS MESSAGE.  THIS MAILBOX NOT MONITORED FOR REPLIES. *** >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	J:\SCMtools\email\tcmail -s "%LC% Successfully deployed to %STATE%" %MAIL% < J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	Del /q J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	goto setenv ;
+
+:ProgramEnd
+::-----------------------::
+if exist J:\SCMtools\Scripts\iLyticsdeploy.txt (
+	ECHO No more deployments requested.  Exiting and sending out error log. >> J:\SCMtools\Logs\iLytics_deploy.log
+	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+	J:\SCMtools\email\tcmail -s "SCM ACTION REQUIRED:  ILytics Deploy process encountered a problem!  See this message for details." %who% < J:\SCMtools\Logs\iLytics_deploy.log
+	Del /q J:\SCMtools\Scripts\iLyticsdeploy.txt
+) else if exist J:\SCMtools\Scripts\Deploy\eMail\iLyticsdeployend.txt (
+	ECHO No more deployments requested.  Exiting and sending out deployment summary. >> J:\SCMtools\Logs\iLytics_deploy.log
+	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+	ECHO Process finished at: >> J:\SCMtools\Logs\iLytics_deploy.log
+	Time /t  >> J:\SCMtools\Logs\iLytics_deploy.log
+	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
+	del /q J:\SCMtools\Scripts\Deploy\eMail\iLyticsdeployend.txt
+	J:\SCMtools\email\tcmail -s "ILytics Deploy has Completed Successfully" %who% < J:\SCMtools\Logs\iLytics_deploy.log
+) else (
+	Echo No staging triggered or no errors found with stage and deploy script.  >>J:\SCMtools\Logs\iLytics_deploy.log
+)
+exit

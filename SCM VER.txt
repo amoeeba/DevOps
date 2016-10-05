@@ -1,0 +1,2424 @@
+::-------------------------------UPDATES SECTION----------------------------------------
+:: Updates:   UID    Date       - Explanation
+::           usgpyv  2015-07-21 - Adding ECM-CMS-Transformation-Batch to automation.
+::           usgpyv  2015-07-10 - Adding updated mail ids KSGEnterpriseServiceITOperations@kemper.com to USG-InsuranceNotification.
+::           usgpyv  2015-07-08 - Adding Policy-RoboFT to automation for HT 01988932.
+::           usgpyv  2015-04-14 - Adding UserActivityPortalRESTApp to automation for PortalRESTUserActivity-LT HT 01955540
+::           usgpyv  2015-04-02 - Changed Outlook group for ClaimsService lifecycle to: USGISClaimProdSupport@kemper.com per Heat
+::           usgpyv  2015-04-01 - Adding automation GW-Claim-Center-V2 and GW-ContactManager to automation.
+::           usgpyv  2015-03-19 - Adding automation GW-SNAPSHOT-BATCH to automation.
+::           usgpyv  2015-03-10 - Adding automation PortalPagesKemperPreferred to automation
+::           usgpyv  2015-02-02 - Adding automation FinanceRoboFTPV2 to automation
+::           usgpyv  2015-02-02 - Adding automation StatRoboFTPV2 to automation 
+::           usgpyv  2015-01-20 - Adding automation Agency-Download-DeployV2 to automation 
+::           usgpyv  2015-01-20 - Adding automation RPW-Acord-Forms-V2 to automation
+::           usgpyv  2015-01-13 - Adding GW-AVAYAFNOL-BATCH to automation
+::           usgpyv  2014-12-10 - Adding USG-PolSS-Batch-LocationSvc-OnRamp and USG-PolSS-Batch-DwellFire-OnRamp to automation.
+::           usgpyv  2014-12-08 - Adding USG-Billing-MastTrigs-V2 USG-Billing-RoboFTP-V2 USG-PolSS-RoboFTP-V2 to automation.
+::           usgpyv  2014-11-07 - update PortletLocationv2-MK to automation.
+::           usgpyv  2014-11-06 - Adding PortletLocationv2-MK to automation.
+::           usgpyv  2014-10-17 - update GW-RENTAL-BATCH deploy artifact to automation.
+::           usgpyv  2014-09-30 - Adding CustomerWebeStatic to automation.
+::           usgpyv  2014-09-30 - Adding Exceed-SLI-Batch-Parm-Cards to automation.
+::           usgpyv  2014-09-29 - Adding ECM-CMSNotification-Batch to automation.
+::           usgpyv  2014-09-18 - Adding GW-RENTAL-BATCH to automation.
+::           usgpyv  2014-09-17 - Adding Customer-Web to ekempercontent.zip automation.
+::           usgpyv  2014-06-11 - Adding SimpleBatch to automation.
+::           usgpyv  2014-06-03 - Adding ProducerBatch to automation. HT 01829356
+::           usgpyv  2014-05-29 - Adding EDIBatch & EDIService to automation. HT 1827475
+::           usgpyv  2014-05-29 - Adding MLOnramp to automation. HT 1827474
+::           usgpyv  2014-05-22 - Adding IncentivePaymentBatch lifecycle to automation.
+::           usgpyv  2014-05-08 - Adding KemperBillingWeb to automation.
+::           usgpyv  2014-05-06 - Adding PortalServiceRESTWCMContent to automation.
+::           usgpyv  2014-05-06 - Remove PortletServiceRESTWCMContent to automation.
+::           usgpyv  2014-04-09 - Replace artifact from ear to zip for PortletKemperBilling
+::           usgezr  2014-03-06 - Adding versioning processing for PortalPagesKemperAgentv2.
+::           usgezr  2014-02-18 - Adding PortletWebClippingsv2 to automation.
+::           usgezr  2014-02-18 - Adding PortalPagesKemper to automation.
+::           usgpyv  2014-02-12 - Revome UserActivityPortalRESTApp from automation.
+::           usgpyv  2014-02-05 - Adding IDMBatch to automation.
+::           usgpyv  2014-02-05 - Adding EnterpriseImages to automation.
+::           usgezr  2014-02-05 - Fixing ProducerSynch-Batch; repository name mismatch.
+::           usgpyv  2014-02-04 - Adding PortletServiceRESTWCMContent to automation.
+::           usgpyv  2014-02-04 - Adding EBillBatch to automation.
+::           usgpyv  2014-01-27 - Changing ContentMGTService2.ear to CMS.ear.
+::           usgpyv  2014-01-27 - Adding ECAVertical to automation.
+::           usgpyv  2014-01-23 - Adding KNPDataRetention-Batch to automation.
+::           usgpyv  2014-01-21 - Adding ProducerSynch-Batch to automation.
+::           usgezr  2014-01-16 - Adding CustomerWeb-Batch and CustomerDataRetention-Batch as they were converted to artifact deployment.
+::           usgezr  2013-12-30 - Adding Exceed-SLI-Billing-UX to automation.
+::           usgpyv  2013-12-23 - Adding PersWebService to automation.
+::           usgpyv  2013-12-12 - Adding PortletKemperBilling to automation.
+::           usgezr  2013-11-22 - Adding ThomasBilling to automation.
+::           usgezr  2013-11-18 - Replacing RPW6-Production with RPW_APP.
+::           usgezr  2013-11-01 - Adding PortletLocationv2-MK and PortletKemperVINv2-MK lifecycles.
+::           usgezr  2013-10-29 - Changing KBS PymtSvcEAR.ear file to PymtSvc.ear because Distributed Systems changed it without prior notice.
+::           usgpyv  2013-10-28 - Adding ConsumerPolicyQuery lifecycle.
+::           usgezr  2013-10-22 - Moving ProducerServiceLegacy to put it before RPW6-Production in support of WAS8.5 upgrade.
+::           usgezr  2013-10-10 - Removing RPW6-Java lifecycles.
+::           usgezr  2013-10-10 - Adding USG-Monitor-85 lifecycle.
+::           usgpyv  2013-10-09 - Adding RPW6-JAVA lifecycle.
+::           usgezr  2013-09-20 - Removing Scott Schank from USG-Monitor emails.
+::           usgezr  2013-08-07 - Changing PortletIDMServices, PortletCLPLinks artifact types from .war to .zip.
+::           usgpyv  2013-08-01 - Remove CC-DwellingFire, CC-Dwelling-Fire and Coverage-Confirmation-Service lifecycle.
+::           usgpyv  2013-08-01 - Adding AgentAlerts-Batch lifecycle.
+::           usgpyv  2013-07-23 - Adding PortletIDMServices, PortletCLPLinks lifecycles to automation per Heat ticket 1705794.
+::           usgpyv  2013-06-12 - Adding Agency-Download-JAVA artifact 
+::           usgezr  2013-05-08 - Adding AgentInsideApp artifact per Heat 1672292
+::           usgezr  2013-05-06 - Adding GW-SafeliteClaimsGlass-Batch artifact per Heat 1668239
+::           usgezr  2013-04-30 - Adding Portalrestuseractivity artifact per Heat 1671815
+::           usgezr  2013-04-25 - Adding ABImport - renamed old one to ABImport-old; it wasn't automated.
+::           usgpyv  2013-03-06 - Replace old USG-INFOGIX-KemperScripts lifecycle email group with USGInfogixSupport@kemper.com
+::           usgpyv  2013-03-04 - Replace old Exceed email USGITExceedPolicySupport@kemper.com group with USGITExceedPolicyandBilling@kemper.com
+::           usgezr  2013-02-20 - Updated Thomas-KemperClaims email address per heat ticket 1637046
+::           usgpyv  2013-01-29 - Changing email for all Exceed LifeCycle as per Heat#1630858
+::           usgpyv  2013-01-28 - Changing Crat .ear file name to AgentCrat.ear.
+::           usgezr  2013-01-28 - Changing CM-Gateway .ear file name to CMSGateway.ear.
+::           usgezr  2013-01-16 - Adding Exceed-SLI-BP-UserExit lifecycle to automation per Heat ticket 1627682
+::           usgezr  2013-01-15 - Remove CustomerWebManager per Heat #1624911.
+::           usgezr  2013-01-15 - Replaced USG IT Policy Billing address with USG IS Service Disbursement per Heat #1622492.
+::           usgezr  2013-01-15 - Adding FormsResourceCategoryReload-Batch lifecycle to automation.
+::           usgezr  2013-01-15 - Adding SimpleArch lifecycle to automation per Heat ticket 1623700.
+::           usgpyv  2012-12-13 - Changed HCO and HCI commands for the .ear file to use the repository variable.
+::           usgezr  2012-12-07 - Adding FormsWebServices lifecycles to automation.
+::           usgezr  2012-12-07 - Updating email addresses per Heat ticket 1609303.
+::           usgezr  2012-11-28 - Moved Ebillgateway to build/deploy after XAG per CRF/WR18574.
+::           usgezr  2012-11-12 - Documenting EBillGateway ear file name per Heat #1603567.
+::           usgezr  2012-11-06 - Added Sar email list to SAR lifecycle.
+::           usgezr  2012-11-06 - Renaming CustomerWeb lifecycle to Customer-Web.
+::           usgezr  2012-10-31 - Changing email for Exceed-SLI-Batch-Reports per Heat#1599343
+::           usgezr  2012-09-21   Per Heat ticket 1583224, updating SAR email address.
+::           usgezr  2012-09-18   Per Heat ticket 1581380, updating PolicyWebService artifact/trigger.
+::           usgrem  2012-08-30   Updated replacement lifecycles for EWS: Agent-Documents and Forms-Library.
+::           usgezr  2012-08-28   Added new CommissionReportAccessTool lifecycle.
+::           usgrem  2012-08-23   Added new PortalThemeHomePlate lifecycle.
+::           usgrem  2012-08-20   Added new PortletKemperStockTicker lifecycle.
+::           usgrem  2012-08-17   Updated replacement lifecycles for EWS: Agent-Alerts and ProducerServiceLegacy.
+::           usgrem  2012-08-15   Updated replacement lifecycles for EWS: Kemper-IDM, AI-Docs, and ODWEK-Docs. 
+::           usgrem  2012-08-09   Changed AgencyContactCenter to Agency-ContactCenter per EWS -LT project.
+::           usgrem  2012-07-25   Added 7 new Portal v2 lifecycles.
+::           usgezr  2012-07-23   This serves as a general notification that we are adding numerious Portal v2 lifecycles.
+::           usgrem  2012-07-20   Added new PortalThemeKemperAgentv2 and PortalCommonKemperAgentv2 lifecycles.
+::           usgezr  2012-06-29   Added GW-ISO-Gateway lifecycle.
+::           usgrem  2012-06-26   Added new ContentMGTService2 lifecycle per PWA task.
+::           usgrem  2012-06-21   Added new PortletWCMSupportTool7 - Heat 1547832.
+::           usgame  2012-06-18 - Added new ECM-CMS-BATCH lifecycle per PWA requests.
+::           usgrem  2012-06-12 - Added new ECM-OB-BATCH and CM-Gateway lifecycles per PWA requests.
+::           usgrem  2012-06-07 - Changed email notifications per Heat 1540805 for: USG-Disbursement-Service, USG-DisbServiceJavaBatch, EventJournal-Batch, USGBillingBatch, USG-Payment-Service & LocationServiceBatch.
+::           usgrls  2012-05-31 - Added New Lifecycle EBillGateway. 
+::           usgezr  2012-05-25 - Per Heat#1537465, changed PortletFindRepairCenter email to notify EWS.
+::           usgezr  2012-05-18 - Added Control-M to script.
+::           usgrem  2012-05-16 - Added new USG-INFOGIX-KemperScripts lifecycle per PWA task: True Comp Infogix Controls.
+::           usgrem  2012-05-11 - Changed XAG-App to XAGApp as required per WR: EXCD KP R4 EAI - Real Time Rating
+::           usgezr  2012-05-08 - Added additional artifact for PortalRestUserActivity to deploy to Portal7.
+::           usgezr  2012-05-04 - Added Exceed-SLI-Documentation.
+::           usgezr  2012-04-23 - Renamed ClaimInquiry lifecycle to Claims-Inquiry per Heat #1522319
+::           usgrem  2012-04-19 - Change artifact name to PolicyWebServiceEAR for PolicyWebService lifecycle per Heat 1522319.
+::           usgezr  2012-04-19 - Added GW-AuditControl back into Automation per Heat #1521639.
+::           usgezr  2012-04-16 - Removed wording that indicated a deploy was being triggered after package promotion from versioning to INT.
+::				  This caused confusion for the Exceed team as the deploy triggering is manual.
+::           usgrem  2012-04-12 - Updated artifact name for PortletFindRepairCenter per customer - Heat 1519617.
+::           usgezr  2012-04-10 - Removed old GW AuditControl lifecycle automation; changed artifact name of new one.
+::           usgrem  2012-04-06 - Updated artifact name for PortletContactKemper lifecycle per Heat 1517418.
+::           usgezr  2012-03-30 - Added Exceed KP lifecycles; modified triggers to include company designator.
+::           usgrem  2012-03-29 - Added new PortletContactKemper lifecycle per WR 18371 / Heat 1512180.
+::           usgezr  2012-03-27 - Removed old Exceed entries and added new Exceed lifecycles.
+::           usgrem  2012-03-26 - Added new PolicyWebService lifecycle per WR18415 / Heat 1508280.
+::           usgame  2012-03-09 - Added new GW-Audit-Control lifecycles for both short/long term - WR -18471.
+::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
+::           usgrem  2012-02-23 - Added new PortalThemeKemperCorporate lifecycles per WR 18494.
+::           usgame  2012-02-09 - Changed the recipient list for RPW6-Batch lifecycle to: KAHITRPWTeam@unitrin.com,KAHITRPWProdSupport@unitrin.com,KAHITEAS-AgencyInterface@unitrin.com,KAHITPolicyAutoServicesTeam@unitrin.com, & KAHITPolicyHomeServicesTeam@unitrin.com per Heat 1487619.
+::           usgame  2012-02-09 - Changed the recipient list for RPW6-Production lifecycle to: KAHITRPWTeam@unitrin.com,KAHITRPWProdSupport@unitrin.com,KAHITEAS-AgencyInterface@unitrin.com,KAHITPolicyAutoServicesTeam@unitrin.com, & KAHITPolicyHomeServicesTeam@unitrin.com per Heat 1487619.
+::           usgame  2012-02-03 - Added new PotalCommon7 lifecycle per Heat 1489918.
+::           usgrem  2012-01-12 - Added new GW-PCN-Batch lifecycle per Heat 1480691.
+::           usgrem  2012-01-12 - Changed Outlook group for ClaimsService lifecycle to: KAHITCLAIMDEV@unitrin.com per Heat 1480568.
+::           usgezr  2012-01-11 - Removed AgentAlertsService and PortletLocation per Heat #1480052.
+::           usgezr  2011-12-28 - Replaced GW-ClaimCenter with GW-Claim-Center.
+::           usgame  2011-12-19 - Added new PortletQuoting lifecycle - Heat 1471779.
+::           usgame  2011-12-16 - Added new PortletPayments lifecycle - Heat 1469786.
+::           usgrem  2011-12-12 - Added new PortletReportClaim lifecycle - Heat 1467962.
+::           usgame  2011-12-08 - Added new PortletFindRepairCenter lifecycle - Heat 1467411.
+::           usgame  2011-12-08 - Added new PortletKemperWidgets lifecycle - Heat 1466220.
+::           usgame  2011-12-02 - Added new PortletFindAgent lifecycle - Heat 1465934.
+::           usgrem  2011-11-29 - Added new FS-ThomasKemperBilling lifecycle - Heat 1462758.
+::           usgame  2011-11-28 - Added new PortletCustomerLogin lifecycle - Heat 1463167.
+::           usgrem  2011-11-21 - Added new ProducerCallidus-Batch lifecycle - Heat 1462663.
+::           usgame  2011-11-21 - Added new GW-NYNoFault-Batch lifecycle - Heat 1462440.
+::           usgrem  2011-11-18 - Added new GW-UWReferrals-Batch lifecycle - Heat 1459874.
+::           usgame  2011-11-17 - Added new PortletBecomeAnAgent lifecycle - Heat 1460607.	
+::           usgrem  2011-11-10 - Added new ECM-RRD-BATCH lifecycle - Heat 1452143.
+::           usgrem  2011-11-08 - Add Versioning for lifecycle ECM-IPAL-BATCH - Heat 1457200.
+::           usgezr  2011-11-07 - Added MAudit lifecycle per Heat #1456731.
+::           usgrem  2011-11-02 - Added PortletWATTools lifecycle per Heat #1451984.
+::           usgrem  2011-10-26 - Added KSG-Fee-Service lifecycle per Heat #1448809.
+::           usgrem  2011-10-12 - Changed artifact to UserActivityPortletService for lifecycle PortletServiceUserActivity - Heat 1446265.
+::           usgrem  2011-10-14 - Changed artifact to UserActivityPortalRESTApp for lifecycle PortalRESTUserActivity - Heat 1446265.
+::	     kahezr  2011-10-11 - Changed trigger file processing to indicate that an appliation is running.
+::           usgrem  2011-10-10 - Added PortalFilterKemperCustomer lifecycle per Heat#1443629.
+::           usgezr  2011-10-07 - Renamed RPW6-Batch artifact to correct name.
+::           usgezr  2011-10-04 - Re-ordered Portal/Portlet lifecycles per Heat#1440831.
+::           usgrem  2011-09-26 - Created new lifecycle UserActivityService (ticket 1436825).	
+::           usgezr  2011-09-26 - Created new lifecycles to replace USG-BillingBatch (ticket 1439280)
+::           usgezr  2011-09-26 - Made email changes per Heat ticket 1433821.
+::           usgrem  2011-09-16 - Added LocationServiceBatch lifecycle per Heat 1435620. 
+::           usgrem  2011-09-12 - Added PortletServiceUserActivity and PortalRESTUserActivity lifecycles per Heat 1430810. 
+::           usgrem  2011-08-31 - Changed Outlook group for ClaimsService lifecycle to: KAHITClaimDev@unitrin.com
+::           usgrem  2011-08-30 - Updated ClaimsService lifecycle per Heat ticket 1428835.
+::           usgrem  2011-08-25 - Added new PortalThemeCorporateEmployee lifecycle per Heat ticket 1421199.
+::	     kahezr  2011-08-23 - Added new PortletKemperVIN lifecycle.
+::	     kahezr  2011-08-23 - Added new iExpenseBatch lifecycle.
+::	     usgame  2011-08-18 - Added new PortalThemeKemperAgent,Customer,and Employee Lifecycles per Heat Ticket no. 1421296 
+::           usgrem  2011-08-10 - Added new GW-ABImport-Batch lifecycle per Heat ticket 1412809.
+::	     kahezr  2011-08-05 - Added new Exceed J lifecycles.
+::	     kahezr  2011-08-05 - Removed old ExceedJ lifecycle automation.
+::	     kahrem  2011-08-02 - Added KAHITCLAIMDEV@unitrin.com to Thomas-KemperClaims.
+::	     kahrem  2011-07-25 - Added UniFormsMaster-Report lifecycle.
+::	     kahezr  2011-07-14 - Changed Peaceofmind batch artifact name to POMBatch.
+::	     kahrem  2011-07-06 - Added Unitrin-Internet lifecycle. 
+::	     kahezr  2011-06-20 - Changed syntax for 'if errorlevel' commands to include parens.
+::	     kahezr  2011-05-25 - Changed new Portal/Portlet lifecycles to be .zip files instead of .war files.
+::	     kahezr  2011-05-10 - Added new Portal/Portlet lifecycles according to Heat ticket #1382444.
+::	     usgrem  2011-05-09 - Added PeaceOfMindBatch lifecycle.
+::	     usgimh  2011-05-04 - Corrected the trigger file by renaming PERSDataValidationServtxt to 
+::				  PERSDataValidationServ.txt so that Pers Data Validation Service could run.
+::	     kahezr  2011-04-26 - Modified order of all Portlet and Portal lifecycles per Heat #1379282.
+:: 	     usgimh  2011-04-15 - Added the EWS-RoboFTPBatch lifecycle.
+::	     kahezr  2011-04-12 - Changed AgencyXML emails per Heat ticket 1373453.
+::	     kahrem  2011-03-11 - Added USG-CM-LargeFileImport lifecycle.
+::	     kahezr  2011-03-03 - Changed the Webi artifact to an ear file.
+::	     kahezr  2011-02-17 - Added USG-CM-LoadValidatorBatch and USG-CM-WEBI-SSO lifecycles.
+::	     kahezr  2011-02-07 - Added EBillCSAPIService lifecycle.
+::	     kahezr  2011-01-31 - Correcting automation for USG-PERS-Data-Validation lifecycle.
+::	     kahezr  2011-01-31 - Changing USG-Billing-Batch lifecycle name; replaced lifecycle with new one:  USG-BillingBatch.
+::	     kahezr  2011-01-31 - Adding PortalCommon and PortalKemperAgentCommon to build zip files.
+::	     kahezr  2011-01-26 - Updated UniformsCorrespondenceBatch triggers to match lifecycle name.
+::	     kahezr  2011-01-25 - Added USG-CM-IPAL and USG-PERS-Data-Validation.
+::	     kahezr  2011-01-17 - Corrected email address for AuditsAndControls and AuditsAndControlsBatch.
+::           kahezr  2010-11-19 - Updated Forms email address.
+::           kahezr  2010-11-10 - Added MessageSequencer.
+::           usgrem  2010-11-10 - Adding new Project RPW-QuotingDocumentService
+::           usgrem  2010-10-21 - Updating Portal App automation
+::           kahezr  2010-10-07 - Added KemperEBillService
+::           kahrem  2010-09-22 - Added PortletKemperDocument
+::				  PortletKemperCustomerInfo
+::				  PortletKemperClaimsInfo
+::				  App=PortletKemperCompanyNews - Tigger=PortKmprCompanyNews
+::				  App=PortletKemperProductLauncher - Trigger=PortKmprProdLaunch 
+::	     kahezr  2010-06-08 - Added USG-Monitor.
+::	     kahezr  2010-06-04 - Added EventJournal-Onetime.
+::	     kahezr  2010-05-27 - Add GWAuditControl.
+::	     kahezr  2010-04-16 - Add Insurance Notification lifecycles.
+::	     kahezr  2010-03-15 - Add EventJournal-Batch.
+::	     kahezr  2010-03-15 - Add MessageAssurance lifecycles.
+::	     kahezr  2010-03-10 - Add Exceed CommFW.
+::	     kahezr  2010-02-01 - Update Vin service dist list.
+::	     kahezr  2010-02-01 - Added PrintBundlingBatch.
+::	     kahezr  2010-02-23 - Removed IdentityManagement and AccountsPay
+::	     kahezr  2010-01-06 - Adding AuditsandControls and AuditsControlsBatch to script.
+::	     kahezr  2009-12-08 - Rewrite to support new Artifact build and deploy process. For versioning only.
+::-------------------------------------------------------------------------------------------
+
+
+:begin
+Echo Process Log started at:  > J:\SCMtools\Logs\Artifact_versioning.log
+Date /t  >> J:\SCMtools\Logs\Artifact_versioning.log
+Time /t  >> J:\SCMtools\Logs\Artifact_versioning.log
+ECHO ************************* >> J:\SCMtools\Logs\Artifact_versioning.log
+
+set who=USGITSCMTeam@unitrin.com
+::set who=erasmussen@eKemper.com,ihunley@ekemper.com
+set SCMBROKER=usgjaxscm45
+set DEPLOYSERVER=usgdeploymentserver
+
+:: Legend: 
+::  LC = The Harvest Life cycle name
+::  RP = The Harvest Life cycle repository
+::  ARTNM = The artifact name, i.e. rpw_app.ear.
+::  TYPE = They type of artifact, i.e. .ear, .war, .jar, .zip, etc.
+::  MAIL = The mail group
+
+:setenv
+::-----------------------------
+if exist J:\SCMtools\Scripts\Deploy\VER\*.txt (
+	goto setapp
+) else goto ProgramEnd
+
+:setapp
+::-----------------------------
+::Copying this file allows us to send an email if there is a problem with the script:
+xcopy /r /y "J:\SCMtools\Scripts\Deploy\Development\Artifactversioning.txt" "J:\SCMtools\Scripts\Deploy\eMail"
+
+if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
+::----------------------------- AI-Docs -----------------------------::
+  set LC=AI-Docs
+  set RP=AI-Docs
+  set ARTNM=AIDocumentEar
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerAPP.txt             	(
+::----------------------------- ProducerServiceLegacy -----------------------------::
+  set LC=ProducerServiceLegacy
+  set RP=ProducerServiceLegacy
+  set ARTNM=ProducerAPP
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\RPW_APP.txt                 	(
+::----------------------------- RPW_APP -----------------------------::
+  set LC=RPW_APP
+  set RP=RPW_APP
+  set ARTNM=RPW_APP
+  set TYPE=ear
+  set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\RpwQtDocumentSvcWAR.txt          	(
+::----------------------------- RPW-QuotingDocumentService -----------------------------::
+  set LC=RPW-QuotingDocumentService
+  set RP=RPW-QuotingDocumentService
+  set ARTNM=RpwQtDocumentSvcWAR
+  set TYPE=war
+  set MAIL=KAHITRPWDevelopers@ekemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustomerProfile.txt     	(
+::----------------------------- KemperCustomer -----------------------------::
+  set LC=KemperCustomer
+  set RP=KemperCustomer
+  set ARTNM=KemperCustomerProfile
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyContactCenter.txt     	(
+::----------------------------- Agency-ContactCenter -----------------------------::
+  set LC=Agency-ContactCenter
+  set RP=Agency-ContactCenter
+  set ARTNM=AgencyContactCenter
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentAlerts.txt          	(
+ ::----------------------------- Agent-Alerts -----------------------------::
+  set LC=Agent-Alerts
+  set RP=Agent-Alerts
+  set ARTNM=AgentAlerts
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EBillBatch.txt          	(
+ ::----------------------------- EBill-Batch -----------------------------::
+  set LC=EBill-Batch
+  set RP=EBill-Batch
+  set ARTNM=EBillBatch
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentAlerts-Batch.txt          	(
+ ::----------------------------- AgentAlerts-Batch -----------------------------::
+  set LC=AgentAlerts-Batch
+  set RP=AgentAlerts-Batch
+  set ARTNM=AgentAlerts-Batch
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\LocServBat.txt          	(
+ ::----------------------------- USG-PolSS-Batch-LocationSvc-OnRamp -----------------------------::
+  set LC=USG-PolSS-Batch-LocationSvc-OnRamp
+  set RP=USG-PolSS-Batch-LocationSvc-OnRamp
+  set ARTNM=LocServBat
+  set TYPE=zip
+  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DFDC.txt          	(
+ ::----------------------------- USG-PolSS-Batch-DwellFire-OnRamp -----------------------------::
+  set LC=USG-PolSS-Batch-DwellFire-OnRamp
+  set RP=USG-PolSS-Batch-DwellFire-OnRamp
+  set ARTNM=DFDC
+  set TYPE=zip
+  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentDocuments.txt          	(
+ ::----------------------------- Agent-Documents -----------------------------::
+  set LC=Agent-Documents
+  set RP=Agent-Documents
+  set ARTNM=AgentDocuments
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentInsideApp.txt          	(
+::----------------------------- AgentInsideApp -----------------------------::
+  set LC=AgentInsideApp
+  set RP=AgentInsideApp
+  set ARTNM=AgentInsideApp
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PolicyWebService.txt          	(
+::----------------------------- PolicyWebService -----------------------------::
+  set LC=PolicyWebService
+  set RP=PolicyWebService
+  set ARTNM=PolicyWebService
+  set TYPE=ear
+  set MAIL=USGISServicePolicyInquiryPIT@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyXML.txt          	(
+::----------------------------- AgencyXML -----------------------------::
+  set LC=AgencyXML
+  set RP=AgencyXML
+  set ARTNM=AgencyXML
+  set TYPE=ear
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMIBL.txt                   	(
+::----------------------------- AMIBilling -----------------------------::
+  set LC=AMIBilling
+  set RP=AMIBilling
+  set ARTNM=AMIBL
+  set TYPE=ear
+  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMICL.txt                   	(
+::----------------------------- AMIClaim -----------------------------::
+  set LC=AMIClaim
+  set RP=AMIClaim
+  set ARTNM=AMICL
+  set TYPE=ear
+  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMIEND.txt                  	(
+::----------------------------- AMIEndorsement -----------------------------::
+  set LC=AMIEndorsement
+  set RP=AMIEndorsement
+  set ARTNM=AMIEND
+  set TYPE=ear
+  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMIPL.txt                   	(
+::----------------------------- AMIPolicy -----------------------------::
+  set LC=AMIPolicy
+  set RP=AMIPolicy
+  set ARTNM=AMIPL
+  set TYPE=ear
+  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyDownloadDeployV2.txt            	(
+::----------------------------- Agency-Download-DeployV2 -----------------------------::
+  set LC=Agency-Download-DeployV2
+  set RP=Agency-Download-DeployV2
+  set ARTNM=AgencyDownloadDeployV2
+  set TYPE=zip
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build 
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Agency-Download-JAVA.txt            	(
+::----------------------------- Agency-Download-JAVA -----------------------------::
+  set LC=Agency-Download-JAVA
+  set RP=Agency-Download-JAVA
+  set ARTNM=Agency-Download-JAVA
+  set TYPE=zip
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build 
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommon.txt            	(
+::----------------------------- PortalCommon -----------------------------::
+  set LC=PortalCommon
+  set RP=PortalCommon
+  set ARTNM=PortalCommon
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build 
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommon7.txt            	(
+::----------------------------- PortalCommon7 -----------------------------::
+  set LC=PortalCommon7
+  set RP=PortalCommon7
+  set ARTNM=PortalCommon7
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalKemperAgentCommon.txt            	(
+::----------------------------- PortalKemperAgentCommon -----------------------------::
+  set LC=PortalKemperAgentCommon
+  set RP=PortalKemperAgentCommon
+  set ARTNM=PortalKemperAgentCommon
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommonKemperAgentv2.txt            	(
+::----------------------------- PortalCommonKemperAgentv2 -----------------------------::
+  set LC=PortalCommonKemperAgentv2
+  set RP=PortalCommonKemperAgentv2
+  set ARTNM=PortalCommonKemperAgentv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalUSGCommon.txt           	(
+::----------------------------- PortalUSGCommon -----------------------------::
+  set LC=PortalUSGCommon
+  set RP=PortalUSGCommon
+  set ARTNM=PortalUSGCommon
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustomerPortalFilter.txt           	(
+::----------------------------- PortalFilterKemperCustomer -----------------------------::
+  set LC=PortalFilterKemperCustomer
+  set RP=PortalFilterKemperCustomer
+  set ARTNM=KemperCustomerPortalFilter
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortletService.txt          	(
+::----------------------------- PortletServiceUserActivity -----------------------------::
+  set LC=PortletServiceUserActivity
+  set RP=PortletServiceUserActivity
+  set ARTNM=UserActivityPortletService
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentHelloPort.txt          	(
+::----------------------------- PortletAgentHome -----------------------------::
+  set LC=PortletAgentHome
+  set RP=PortletAgentHome
+  set ARTNM=AgentHelloPort
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\BecomeAnAgentPortlet.txt          	(
+::----------------------------- PortletBecomeAnAgent -----------------------------::
+  set LC=PortletBecomeAnAgent
+  set RP=PortletBecomeAnAgent
+  set ARTNM=BecomeAnAgentPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerWebeStatic.txt          	(
+::----------------------------- CustomerWebeStatic -----------------------------::
+  set LC=CustomerWebeStatic
+  set RP=CustomerWebeStatic
+  set ARTNM=CustomerWebeStatic
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECAVertical.txt          	(
+::----------------------------- ECAVertical -----------------------------::
+  set LC=ECAVertical
+  set RP=ECAVertical
+  set ARTNM=ECAVertical
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContactKemper.txt          	(
+::----------------------------- PortletContactKemper -----------------------------::
+  set LC=PortletContactKemper
+  set RP=PortletContactKemper
+  set ARTNM=ContactKemper
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CorporateLandingPage.txt            	(
+::----------------------------- PortletCorporateEmployee -----------------------------::
+  set LC=PortletCorporateEmployee
+  set RP=PortletCorporateEmployee
+  set ARTNM=CorporateLandingPage
+  set TYPE=zip
+  set MAIL=usgenterprisesharedservices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CorporateIntranet.txt            	(
+::----------------------------- PortletCorporateIntranet -----------------------------::
+  set LC=PortletCorporateIntranet
+  set RP=PortletCorporateIntranet
+  set ARTNM=CorporateIntranet
+  set TYPE=zip
+  set MAIL=usgenterprisesharedservices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerLoginPortlet.txt          	(
+::----------------------------- PortletCustomerLogin -----------------------------::
+  set LC=PortletCustomerLogin
+  set RP=PortletCustomerLogin
+  set ARTNM=CustomerLoginPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerRelationsPortletApp.txt          	(
+::----------------------------- PortletCustomerRelations -----------------------------::
+  set LC=PortletCustomerRelations
+  set RP=PortletCustomerRelations
+  set ARTNM=CustomerRelationsPortletApp
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FindAgentPortlet.txt          	(
+::----------------------------- PortletFindAgent -----------------------------::
+  set LC=PortletFindAgent
+  set RP=PortletFindAgent
+  set ARTNM=FindAgentPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FindRepairCtrPortlet.txt          	(
+::----------------------------- PortletFindRepairCenter -----------------------------::
+  set LC=PortletFindRepairCenter
+  set RP=PortletFindRepairCenter
+  set ARTNM=FindRepairCtrPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperClaimsPort.txt          	(
+::----------------------------- PortletKemperClaimsInfo -----------------------------::
+  set LC=PortletKemperClaimsInfo
+  set RP=PortletKemperClaimsInfo
+  set ARTNM=KemperClaimsPort
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperClaimsPortv2.txt          	(
+::----------------------------- PortletKemperClaimsInfov2 -----------------------------::
+  set LC=PortletKemperClaimsInfov2
+  set RP=PortletKemperClaimsInfov2
+  set ARTNM=KemperClaimsPortv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCoNewsPort.txt          	(
+::----------------------------- PortletKemperCompanyNews -----------------------------::
+  set LC=PortletKemperCompanyNews
+  set RP=PortletKemperCompanyNews
+  set ARTNM=KemperCoNewsPort
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCoNewsPortv2.txt          	(
+::----------------------------- PortletKemperCompanyNewsv2 -----------------------------::
+  set LC=PortletKemperCompanyNewsv2
+  set RP=PortletKemperCompanyNewsv2
+  set ARTNM=KemperCoNewsPortv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustPort.txt          	(
+::----------------------------- PortletKemperCustomerInfo -----------------------------::
+  set LC=PortletKemperCustomerInfo
+  set RP=PortletKemperCustomerInfo
+  set ARTNM=KemperCustPort
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustPortv2.txt          	(
+::----------------------------- PortletKemperCustomerInfov2 -----------------------------::
+  set LC=PortletKemperCustomerInfov2
+  set RP=PortletKemperCustomerInfov2
+  set ARTNM=KemperCustPortv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletLocationv2-MK.txt          	(
+::----------------------------- PortletLocationv2-MK -----------------------------::
+  set LC=PortletLocationv2-MK
+  set RP=PortletLocationv2-MK
+  set ARTNM=PortletLocationv2-MK
+  set TYPE=zip
+  set MAIL=KSGECommerceAnalytics@kemper.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperDocPort.txt          	(
+::----------------------------- PortletKemperDocuments -----------------------::
+  set LC=PortletKemperDocuments
+  set RP=PortletKemperDocuments
+  set ARTNM=KemperDocPort
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperDocPortv2.txt          	(
+::----------------------------- PortletKemperDocumentsv2 -----------------------::
+  set LC=PortletKemperDocumentsv2
+  set RP=PortletKemperDocumentsv2
+  set ARTNM=KemperDocPortv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperPrdLchPort.txt          	(
+::----------------------------- PortletKemperProductLauncher -----------------------------::
+  set LC=PortletKemperProductLauncher
+  set RP=PortletKemperProductLauncher
+  set ARTNM=KemperPrdLchPort
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperPrdLchPortv2.txt          	(
+::----------------------------- PortletKemperProductLauncherv2 -----------------------------::
+  set LC=PortletKemperProductLauncherv2
+  set RP=PortletKemperProductLauncherv2
+  set ARTNM=KemperPrdLchPortv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperWidgetsPortlet.txt          	(
+::----------------------------- PortletKemperWidgets -----------------------------::
+  set LC=PortletKemperWidgets
+  set RP=PortletKemperWidgets
+  set ARTNM=KemperWidgetsPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperVIN.txt          	(
+::----------------------------- PortletKemperVIN -----------------------------::
+  set LC=PortletKemperVIN
+  set RP=PortletKemperVIN
+  set ARTNM=PortletKemperVIN
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperVINv2.txt          	(
+::----------------------------- PortletKemperVINv2 -----------------------------::
+  set LC=PortletKemperVINv2
+  set RP=PortletKemperVINv2
+  set ARTNM=PortletKemperVINv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperVINv2-MK.txt          	(
+::----------------------------- PortletKemperVINv2-MK -----------------------------::
+  set LC=PortletKemperVINv2-MK
+  set RP=PortletKemperVINv2-MK
+  set ARTNM=PortletKemperVINv2-MK
+  set TYPE=zip
+  set MAIL=KSGECommerceAnalytics@kemper.com 
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\LocationPortFaces.txt          	(
+::----------------------------- PortletLocationFaces -----------------------------::
+  set LC=PortletLocationFaces
+  set RP=PortletLocationFaces
+  set ARTNM=LocationPortFaces
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\LocationPortFacesv2.txt          	(
+::----------------------------- PortletLocationv2 -----------------------------::
+  set LC=PortletLocationv2
+  set RP=PortletLocationv2
+  set ARTNM=LocationPortFacesv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PaymentsPortlet.txt          	(
+::----------------------------- PortletPayments -----------------------------::
+  set LC=PortletPayments
+  set RP=PortletPayments
+  set ARTNM=PaymentsPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\QuotingPortlet.txt          	(
+::----------------------------- PortletQuoting -----------------------------::
+  set LC=PortletQuoting
+  set RP=PortletQuoting
+  set ARTNM=QuotingPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ReportClaimPortlet.txt          	(
+::----------------------------- PortletReportClaim -----------------------------::
+  set LC=PortletReportClaim
+  set RP=PortletReportClaim
+  set ARTNM=ReportClaimPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PersonalizedLinkPortlet.txt            	(
+::----------------------------- PortletUSGEmployeeHome -----------------------------::
+  set LC=PortletUSGEmployeeHome
+  set RP=PortletUSGEmployeeHome
+  set ARTNM=PersonalizedLinkPortlet
+  set TYPE=zip
+  set MAIL=usgenterprisesharedservices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletWATTools.txt            	(
+::----------------------------- PortletWATTools -----------------------------::
+  set LC=PortletWATTools
+  set RP=PortletWATTools
+  set ARTNM=PortletWATTools
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletWCMSupportTool7.txt            	(
+::----------------------------- PortletWCMSupportTool7 -----------------------------::
+  set LC=PortletWCMSupportTool7
+  set RP=PortletWCMSupportTool7
+  set ARTNM=PortletWCMSupportTool7
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperStockTicker.txt            	(
+::----------------------------- PortletKemperStockTicker -----------------------------::
+  set LC=PortletKemperStockTicker
+  set RP=PortletKemperStockTicker
+  set ARTNM=KemperStockTicker
+  set TYPE=ear
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+) else if exist J:\SCMtools\Scripts\Deploy\VER\ConsumerPolicyQuery.txt            	(
+::----------------------------- ConsumerPolicyQuery -----------------------------::
+  set LC=ConsumerPolicyQuery
+  set RP=ConsumerPolicyQuery
+  set ARTNM=ConsumerPolicyQuery
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\IDMServicePortlets.txt          	(
+::----------------------------- PortletIDMServices -----------------------------::
+  set LC=PortletIDMServices
+  set RP=PortletIDMServices
+  set ARTNM=IDMServicePortlets
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KSGLinksPortlet.txt          	(
+::----------------------------- PortletCLPLinks -----------------------------::
+  set LC=PortletCLPLinks
+  set RP=PortletCLPLinks
+  set ARTNM=KSGLinksPortlet
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemes.txt          	(
+::----------------------------- PortalThemes -----------------------------::
+  set LC=PortalThemes
+  set RP=PortalThemes
+  set ARTNM=PortalThemes
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperCorporate.txt          	(
+::----------------------------- PortalThemeKemperCorporate -----------------------------::
+  set LC=PortalThemeKemperCorporate
+  set RP=PortalThemeKemperCorporate
+  set ARTNM=PortalThemeKemperCorporate
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeCorporateEmployee.txt          	(
+::----------------------------- PortalThemeCorporateEmployee -----------------------------::
+  set LC=PortalThemeCorporateEmployee
+  set RP=PortalThemeCorporateEmployee
+  set ARTNM=PortalThemeCorporateEmployee
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperAgent.txt          	(
+::----------------------------- PortalThemeKemperAgent -----------------------------::
+  set LC=PortalThemeKemperAgent
+  set RP=PortalThemeKemperAgent
+  set ARTNM=PortalThemeKemperAgent
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperAgentv2.txt          	(
+::----------------------------- PortalThemeKemperAgentv2 -----------------------------::
+  set LC=PortalThemeKemperAgentv2
+  set RP=PortalThemeKemperAgentv2
+  set ARTNM=PortalThemeKemperAgentv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperCustomer.txt          	(
+::----------------------------- PortalThemeKemperCustomer -----------------------------::
+  set LC=PortalThemeKemperCustomer
+  set RP=PortalThemeKemperCustomer
+  set ARTNM=PortalThemeKemperCustomer
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperEmployee.txt          	(
+::----------------------------- PortalThemeKemperEmployee -----------------------------::
+  set LC=PortalThemeKemperEmployee
+  set RP=PortalThemeKemperEmployee
+  set ARTNM=PortalThemeKemperEmployee
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\HomePlateTheme.txt          	(
+::----------------------------- PortalThemeHomePlate -----------------------------::
+  set LC=PortalThemeHomePlate
+  set RP=PortalThemeHomePlate
+  set ARTNM=HomePlateTheme
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalPagesKemperAgentv2.txt          	(
+::----------------------------- PortalPagesKemper -----------------------------::
+  set LC=PortalPagesKemperAgentv2
+  set RP=PortalPagesKemperAgentv2
+  set ARTNM=PortalPagesKemperAgentv2
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExportedKemperPages.txt          	(
+::----------------------------- PortalPagesKemper -----------------------------::
+  set LC=PortalPagesKemper
+  set RP=PortalPagesKemper
+  set ARTNM=ExportedKemperPages
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExportedKemperPreferredPages.txt          	(
+::----------------------------- PortalPagesKemperPreferred -----------------------------::
+  set LC=PortalPagesKemperPreferred
+  set RP=PortalPagesKemperPreferred
+  set ARTNM=ExportedKemperPreferredPages
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\webClippingv2.txt          	(
+::----------------------------- PortletWebClippingsv2 -----------------------------::
+  set LC=PortletWebClippingsv2
+  set RP=PortletWebClippingsv2
+  set ARTNM=webClippingv2
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperBilling.txt            	(
+::----------------------------- PortletKemperBilling -----------------------------::
+  set LC=PortletKemperBilling
+  set RP=PortletKemperBilling
+  set ARTNM=PortletKemperBilling
+  set TYPE=zip
+  set MAIL=KemperOutsourcingExceedTeam@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortalRESTApp.txt            	(
+::----------------------------- PortalRESTUserActivity-LT-----------------------------::
+  set LC=PortalRESTUserActivity
+  set RP=PortalRESTUserActivity
+  set ARTNM=UserActivityPortalRESTApp
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortalRESTApp7.txt            	(
+::----------------------------- PortalRESTUserActivity -----------------------------::
+  set LC=PortalRESTUserActivity
+  set RP=PortalRESTUserActivity
+  set ARTNM=UserActivityPortalRESTApp7
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\RESTWCMContentPortalService.txt            	(
+::----------------------------- PortalServiceRESTWCMContent -----------------------------::
+  set LC=PortalServiceRESTWCMContent
+  set RP=PortalServiceRESTWCMContent
+  set ARTNM=RESTWCMContentPortalService
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortalRESTAppv2.txt            	(
+::----------------------------- PortalRESTUserActivity -----------------------------::
+  set LC=PortalRESTUserActivity
+  set RP=PortalRESTUserActivity
+  set ARTNM=UserActivityPortalRESTAppv2
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\claiminquiry.txt            	(
+::----------------------------- Claims-Inquiry -----------------------------::
+  set LC=Claims-Inquiry
+  set RP=Claims-Inquiry
+  set ARTNM=claiminquiry
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com;USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimsService.txt           	(
+::----------------------------- ClaimsService -----------------------------::
+  set LC=ClaimsService
+  set RP=ClaimsService
+  set ARTNM=ClaimsService
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContentMgmt.txt             	(
+::----------------------------- ContentMGTService -----------------------------::
+  set LC=ContentMGTService
+  set RP=ContentMGTService
+  set ARTNM=ContentMgmt
+  set TYPE=ear
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\LoadValidatorBatch.txt             	(
+::----------------------------- USG-CM-LoadValidatorBatch -----------------------------::
+  set LC=USG-CM-LoadValidatorBatch
+  set RP=USG-CM-LoadValidatorBatch
+  set ARTNM=LoadValidatorBatch
+  set TYPE=jar
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CMWebiSSO.txt             	(
+::----------------------------- USG-CM-WEBI-SSO -----------------------------::
+  set LC=USG-CM-WEBI-SSO
+  set RP=USG-CM-WEBI-SSO
+  set ARTNM=CMWebiSSO
+  set TYPE=ear
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EDIService.txt            	(
+::----------------------------- EDIService -----------------------------::
+  set LC=EDIService
+  set RP=EDIService
+  set ARTNM=EDIService
+  set TYPE=ear
+  set MAIL=ksgitpolicy&financialservices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperBillingWebApp.txt            	(
+::----------------------------- KemperBillingWeb -----------------------------::
+  set LC=KemperBillingWeb
+  set RP=KemperBillingWeb
+  set ARTNM=KemperBillingWebApp
+  set TYPE=ear
+  set MAIL=USGITDigitalExperience@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ekempercontent.txt          	(
+::----------------------------- Customer-Web -----------------------------::
+  set LC=Customer-Web
+  set RP=Customer-Web
+  set ARTNM=ekempercontent
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\customer_ear.txt            	(
+::----------------------------- CustomerWeb -----------------------------::
+  set LC=Customer-Web
+  set RP=CustomerWeb
+  set ARTNM=customer_ear
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CWNotices.txt            	(
+::----------------------------- CustomerWeb-Batch -----------------------------::
+  set LC=CustomerWeb-Batch
+  set RP=CustomerWeb-Batch
+  set ARTNM=CWNotices
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DataRetentionknp.txt            	(
+::----------------------------- KNPDataRetention-Batch -----------------------------::
+  set LC=KNPDataRetention-Batch
+  set RP=KNPDataRetention-Batch
+  set ARTNM=DataRetentionknp
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DataRetentionCustomer.txt            	(
+::----------------------------- CustomerDataRetention-Batch -----------------------------::
+  set LC=CustomerDataRetention-Batch
+  set RP=CustomerDataRetention-Batch
+  set ARTNM=DataRetentionCustomer
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\customeronlinequoting.txt   	(
+::----------------------------- CustomerOnlineQuoting -----------------------------::
+  set LC=CustomerOnlineQuoting
+  set RP=CustomerOnlineQuoting
+  set ARTNM=customeronlinequoting
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Disbursement.txt            	(
+::----------------------------- USG-Disbursement-Service -----------------------------::
+  set LC=USG-Disbursement-Service
+  set RP=USG-Disbursement-Service
+  set ARTNM=Disbursement
+  set TYPE=ear
+  set MAIL=USGISServiceDisbursement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DMVCC.txt                   	(
+::----------------------------- DMVCovConf -----------------------------::
+  set LC=DMV-Coverage-Confirmation
+  set RP=DMV-Coverage-Confirmation
+  set ARTNM=DMVCC
+  set TYPE=ear
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EventJournal.txt            	(
+::----------------------------- Event-Journal -----------------------------::
+  set LC=EventJournal
+  set RP=EventJournal
+  set ARTNM=EventJournal
+  set TYPE=ear
+  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EventJournalOnetime.txt            	(
+::----------------------------- Event-Journal Onetime -----------------------------::
+  set LC=EventJournalOnetime
+  set RP=EventJournalOnetime
+  set ARTNM=EventJournalOnetime
+  set TYPE=jar
+  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsLibraryApp.txt         	(
+::----------------------------- Forms-Library -----------------------------::
+  set LC=Forms-Library
+  set RP=Forms-Library
+  set ARTNM=FormsLibraryApp
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimCenter-V2.txt             	(
+::----------------------------- GW-Claim-Center-V2 -----------------------------::
+  set LC=GW-Claim-Center-V2
+  set RP=GW-Claim-Center-V2
+  set ARTNM=ClaimCenter-V2
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContactManager.txt             	(
+::----------------------------- GW-ContactManager -----------------------------::
+  set LC=GW-ContactManager
+  set RP=GW-ContactManager
+  set ARTNM=ContactManager
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimCenter.txt             	(
+::----------------------------- GWClaim-Center -----------------------------::
+  set LC=GW-Claim-Center
+  set RP=GW-Claim-Center
+  set ARTNM=ClaimCenter
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\SafeliteClaimsGlass.txt             	(
+::----------------------------- GW-SafeliteClaimsGlass-Batch -----------------------------::
+  set LC=GW-SafeliteClaimsGlass-Batch
+  set RP=GW-SafeliteClaimsGlass-Batch
+  set ARTNM=SafeliteClaimsGlass
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContactCenter.txt           	(
+::----------------------------- GWContactCenter ----------------------------::
+  set LC=GW-ContactCenter
+  set RP=GW-ContactCenter
+  set ARTNM=ContactCenter
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\HODWeb.txt                  	(
+::----------------------------- HOD -----------------------------::
+  set LC=HOD
+  set RP=HOD
+  set ARTNM=HODWeb
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PymtSvc.txt              	(
+::----------------------------- KBSPayment -----------------------------::
+  set LC=KBS
+  set RP=KBS
+  set ARTNM=PymtSvc
+  set TYPE=ear
+  set MAIL=KAHITKBSUnit@eKemper.com;ksgenterpriseservicesitoperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KbsWfeEAR.txt               	(
+::----------------------------- KBSWFE -----------------------------::
+  set LC=KBS
+  set RP=KBS
+  set ARTNM=KbsWfeEAR
+  set TYPE=ear
+  set MAIL=KAHITKBSUnit@eKemper.com;ksgenterpriseservicesitoperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasBilling.txt               	(
+::----------------------------- ThomasBilling -----------------------------::
+  set LC=ThomasBilling
+  set RP=ThomasBilling
+  set ARTNM=ThomasBilling
+  set TYPE=ear
+  set MAIL=USGFormsServices@kemper.com;ksgenterpriseservicesitoperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperIDM.txt               	(
+::----------------------------- Kemper-IDM -----------------------------::
+  set LC=Kemper-IDM
+  set RP=Kemper-IDM
+  set ARTNM=KemperIDM
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperIDMPublic.txt         	(
+::----------------------------- Kemper-IDMPublic -----------------------------::
+  set LC=Kemper-IDM
+  set RP=Kemper-IDM
+  set ARTNM=KemperIDMPublic
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DocWSEAR.txt                	(
+::----------------------------- ODWEK-Docs -----------------------------::
+  set LC=ODWEK-Docs
+  set RP=ODWEK-Docs
+  set ARTNM=DocWSEAR
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Acord.txt                 	(
+::----------------------------- RPW-Acord-Forms-V2 -----------------------------::
+  set LC=RPW-Acord-Forms-V2
+  set RP=RPW-Acord-Forms-V2
+  set ARTNM=Acord
+  set TYPE=zip
+  set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITEAS-AgencyInterface@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\RpwBatchZIP.txt                 	(
+::----------------------------- RPW6-Batch -----------------------------::
+  set LC=RPW6-Batch
+  set RP=RPW6-Batch
+  set ARTNM=RpwBatchZIP
+  set TYPE=zip
+  set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITEAS-AgencyInterface@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerSynchBatch.txt                 	(
+::----------------------------- ProducerSynch-Batch -----::
+  set LC=ProducerSynch-Batch
+  set RP=ProducerSync-Batch
+  set ARTNM=ProducerSynchBatch
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com;
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EnterpriseImages.txt                 	(
+::----------------------------- EnterpriseImages -----::
+  set LC=EnterpriseImages
+  set RP=EnterpriseImages
+  set ARTNM=EnterpriseImages
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\IDMBatch.txt                 	(
+::----------------------------- IDMBatch ---------::
+  set LC=IDMBatch
+  set RP=IDMBatch
+  set ARTNM=IDMBatch
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGBillingMastTrigs.txt                 	(
+::----------------------------- USG-Billing-MastTrigs-V2 -----::
+  set LC=USG-Billing-MastTrigs-V2
+  set RP=USG-Billing-MastTrigs-V2
+  set ARTNM=USGBillingMastTrigs
+  set TYPE=zip
+  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGBillingRoboFTP.txt                 	(
+::----------------------------- USG-Billing-RoboFTP-V2 -----::
+  set LC=USG-Billing-RoboFTP-V2
+  set RP=USG-Billing-RoboFTP-V2
+  set ARTNM=USGBillingRoboFTP
+  set TYPE=zip
+  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGPolSSRoboFTP.txt                 	(
+::----------------------------- USG-PolSS-RoboFTP-V2 -----::
+  set LC=USG-PolSS-RoboFTP-V2
+  set RP=USG-PolSS-RoboFTP-V2
+  set ARTNM=USGPolSSRoboFTP
+  set TYPE=zip
+  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EWS-RoboFTPBatch.txt                 	(
+::----------------------------- EWS-RoboFTPBatch -----::
+  set LC=EWS-RoboFTPBatch
+  set RP=EWS-RoboFTPBatch
+  set ARTNM=EWS-RoboFTPBatch
+  set TYPE=zip
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGGatewayEAR.txt           	(
+::----------------------------- USGGateway -----------------------------::
+  set LC=USGGateway
+  set RP=USGGateway
+  set ARTNM=USGGatewayEAR
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageSequencer.txt           	(
+::----------------------------- MessageSequencer -----------------------------::
+  set LC=MessageSequencer
+  set RP=MessageSequencer
+  set ARTNM=MessageSequencer
+  set TYPE=ear
+  set MAIL=USGITPERSInfrastructure@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\XAGApp.txt                  	(
+::----------------------------- XAGApp -----------------------------::
+  set LC=XAGApp
+  set RP=XAGApp
+  set ARTNM=XAGApp
+  set TYPE=ear
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EBillGateway.txt            	(
+::----------------------------- EBillGateway -----------------------------::
+  set LC=EBillGateway
+  set RP=EBillGateway
+  set ARTNM=EBillGateway
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\XAGBridgingApp.txt          	(
+::----------------------------- XAGBridge -----------------------------::
+  set LC=XAG-Bridge
+  set RP=XAG-Bridge
+  set ARTNM=XAGBridgingApp
+  set TYPE=ear
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsService.txt          	(
+::----------------------------- USGFormsService -----------------------------::
+  set LC=USGFormsService
+  set RP=USGFormsService
+  set ARTNM=FormsService
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Payment.txt          	(
+::----------------------------- USG-Payment-Service -----------------------------::
+  set LC=USG-Payment-Service
+  set RP=USG-Payment-Service
+  set ARTNM=Payment
+  set TYPE=ear
+  set MAIL=USGISServicePayment@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KSGEntFee.txt          	(
+::----------------------------- KSG-Fee-Service -----------------------------::
+  set LC=KSG-Fee-Service
+  set RP=KSG-Fee-Service
+  set ARTNM=KSGEntFee
+  set TYPE=ear
+  set MAIL=USGISServiceFee@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGProducerService.txt          	(
+::----------------------------- ProducerCallidus -----------------------------::
+  set LC=ProducerCallidus
+  set RP=ProducerCallidus
+  set ARTNM=USGProducerService
+  set TYPE=ear
+  set MAIL=USGEnterpriseProducerServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GWCallback.txt          	(
+::----------------------------- GW-Callback-Service -----------------------------::
+  set LC=GW-Callback-Service
+  set RP=GW-Callback-Service
+  set ARTNM=GWCallback
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageManager.txt          	(
+::----------------------------- USGMessageManager -----------------------------::
+  set LC=USGMessageManager
+  set RP=USGMessageManager
+  set ARTNM=MessageManager
+  set TYPE=ear
+  set MAIL=USGITPERSInfrastructure@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsServiceTHUtils.txt          	(
+::----------------------------- USGFormsServiceBatch -----------------------------::
+  set LC=FormsServiceTHUtils
+  set RP=FormsServiceTHUtils
+  set ARTNM=FormsServiceTHUtils
+  set TYPE=zip
+  set MAIL=USGITPolicySharedServices@unitrin.com;USGITFormServiceCore@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasKemperPolicy.txt          	(
+::----------------------------- FS-ThomasKemperPolicy -----------------------------::
+  set LC=FS-ThomasKemperPolicy
+  set RP=FS-ThomasKemperPolicy
+  set ARTNM=ThomasKemperPolicy
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com;USGITFormServiceCore@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasKemperBilling.txt          	(
+::----------------------------- FS-ThomasKemperBilling -----------------------------::
+  set LC=FS-ThomasKemperBilling
+  set RP=FS-ThomasKemperBilling
+  set ARTNM=ThomasKemperBilling
+  set TYPE=ear
+  set MAIL=KSGFormsandAutomatedControls@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasKemperClaims.txt          	(
+::----------------------------- Thomas-KemperClaims -----------------------------::
+  set LC=Thomas-KemperClaims
+  set RP=Thomas-KemperClaims
+  set ARTNM=ThomasKemperClaims
+  set TYPE=ear
+  set MAIL=usgformsservices@unitrin.com;USGITClaimDevSupport@unitrin.com;USGISClaimProdSupport@kemper.com;usgisclaimdevelopers@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasSpecialtyPolicy.txt          	(
+::----------------------------- ThomasSpecialtyPolicy -----------------------------::
+  set LC=ThomasSpecialtyPolicy
+  set RP=ThomasSpecialtyPolicy
+  set ARTNM=ThomasSpecialtyPolicy
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasSpecialtyBilling.txt          	(
+::----------------------------- ThomasSpecialtyBilling -----------------------------::
+  set LC=ThomasSpecialtyBilling
+  set RP=ThomasSpecialtyBilling
+  set ARTNM=ThomasSpecialtyBilling
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniFormsMaster.txt          	(
+::----------------------------- UniFormsMaster -----------------------------::
+  set LC=UniFormsMaster
+  set RP=UniFormsMaster
+  set ARTNM=UniFormsMaster
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniformsCorrespondence.txt          	(
+::----------------------------- UniformsCorrespondence -----------------------------::
+  set LC=UniformsCorrespondence
+  set RP=UniformsCorrespondence
+  set ARTNM=UniformsCorrespondence
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com;USGITClaimDevSupport@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniformsTracking.txt          	(
+::----------------------------- UniformsTracking -----------------------------::
+  set LC=FS-UniFormsTracking
+  set RP=FS-UniFormsTracking
+  set ARTNM=UniFormsTracking
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com;USGITFormServiceCore@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniformsCorrespondenceBatch.txt          	(
+::----------------------------- UniformsCorrespondenceBatch -----------------------------::
+  set LC=UniformsCorrespondenceBatch
+  set RP=UniformsCorrespondenceBatch
+  set ARTNM=UniformsCorrespondenceBatch
+  set TYPE=zip
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsTracking.txt          	(
+::----------------------------- FormsTracking -----------------------------::
+  set LC=FormsTracking
+  set RP=FormsTracking
+  set ARTNM=FormsTracking
+  set TYPE=ear
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\BookSmart.txt          	(
+::----------------------------- BookSmart -----------------------------::
+  set LC=BookSmart
+  set RP=BookSmart
+  set ARTNM=BookSmart
+  set TYPE=war
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PersWebService.txt          	(
+::----------------------------- PersWebService -----------------------------::
+  set LC=PersWebService
+  set RP=PersWebService
+  set ARTNM=PersWebService
+  set TYPE=ear
+  set MAIL=USGFormsServices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsWebService.txt          	(
+::----------------------------- FormsWebService -----------------------------::
+  set LC=FormsWebService
+  set RP=FormsWebService
+  set ARTNM=FormsWebService
+  set TYPE=ear
+  set MAIL=USGFormsServices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ResourceCategoryServletClient.txt          	(
+::----------------------------- FormsResourceCategoryReload-Batch -----------------------------::
+  set LC=FormsResourceCategoryReload-Batch
+  set RP=FormsResourceCategoryReload-Batch
+  set ARTNM=ResourceCategoryServletClient
+  set TYPE=zip
+  set MAIL=USGFormsServices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerBatch.txt          	(
+::----------------------------- ProducerBatch -----------------------------::
+  set LC=ProducerBatch
+  set RP=ProducerBatch
+  set ARTNM=ProducerBatch
+  set TYPE=zip
+  set MAIL=ksgitpolicy&financialservices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EDIBatch.txt          	(
+::----------------------------- EDIBatch -----------------------------::
+  set LC=EDIBatch
+  set RP=EDIBatch
+  set ARTNM=EDIBatch
+  set TYPE=zip
+  set MAIL=ksgitpolicy&financialservices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\MALPOR.txt          	(
+::----------------------------- MLOnramp -----------------------------::
+  set LC=MLOnramp
+  set RP=MLOnramp
+  set ARTNM=MALPOR
+  set TYPE=zip
+  set MAIL=ksgitpolicy&financialservices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\IncentivePaymentBatch.txt          	(
+::----------------------------- IncentivePaymentBatch -----------------------------::
+  set LC=IncentivePaymentBatch
+  set RP=IncentivePaymentBatch
+  set ARTNM=IncentivePaymentBatch
+  set TYPE=zip
+  set MAIL=USGFormsServices@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyConnect.txt          	(
+::----------------------------- AgencyConnect -----------------------------::
+  set LC=BookSmart
+  set RP=BookSmart
+  set ARTNM=AgencyConnect
+  set TYPE=war
+  set MAIL=KAHITEAIDeploys@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ABImport.txt          	(
+::----------------------------- ABImport -----------------------------::
+  set LC=ABImport
+  set RP=ABImport
+  set ARTNM=ABImport
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CoverageConfirmation.txt          	(
+::----------------------------- CoverageConfirmation -----------------------------::
+  set LC=Claims-Batch
+  set RP=Claims-Batch
+  set ARTNM=CoverageConfirmation
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\StatBatch.txt          	(
+::----------------------------- StatEdits -----------------------------::
+  set LC=StatEdits
+  set RP=StatEdits
+  set ARTNM=StatBatch
+  set TYPE=zip
+  set MAIL=KAHITStatTeam@eKemper.com;KAHHarvestStatEdits@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\StatBatchXMLSplitter.txt          	(
+::----------------------------- StatBatchXMLSplitter -----------------------------::
+  set LC=Stat-Edits
+  set RP=Stat-Edits
+  set ARTNM=StatBatchXMLSplitter
+  set TYPE=zip
+  set MAIL=KAHITStatTeam@eKemper.com;KAHHarvestStatEdits@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGBillingBatch.txt          	(
+::----------------------------- USGBillingBatch -----------------------------::
+  set LC=USGBillingBatch
+  set RP=USGBillingBatch
+  set ARTNM=USGBillingBatch
+  set TYPE=zip
+  set MAIL=USGISServicePayment@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\POMBatch.txt            	(
+::----------------------------- PeaceOfMind-Batch -----------------------------::
+  set LC=PeaceOfMind-Batch
+  set RP=PeaceOfMind-Batch
+  set ARTNM=POMBatch
+  set TYPE=zip
+  set MAIL=USGISServiceLocation@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KbsBatchZIP.txt          	(
+::----------------------------- KBSBatch -----------------------------::
+  set LC=KBS-Batch
+  set RP=KBS-Batch
+  set ARTNM=KbsBatchZIP
+  set TYPE=zip
+  set MAIL=USGISServiceDisbursement@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FinanceRoboFTPV2.txt          	(
+::----------------------------- FinanceRoboFTPV2 -----------------------------::
+  set LC=FinanceRoboFTPV2
+  set RP=FinanceRoboFTPV2
+  set ARTNM=FinanceRoboFTPV2
+  set TYPE=zip
+  set MAIL=USGISServiceDisbursement@kemper.com;KAHITCEDAS@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\StatRoboFTPV2.txt          	(
+::----------------------------- StatRoboFTPV2 -----------------------------::
+  set LC=StatRoboFTPV2
+  set RP=StatRoboFTPV2
+  set ARTNM=StatRoboFTPV2
+  set TYPE=zip
+  set MAIL=USGISServiceDisbursement@kemper.com;KAHITCEDAS@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KBS-Batch-RoboFTP.txt          	(
+::----------------------------- KBS-Batch-RoboFTP -----------------------------::
+  set LC=KBS-Batch-RoboFTP
+  set RP=KBS-Batch-RoboFTP
+  set ARTNM=KBS-Batch-RoboFTP
+  set TYPE=zip
+  set MAIL=USGISServiceDisbursement@kemper.com
+  goto build
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PolicyRoboFTP.txt          	(
+::----------------------------- Policy-RoboFTP -----------------------------::
+  set LC=Policy-RoboFTP
+  set RP=Policy-RoboFTP
+  set ARTNM=PolicyRoboFTP
+  set TYPE=zip
+  set MAIL=KAHPolicyProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DisbursementJavaBatch.txt          	(
+::----------------------------- USG-DisbServiceJavaBatch -----------------------------::
+  set LC=USG-DisbServiceJavaBatch
+  set RP=USG-DisbServiceJavaBatch
+  set ARTNM=DisbursementJavaBatch
+  set TYPE=zip
+  set MAIL=USGISServiceDisbursement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Control-M.txt            	(
+::----------------------------- Control-M -----------------------------::
+  set LC=Control-M
+  set RP=Control-M
+  set ARTNM=Control-M
+  set TYPE=zip
+  set MAIL=usgittecharch@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\VINService.txt            	(
+::----------------------------- VINService.aar -----------------------------::
+  set LC=VINService
+  set RP=VINService
+  set ARTNM=VINService
+  set TYPE=aar
+  set MAIL=USGISServiceVIN@unitrin.com;KAHPolicyProdSupport@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\HLDIapp.txt            	(
+::----------------------------- HLDIapp.war -----------------------------::
+  set LC=VINService
+  set RP=VINService
+  set ARTNM=HLDIapp
+  set TYPE=war
+  set MAIL=USGISServiceVIN@unitrin.com;KAHPolicyProdSupport@eKemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AuditsControl.txt            	(
+::----------------------------- AuditsAndControls -----------------------------::
+  set LC=AuditsAndControls
+  set RP=AuditsAndControls
+  set ARTNM=AuditsControl
+  set TYPE=ear
+  set MAIL=USGITPERSInfrastructure@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AuditsControlsBatch.txt            	(
+::----------------------------- AuditsandControlsBatch -----------------------------::
+  set LC=AuditsandControlsBatch
+  set RP=AuditsandControlsBatch
+  set ARTNM=AuditsControlsBatch
+  set TYPE=zip
+  set MAIL=USGITPERSInfrastructure@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-CMS.txt          	(
+::----------------------------- GW-CMS-Batch -----------------------------::
+  set LC=GW-CMS-Batch
+  set RP=GW-CMS-Batch
+  set ARTNM=GW-CMS
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-PCN.txt          	(
+::----------------------------- GW-PCN-Batch -----------------------------::
+  set LC=GW-PCN-Batch
+  set RP=GW-PCN-Batch
+  set ARTNM=GW-PCN
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UWReferrals.txt          	(
+::----------------------------- GW-UWReferrals-Batch -----------------------------::
+  set LC=GW-UWReferrals-Batch
+  set RP=GW-UWReferrals-Batch
+  set ARTNM=UWReferrals
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\NYNoFault.txt          	(
+::----------------------------- GW-NYNoFault-Batch -----------------------------::
+  set LC=GW-NYNoFault-Batch
+  set RP=GW-NYNoFault-Batch
+  set ARTNM=NYNoFault
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-RENTAL.txt          	(
+::----------------------------- GW-RENTAL-BATCH -----------------------------::
+  set LC=GW-RENTAL-BATCH
+  set RP=GW-RENTAL-BATCH
+  set ARTNM=GW-RENTAL
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-SNAPSHOT.txt          	(
+::----------------------------- GW-SNAPSHOT-BATCH -----------------------------::
+  set LC=GW-SNAPSHOT-BATCH
+  set RP=GW-SNAPSHOT-BATCH
+  set ARTNM=GW-SNAPSHOT
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-AVAYAFNOL.txt          	(
+::----------------------------- GW-AVAYAFNOL-BATCH -----------------------------::
+  set LC=GW-AVAYAFNOL-BATCH
+  set RP=GW-AVAYAFNOL-BATCH
+  set ARTNM=GW-AVAYAFNOL
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-MBR.txt          	(
+::----------------------------- GW-Callback-Service -----------------------------::
+  set LC=GW-MBR-Batch
+  set RP=GW-MBR-Batch
+  set ARTNM=GW-MBR
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsuranceNotifyRobo.txt          	(
+::----------------------------- USG-InsuranceNotification-RoboFTP -----------------------------::
+  set LC=USG-InsuranceNotification-RoboFTP
+  set RP=USG-InsuranceNotification-RoboFTP
+  set ARTNM=InsuranceNotifyRobo
+  set TYPE=zip
+  set MAIL=USGDMV@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\SimpleBatch.txt           	(
+::----------------------------- SimpleBatch -----------------------------::
+  set LC=SimpleBatch
+  set RP=SimpleBatch
+  set ARTNM=SimpleBatch
+  set TYPE=zip
+  set MAIL=USGITEnterpriseArchitecture@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PrintBundling.txt           	(
+::----------------------------- PrintBundlingBatch -----------------------------::
+  set LC=PrintBundling
+  set RP=PrintBundling
+  set ARTNM=PrintBundling
+  set TYPE=zip
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniFormsMaster-Report.txt           	(
+::----------------------------- UniFormsMaster-Report -----------------------------::
+  set LC=UniFormsMaster-Report
+  set RP=UniFormsMaster-Report
+  set ARTNM=UniFormsMaster-Report
+  set TYPE=zip
+  set MAIL=USGITFormServiceExceed@unitrin.com;USGITFormServiceCore@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageAssuranceService.txt           	(
+::----------------------------- USG-MessageAssuranceService -----------------------------::
+  set LC=USG-MessageAssuranceService
+  set RP=USG-MessageAssuranceService
+  set ARTNM=MessageAssuranceService
+  set TYPE=ear
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageAssuranceBatch.txt           	(
+::----------------------------- USG-MessageAssuranceService -----------------------------::
+  set LC=USG-MessageAssuranceBatch
+  set RP=USG-MessageAssuranceBatch
+  set ARTNM=MessageAssuranceBatch
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CoatCheck.txt           	(
+::----------------------------- USG-CoatCheck -----------------------------::
+  set LC=USG-CoatCheck
+  set RP=USG-CoatCheck
+  set ARTNM=CoatCheck
+  set TYPE=ear
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\iExpenseBatch.txt           	(
+::----------------------------- iExpenseBatch -----------------------------::
+  set LC=iExpenseBatch
+  set RP=iExpenseBatch
+  set ARTNM=iExpenseBatch
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EventJournalMessageBuilder.txt           	(
+::----------------------------- EventJournal-Batch -----------------------------::
+  set LC=EventJournal-Batch
+  set RP=EventJournal-Batch
+  set ARTNM=EventJournalMessageBuilder
+  set TYPE=zip
+  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsNotifyILBatch.txt            	(
+::----------------------------- USG-InsuranceNotificationIL-Batch -----------------------------::
+  set LC=USG-InsuranceNotificationIL-Batch
+  set RP=USG-InsuranceNotificationIL-Batch
+  set ARTNM=InsNotifyILBatch
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsuranceNotify.txt            	(
+::----------------------------- USG-InsuranceNotification -----------------------------::
+  set LC=USG-InsuranceNotification
+  set RP=USG-InsuranceNotification
+  set ARTNM=InsuranceNotify
+  set TYPE=ear
+  set MAIL=USGEnterpriseSharedServices@unitrin.com;KSGEnterpriseServiceITOperations@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsuranceNotifyBatch.txt            	(
+::----------------------------- USG-InsuranceNotification-Batch -----------------------------::
+  set LC=USG-InsuranceNotification-Batch
+  set RP=USG-InsuranceNotification-Batch
+  set ARTNM=InsuranceNotifyBatch
+  set TYPE=zip
+  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerCallidusBatch.txt            	(
+::----------------------------- ProducerCallidus-Batch -----------------------------::
+  set LC=ProducerCallidus-Batch
+  set RP=ProducerCallidus-Batch
+  set ARTNM=ProducerCallidusBatch
+  set TYPE=zip
+  set MAIL=USGEnterpriseProducerServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\LargeFileImporter.txt            	(
+::----------------------------- USG-CM-LargeFileImport -----------------------------::
+  set LC=USG-CM-LargeFileImport
+  set RP=USG-CM-LargeFileImport
+  set ARTNM=LargeFileImporter
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com;vpuli@unitrin.com
+  goto build 
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GWAuditControl.txt             	(
+::----------------------------- GW-AuditControl -----------------------------::
+  set LC=GW-AuditControl
+  set RP=GW-AuditControl
+  set ARTNM=GWAuditControl
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\GWAudit-Control.txt             	(
+::----------------------------- GW-Audit-Control -----------------------------::
+  set LC=GW-Audit-Control
+  set RP=GW-Audit-Control
+  set ARTNM=GWAudit-Control
+  set TYPE=zip
+  set MAIL=USGISClaimProdSupport@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimsISOGateway.txt             	(
+::----------------------------- GW-ISO-Gateway -----------------------------::
+  set LC=GW-ISO-Gateway
+  set RP=GW-ISO-Gateway
+  set ARTNM=ClaimsISOGateway
+  set TYPE=ear
+  set MAIL=USGISClaimProdSupport@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EvJ-Onetime.txt            	(
+::----------------------------- Event-Journal-Onetime -----------------------------::
+  set LC=EventJournal-Onetime
+  set RP=EventJournal-Onetime
+  set ARTNM=EvJ-Onetime
+  set TYPE=zip
+  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGMonitor.txt            	(
+::----------------------------- USG-Monitor -----------------------------::
+  set LC=USG-Monitor
+  set RP=USG-Monitor
+  set ARTNM=USGMonitor
+  set TYPE=zip
+  set MAIL=KAHITTECHARC@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGMonitor85.txt            	(
+::----------------------------- USG-Monitor-85 -----------------------------::
+  set LC=USG-Monitor-85
+  set RP=USG-Monitor-85
+  set ARTNM=USGMonitor85
+  set TYPE=zip
+  set MAIL=KAHITTECHARC@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PolicyConversion.txt                 	(
+::----------------------------- RPW-InternalApps -----------------------------::
+  set LC=RPW-InternalApps
+  set RP=RPW-InternalApps
+  set ARTNM=PolicyConversion
+  set TYPE=ear
+  set MAIL=KAHITRPWDevelopers@ekemper.com;KAHPLISROLLIMPTEAM@ekemper.com;KAHPolicyProdSupport@ekemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerWebService.txt            	(
+::----------------------------- CustomerWebService -----------------------------::
+  set LC=CustomerWebService
+  set RP=CustomerWebService
+  set ARTNM=CustomerWebService
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentCrat.txt            	(
+::----------------------------- CommissionReportAccessTool -----------------------------::
+  set LC=CommissionReportAccessTool
+  set RP=CommissionReportAccessTool
+  set ARTNM=AgentCrat
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerMgmtSvc.txt            	(
+::----------------------------- CustomerMgmtService -----------------------------::
+  set LC=CustomerMgmtService
+  set RP=CustomerMgmtService
+  set ARTNM=CustomerMgmtSvc
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EOD.txt            	(
+::----------------------------- EOD-PERS-RealTime -----------------------------::
+  set LC=EOD-PERS-RealTime
+  set RP=EOD-PERS-RealTime
+  set ARTNM=EOD
+  set TYPE=ear
+  set MAIL=USGISServicePERSEOD@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EODPERSBatch.txt            	(
+::----------------------------- EOD-PERS-Batch -----------------------------::
+  set LC=EOD-PERS-Batch
+  set RP=EOD-PERS-Batch
+  set ARTNM=EODPERSBatch
+  set TYPE=zip
+  set MAIL=USGISServicePERSEOD@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperEBillService.txt            	(
+::----------------------------- KemperEBillService -----------------------------::
+  set LC=KemperEBillService
+  set RP=KemperEBillService
+  set ARTNM=KemperEBillService
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityService.txt            	(
+::----------------------------- UserActivityService -----------------------------::
+  set LC=UserActivityService
+  set RP=UserActivityService
+  set ARTNM=UserActivityService
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USG-CM-IPAL.txt             	(
+::----------------------------- USG-CM-IPAL -----------------------------::
+  set LC=USG-CM-IPAL
+  set RP=USG-CM-IPAL
+  set ARTNM=USG-CM-IPAL
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Unitrin-Internet.txt             	(
+::----------------------------- Unitrin-Internet -----------------------------::
+  set LC=Unitrin-Internet
+  set RP=Unitrin-Internet
+  set ARTNM=Unitrin-Internet
+  set TYPE=zip
+  set MAIL=usgenterprisesharedservices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-IPAL-BATCH.txt             	(
+::----------------------------- ECM-IPAL-BATCH -----------------------------::
+  set LC=ECM-IPAL-BATCH
+  set RP=ECM-IPAL-BATCH
+  set ARTNM=ECM-IPAL-BATCH
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-RRD-BATCH.txt             	(
+::----------------------------- ECM-RRD-BATCH -----------------------------::
+  set LC=ECM-RRD-BATCH
+  set RP=ECM-RRD-BATCH
+  set ARTNM=ECM-RRD-BATCH
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-OB-BATCH.txt             	(
+::----------------------------- ECM-OB-BATCH -----------------------------::
+  set LC=ECM-OB-BATCH
+  set RP=ECM-OB-BATCH
+  set ARTNM=ECM-OB-BATCH
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-CMSNotification-Batch.txt             	(
+::----------------------------- ECM-CMSNotification-Batch -----------------------------::
+  set LC=ECM-CMSNotification-Batch
+  set RP=ECM-CMSNotification-Batch
+  set ARTNM=ECM-CMSNotification-Batch
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-CMS-Transformation-Batch.txt             	(
+::----------------------------- ECM-CMS-Transformation-Batch -----------------------------::
+  set LC=ECM-CMS-Transformation-Batch
+  set RP=ECM-CMS-Transformation-Batch
+  set ARTNM=ECM-CMS-Transformation-Batch
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-CMS-Batch.txt             	(
+::----------------------------- ECM-CMS-Batch -----------------------------::
+  set LC=ECM-CMS-Batch
+  set RP=ECM-CMS-Batch
+  set ARTNM=ECM-CMS-Batch
+  set TYPE=zip
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CMS.txt             	(
+::----------------------------- ContentMGTService2 -----------------------------::
+  set LC=ContentMGTService2
+  set RP=ContentMGTService2
+  set ARTNM=CMS
+  set TYPE=ear
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CMSGateway.txt             	(
+::----------------------------- CM-Gateway -----------------------------::
+  set LC=CM-Gateway
+  set RP=CM-Gateway
+  set ARTNM=CMSGateway
+  set TYPE=ear
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EBillCSAPIService.txt     	(
+::----------------------------- EBillCSAPIService -----------------------------::
+  set LC=EBillCSAPIService
+  set RP=EBillCSAPIService
+  set ARTNM=EBillCSAPIService
+  set TYPE=war
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\MAudit.txt     	(
+::----------------------------- MAudit -----------------------------::
+  set LC=MAudit
+  set RP=MAudit
+  set ARTNM=MAudit
+  set TYPE=war
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\SAR.txt            	(
+::----------------------------- SAR -----------------------------::
+  set LC=SAR
+  set RP=SAR
+  set ARTNM=SAR
+  set TYPE=war
+  set MAIL=USGEnterpriseSharedServices@unitrin.com;USGITSAR@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\FSTHConfig.txt           	(
+::----------------------------- FormsServiceTHConfigurations -----------------------------::
+  set LC=FormsServiceTHConfigurations
+  set RP=FormsServiceTHConfigurations
+  set ARTNM=FSTHConfig
+  set TYPE=zip
+  set MAIL=USGITPolicySharedServices@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGINFOGIXKemperScripts.txt           	(
+::----------------------------- USG-INFOGIX-KemperScripts -----------------------------::
+  set LC=USG-INFOGIX-KemperScripts
+  set RP=USG-INFOGIX-KemperScripts
+  set ARTNM=USGINFOGIXKemperScripts
+  set TYPE=zip
+  set MAIL=USGInfogixSupport@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerMgmtSvc.txt            	(
+::----------------------------- CustomerMgmtService -----------------------------::
+  set LC=CustomerMgmtService
+  set RP=CustomerMgmtService
+  set ARTNM=CustomerMgmtSvc
+  set TYPE=ear
+  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\DocViewerEar.txt             	(
+::----------------------------- USG-CMSDocViewer -----------------------------::
+  set LC=USG-CMSDocViewer
+  set RP=USG-CMSDocViewer
+  set ARTNM=DocViewerEar
+  set TYPE=ear
+  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PERSDataValidationServ.txt            	(
+::----------------------------- USG-PERS-Data-Validation -----------------------------::
+  set LC=USG-PERS-Data-Validation
+  set RP=USG-PERS-Data-Validation
+  set ARTNM=PERSDataValidationServ
+  set TYPE=ear
+  set MAIL=USGITPERSInfrastructure@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\LOCSVCBatch.txt            	(
+::----------------------------- LocationServiceBatch -----------------------------::
+  set LC=LocationServiceBatch
+  set RP=LocationServiceBatch
+  set ARTNM=LOCSVCBatch
+  set TYPE=zip
+  set MAIL=USGISServicePayment@unitrin.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-bpconfig.SLI.txt           	(
+:: **************************************************** NEW SLI EXCEED LIFECYCLES **************************************************** ::
+::----------------------------- Exceed-SLI-BP-Config -----------------------------::
+  set LC=Exceed-SLI-BP-Config
+  set RP=Exceed-SLI-BP-Config
+  set ARTNM=exceedj-bpconfig
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ParmCards.txt           	(
+::----------------------------- Exceed-SLI-Batch-Parm-Cards  -----------------------------::
+  set LC=Exceed-SLI-Batch-Parm-Cards 
+  set RP=Exceed-SLI-Batch-Parm-Cards 
+  set ARTNM=ParmCards
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Exceed_SLI_Reports.SLI.txt           	(
+::----------------------------- Exceed-SLI-Batch-Reports -----------------------------::
+  set LC=Exceed-SLI-Batch-Reports
+  set RP=Exceed-SLI-Batch-Reports
+  set ARTNM=Exceed_SLI_Reports
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExceedJCommFW.SLI.txt           	(
+::----------------------------- Exceed-SLI-CommunicationLayer -----------------------------::
+  set LC=Exceed-SLI-CommunicationLayer
+  set RP=Exceed-SLI-CommunicationLayer
+  set ARTNM=ExceedJCommFW
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EXCEEDJ-Pres.SLI.txt           	(
+::----------------------------- Exceed-SLI-PresentationLayer -----------------------------::
+  set LC=Exceed-SLI-PresentationLayer
+  set RP=Exceed-SLI-PresentationLayer
+  set ARTNM=EXCEEDJ-Pres
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-iocData.SLI.txt           	(
+::----------------------------- Exceed-SLI-BusinessLayer-IOC -----------------------------::
+  set LC=Exceed-SLI-BusinessLayer-IOC
+  set RP=Exceed-SLI-BusinessLayer-IOC
+  set ARTNM=exceedj-iocData
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EXCEEDJ-Doc.SLI.txt           	(
+::----------------------------- Exceed-SLI-Documentation -----------------------------::
+  set LC=Exceed-SLI-Documentation
+  set RP=Exceed-SLI-Documentation
+  set ARTNM=EXCEEDJ-Doc
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserExit.SLI.txt           	(
+::----------------------------- Exceed-SLI-BP-UserExit -----------------------------::
+  set LC=Exceed-SLI-BP-UserExit
+  set RP=Exceed-SLI-BP-UserExit
+  set ARTNM=UserExit
+  set TYPE=jar
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Billing-ux.SLI.txt           	(
+::----------------------------- Exceed-SLI-Billing-UX -----------------------------::
+  set LC=Exceed-SLI-Billing-UX
+  set RP=Exceed-SLI-Billing-UX
+  set ARTNM=Billing-ux
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpcode.SLI.txt           	(
+::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
+  set LC=Exceed-SLI-BusinessLayer
+  set RP=Exceed-SLI-BusinessLayer
+  set ARTNM=exceedj-tbpcode
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpdata.SLI.txt           	(
+::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
+  set LC=Exceed-SLI-BusinessLayer
+  set RP=Exceed-SLI-BusinessLayer
+  set ARTNM=exceedj-tbpdata
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-pm.SLI.txt           	(
+::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
+  set LC=Exceed-SLI-BusinessLayer
+  set RP=Exceed-SLI-BusinessLayer
+  set ARTNM=exceedj-pm
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-online.SLI.txt           	(
+::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
+  set LC=Exceed-SLI-BusinessLayer
+  set RP=Exceed-SLI-BusinessLayer
+  set ARTNM=exceedj-online
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-bpconfig.KP.txt           	(
+:: **************************************************** NEW KP EXCEED LIFECYCLES **************************************************** ::
+::----------------------------- Exceed-KP-BP-Config -----------------------------::
+  set LC=Exceed-KP-BP-Config
+  set RP=Exceed-KP-BP-Config
+  set ARTNM=exceedj-bpconfig
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Exceed_KP_Reports.KP.txt           	(
+::----------------------------- Exceed-KP-Batch-Reports -----------------------------::
+  set LC=Exceed-KP-Batch-Reports
+  set RP=Exceed-KP-Batch-Reports
+  set ARTNM=Exceed_KP_Reports
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExceedJCommFW.KP.txt           	(
+::----------------------------- Exceed-KP-CommunicationLayer -----------------------------::
+  set LC=Exceed-KP-CommunicationLayer
+  set RP=Exceed-KP-CommunicationLayer
+  set ARTNM=ExceedJCommFW
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\EXCEEDJ-Pres.KP.txt           	(
+::----------------------------- Exceed-KP-PresentationLayer -----------------------------::
+  set LC=Exceed-KP-PresentationLayer
+  set RP=Exceed-KP-PresentationLayer
+  set ARTNM=EXCEEDJ-Pres
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-iocData.KP.txt           	(
+::----------------------------- Exceed-KP-BusinessLayer-IOC -----------------------------::
+  set LC=Exceed-KP-BusinessLayer-IOC
+  set RP=Exceed-KP-BusinessLayer-IOC
+  set ARTNM=exceedj-iocData
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserExit.KP.txt           	(
+::----------------------------- Exceed-KP-BP-UserExit -----------------------------::
+  set LC=Exceed-KP-BP-UserExit
+  set RP=Exceed-KP-BP-UserExit
+  set ARTNM=UserExit
+  set TYPE=jar
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpcode.KP.txt           	(
+::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
+  set LC=Exceed-KP-BusinessLayer
+  set RP=Exceed-KP-BusinessLayer
+  set ARTNM=exceedj-tbpcode
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpdata.KP.txt           	(
+::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
+  set LC=Exceed-KP-BusinessLayer
+  set RP=Exceed-KP-BusinessLayer
+  set ARTNM=exceedj-tbpdata
+  set TYPE=zip
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-pm.KP.txt           	(
+::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
+  set LC=Exceed-KP-BusinessLayer
+  set RP=Exceed-KP-BusinessLayer
+  set ARTNM=exceedj-pm
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-online.KP.txt           	(
+::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
+  set LC=Exceed-KP-BusinessLayer
+  set RP=Exceed-KP-BusinessLayer
+  set ARTNM=exceedj-online
+  set TYPE=ear
+  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  goto build
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\SimpleArch.txt     	(
+::----------------------------- SimpleArch -----------------------------::
+  set LC=SimpleArch
+  set RP=SimpleArch
+  set ARTNM=SimpleArch
+  set TYPE=ear
+  set MAIL=rwadhams@kemper.com
+  goto build
+ ) else (
+:: If a trigger exists but is not configured in the script, send a message and get out...
+ECHO No Automation configured for trigger file in J:\SCMtools\Scripts\Deploy\VER! >> J:\SCMtools\Logs\Artifact_versioning.log
+ECHO ******************* >> J:\SCMtools\Logs\Artifact_versioning.log
+goto ProgramEnd
+)
+::-----------------------------[end of setapp routine]-----------------------------::
+
+::-----------------------------::
+:build
+::-----------------------------::
+::Obtain date and time to create Versioning Package Name.
+::This will be different each time an application is versioned.
+set datestr=%date:~-4,4%%date:~-10,2%%date:~-7,2%
+set hr=%time:~-11,2%
+if %hr% lss 10 set hr=0%time:~-10,1%
+set mn=%time:~-8,2%
+if %mn% lss 10 set mn=0%time:~-7,1%
+set sc=%time:~-5,2%
+if %sc% lss 10 set sc=0%time:~-4,1%
+set ms=%time:~-2,2%
+::set timestr=%hr%%mn%%sc%%ms%
+set timestr=%hr%%mn%%sc%
+@echo %datestr%-%timestr%
+
+::Rename trigger file for respective state:
+attrib -r J:\SCMtools\Scripts\Deploy\VER\%ARTNM%.*
+ren J:\SCMtools\Scripts\Deploy\VER\%ARTNM%.* %ARTNM%.running
+
+::Deleting this file indicates that there are no issues with the setapp portion of the script.
+::Additional error checking is in place in the event of a versioning error.
+Del /q J:\SCMtools\Scripts\Deploy\eMail\Artifactversioning.txt
+	
+::This log documents each step in the process so the results can easily be seen in one log file.
+Echo Versioning Log started at:  > J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+Date /t  >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+Time /t  >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+Echo Versioning %LC% for %ARTNM%.%TYPE%: >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log 
+ECHO ************************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO Beginning Build of %LC%..... >> J:\SCMtools\Logs\Artifact_versioning.log
+
+ECHO Cleaning up local build content... >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+Del /f /s /q J:\ref_dir\%LC%\INT\*.* >> J:\SCMtools\Logs\VER\%LC%-CleanDir-%datestr%-%timestr%.log
+ECHO Local build folder cleanup completed. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO ************************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	
+ECHO Begin Checkout of all content to local folder at J:\ref_dir\%LC%\INT... >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+hco -b %SCMBROKER% -en %LC% -st INT -vp %RP% -cp "J:\ref_dir\%LC%\INT" -pn "Check Out for Browse" -o J:\SCMtools\Logs\VER\%LC%-Artifact-HCO_All-%datestr%-%timestr%.log -s * -usr harvpublic -pw harvpublic -br
+if errorlevel 0 (
+	goto CleanSuccess
+) else (
+	goto CleanFailed
+)
+
+:CleanFailed
+	ECHO HCO Error Level: %errorlevel% >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO Local Directory Cleanup and HCO process Failed!  Check the log for errors. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO Local Directory Cleanup and HCO process Failed!  Check the log for errors. >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO ************************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\Artifact_versioning.log
+	::This next command tells the script to send SCM an email when a versioning error occurs.
+	xcopy /Y J:\SCMtools\Scripts\Deploy\Development\Artifactversioning.txt J:\SCMtools\Scripts\Deploy\eMail
+	goto deltrigger ;
+
+:CleanSuccess
+	ECHO %LC% INT local checkout successful. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	if exist J:\ref_dir\%LC%\INT\dist\%ARTNM%.%TYPE% (
+	Del /f /s /q J:\ref_dir\%LC%\INT\dist\%ARTNM%.%TYPE% >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO %ARTNM%.%TYPE% Deleted from dist directory. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	) else (
+	ECHO Artifact not present in dist folder, no need to delete. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	)
+	
+	ECHO Create Versioning package and check out %TYPE% for update: >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	hcp %ARTNM%-%TYPE%-%datestr%-%timestr% -b %SCMBROKER% -en %LC% -st Versioning -usr kahEQA -pw kahEQA
+	hco -b %SCMBROKER% -en %LC% -st Versioning -vp \%RP%\dist -p %ARTNM%-%TYPE%-%datestr%-%timestr% -cp J:\ref_dir\%LC%\INT\dist -pn "Check Out for Update" -s %ARTNM%.%TYPE% -o J:\SCMtools\Logs\INT\%LC%_%TYPE%_HCO-Updt.log -usr kahEQA -pw kahEQA -up
+	if not exist J:\ref_dir\%LC%\INT\dist\%ARTNM%.%TYPE% goto Fail-1
+	del /f /s /q J:\ref_dir\%LC%\INT\dist\%ARTNM%.%TYPE% >>J:\SCMtools\Logs\INT\%LC%_BUILD.log
+	ECHO Package creation and %ARTNM%.%TYPE% checkout for update completed successfully. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	
+	ECHO Begin build of new %ARTNM%.%TYPE% for %LC%: >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	CD J:\ref_dir\%LC%\INT\%ARTNM%Build
+	CALL build 1>"J:\SCMtools\Logs\VER\%LC%_BuildOutput-%datestr%-%timestr%.log" 2>"J:\SCMtools\Logs\VER\%LC%_BuildError-%datestr%-%timestr%.log"
+	TYPE "J:\SCMtools\Logs\VER\%LC%_BuildOutput-%datestr%-%timestr%.log" >>J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	TYPE "J:\SCMtools\Logs\VER\%LC%_BuildError-%datestr%-%timestr%.log" >>J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO ********************* >>J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	if not exist J:\ref_dir\%LC%\INT\dist\%ARTNM%.%TYPE% goto Fail-2
+	
+	ECHO Check new %TYPE% back into Harvest: >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	hci -b %SCMBROKER% -en %LC% -st Versioning -p %ARTNM%-%TYPE%-%datestr%-%timestr% -vp \%RP%\dist -pn "Check In New and Existing Items" -cp J:\ref_dir\%LC%\INT\dist -s %ARTNM%.%TYPE% -o J:\SCMtools\Logs\INT\%LC%_%TYPE%_HCI.log -usr kahEQA -pw kahEQA -ur
+	::hci %LC%_hco_CleanDIR.log -b %SCMBROKER% -en %LC% -st Versioning -p %ARTNM%-%TYPE%-%datestr%-%timestr% -vp \%LC%\dist\hlogs -pn "Check In New and Existing Items" -cp J:\SCMtools\Logs\INT -s %LC%_hco_CleanDIR.log -if ne -o J:\SCMtools\Logs\INT\%LC%_CleanDIR_HCI.log -usr kahEQA -pw kahEQA -ur >>J:\SCMtools\Logs\INT\%LC%_BUILD.log
+	ECHO %TYPE% Check-in Process Complete: >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO ******************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO %TYPE% Check-in Process Complete. >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO Versioning Process Finished at: >> J:\SCMtools\Logs\Artifact_versioning.log
+	time /t >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO *----------------------------------------* >> J:\SCMtools\Logs\Artifact_versioning.log
+	
+	ECHO Promote Versioning package to INT... >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	hpp %ARTNM%-%TYPE%-%datestr%-%timestr% -b %SCMBROKER% -en %LC% -st Versioning -usr kahEQA -pw kahEQA -pn "Promote to INT"
+	ECHO Package promotion successful.  A deploy has been triggered and will take place shortly. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO %LC% versioning process finished at: >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	time /t >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	ECHO ******************** >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	
+	::This next command sends an email to the application dev team stating that versioning
+	::has completed and that a deploy has been triggered.
+	J:\SCMtools\email\tcmail -s "Versioning of %ARTNM%.%TYPE% in INT for %LC% Successful.  See message body for build output." %MAIL% < J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+	::This next command tells the script to send SCM an email when versioning completes.
+	xcopy /Y J:\SCMtools\Scripts\Deploy\Development\VersioningEnd.txt J:\SCMtools\Scripts\Deploy\eMail
+	goto deltrigger ;
+
+:Fail-1
+::--------------------------------------
+Echo "ERROR - %ARTNM%.%TYPE% not found after HCO for Update Process.  Check %LC% Lifecycle for problems." >>J:\SCMtools\Logs\Artifact_versioning.log
+Echo "ERROR - %ARTNM%.%TYPE% not found after HCO for Update Process.  Check %LC% Lifecycle for problems." J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+hdv -b %SCMBROKER% -en %LC% -st Versioning -vp \%LC%\dist -s %ARTNM%.%TYPE% -o J:\SCMtools\Logs\INT\%LC%_%TYPE%_VER-DEL.log -usr kahEQA -pw kahEQA
+Echo "Reserved Version of %TYPE% deleted." J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+hdlp -b %SCMBROKER% -en %LC% -st Versioning -pkgs %ARTNM%-%TYPE%-%datestr%-%timestr% -o J:\SCMtools\Logs\INT\%LC%_Versioning_PkgDel.log -usr kahEQA -pw kahEQA
+Echo "Package %ARTNM%-%TYPE%-%datestr%-%timestr% has been deleted." J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO End of %LC% versioning process. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+time /t >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO ******************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO Reserved version and package in Versioning state have been deleted.  Checking for more versioning requests... >> J:\SCMtools\Logs\Artifact_versioning.log
+ECHO ******************* >> J:\SCMtools\Logs\Artifact_versioning.log
+::This next command tells the script to send SCM an email when a versioning error occurs.
+xcopy /Y J:\SCMtools\Scripts\Deploy\Development\Artifactversioning.txt J:\SCMtools\Scripts\Deploy\eMail
+goto deltrigger ;
+::-----------------------------::
+
+:Fail-2
+::--------------------------------------
+ECHO Build Error!  %ARTNM%.%TYPE% was not found in \dist folder. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+time /t >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO ************************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+J:\SCMtools\email\tcmail -s "%LC% Versioning Failure in INT, see body for build output." %MAIL% < J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+Echo A build problem has occurred.  Output has been sent to app team. >>J:\SCMtools\Logs\Artifact_versioning.log
+hdv -b %SCMBROKER% -en %LC% -st Versioning -vp \%LC%\dist -s %ARTNM%.%TYPE% -o J:\SCMtools\Logs\INT\%LC%_%TYPE%_VER-DEL.log -usr kahEQA -pw kahEQA
+Echo "Reserved Version of %TYPE% deleted." >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+hdlp -b %SCMBROKER% -en %LC% -st Versioning -pkgs %ARTNM%-%TYPE%-%datestr%-%timestr% -o J:\SCMtools\Logs\INT\%LC%_Versioning_PkgDel.log -usr kahEQA -pw kahEQA
+Echo "Package %ARTNM%-%TYPE%-%datestr%-%timestr% has been deleted." >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO End of %LC% versioning process. >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+time /t >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+ECHO ******************* >> J:\SCMtools\Logs\VER\%LC%-Versioning-%datestr%-%timestr%.log
+Echo "ERROR - No %TYPE% file found after Versioning Build.  Output has been sent to app team." >>J:\SCMtools\Logs\Artifact_versioning.log
+ECHO ******************* >> J:\SCMtools\Logs\Artifact_versioning.log
+::This next command tells the script to send SCM an email when a versioning error occurs.
+xcopy /Y J:\SCMtools\Scripts\Deploy\Development\Artifactversioning.txt J:\SCMtools\Scripts\Deploy\eMail
+goto deltrigger ;
+::-----------------------------::
+
+:deltrigger
+::Delete trigger file for respective state:
+attrib -r J:\SCMtools\Scripts\Deploy\VER\%ARTNM%.*
+del /q J:\SCMtools\Scripts\Deploy\VER\%ARTNM%.*
+goto setenv ;
+
+:ProgramEnd
+::-----------------------::
+if exist J:\SCMtools\Scripts\Deploy\eMail\Artifactversioning.txt (
+	ECHO No more versioning tasks requested.  Exiting and sending out error log. >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO ************************* >> J:\SCMtools\Logs\Artifact_versioning.log
+	J:\SCMtools\email\tcmail -s "SCM ACTION REQUIRED:  Artifact Versioning process encountered a problem!  See this message for details." %who% < J:\SCMtools\Logs\Artifact_versioning.log
+	Del /q J:\SCMtools\Scripts\Deploy\eMail\Artifactversioning.txt
+	del /q J:\SCMtools\Scripts\Deploy\eMail\VersioningEnd.txt
+) else if exist J:\SCMtools\Scripts\Deploy\eMail\VersioningEnd.txt (
+	ECHO No more versioning tasks requested.  Exiting and sending out versioning summary. >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO ************************* >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO Process finished at: >> J:\SCMtools\Logs\Artifact_versioning.log
+	Time /t  >> J:\SCMtools\Logs\Artifact_versioning.log
+	ECHO ************************* >> J:\SCMtools\Logs\Artifact_versioning.log
+	del /q J:\SCMtools\Scripts\Deploy\eMail\VersioningEnd.txt
+	::J:\SCMtools\email\tcmail -s "Artifact Versioning has Completed Successfully" %who% < J:\SCMtools\Logs\Artifact_versioning.log
+) else (
+	Echo No versioning triggered or no errors found with versioning script.  >>J:\SCMtools\Logs\Artifact_versioning.log
+)
+exit

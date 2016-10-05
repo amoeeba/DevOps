@@ -1,0 +1,540 @@
+::-------------------------------UPDATES SECTION----------------------------------------
+:: Updates:   UID    Date       - Explanation
+::           usgezr  2014-09-29 - Adding ECAVertical-Extranet-LT lifecycle.
+::           usgpyv  2014-02-05 - Remove EnterpriseImages lifecycle.
+::           usgpyv  2014-02-04 - Remove EBill-Batch lifecycle.
+::           usgezr  2014-01-16 - Removed CustomerWeb-Batch,CustomerDataRetention-Batch, and KNPDataRetention-Batch as they were converted to artifact deployment.
+::           usgezr  2013-09-23 - USG-INFOGIX-IT-Lookup name was incorrect; caused automation to fail.
+::           usgpyv  2013-06-12 - Remove AgentAlerts-Batch lifecycle.
+::           usgpyv  2013-06-12 - Remove Agency-Download-JAVA lifecycle.
+::           usgpyv  2013-04-10 - HT01663178 - update Email Distribution List in Enterprise-Email .
+::           usgezr  2013-03-14 - Adding KSG-EQA-Auto lifecycle.
+::           usgezr  2013-03-14 - Adding automation to promote packages in PROD to Archive when a PROD deployment completes.
+::           usgezr  2013-02-20 - Updated Fastb-automation email address per heat ticket 1639550
+::           usgezr  2013-01-22 - Validate Customer-Web-Audit automation as lifecycle was replaced.
+::           usgezr  2013-01-16 - Fix Customer-Web lifecycle name; it was missing a hyphen.
+::           usgezr  2013-01-15 - Replaced USG IT Policy Billing address with USG IS Service Disbursement per Heat #1622492.
+::           usgrem  2012-08-17   Changed lifecycle EBillBatch to EBill-Batch.
+::           usgezr  2012-09-05 - Cleaning up automation to remove lifecycles that no longer exist.
+::           usgrem  2012-08-17   Added AgentAlerts-Batch lifecycle.
+::           usgrem  2012-08-15 - Added Agency-Download-JAVA lifecycle.
+::           usgrem  2012-08-13 - Added DEV1 and SYSTEST to automation for Agency-Download lifecycle.
+::           usgrem  2012-08-03 - Added CustomerWeb-Batch,CustomerDataRetention-Batch, and KNPDataRetention-Batch
+::           usgezr  2012-07-09 - Added KAHAIContentProdSupport@kemper.com dist list to ECAVertical-Extranet.
+::           usgrem  2012-03-16   Added USG-INFOGIX-IT-Lookup lifecyles per True Comp WR18338.
+::           usgrem  2012-03-16   Added Sean Dempsey to Enterprise-Email notifications per Heat 1508707.
+::           usgrem  2012-03-15   Added automation for: USG-INFOGIX-EnterpriseControls-Lookup, USG-INFOGIX-PremRecon-Lookup, & USG-INFOGIX-Assure-Scripts
+::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
+::           usgame  2012-02-14 - Changed the recipient list for RPW6-Acord-Forms lifecycle to: KAHITRPWTeam@unitrin.com,KAHITRPWProdSupport@unitrin.com,KAHITEAS-AgencyInterface@unitrin.com,KAHITPolicyAutoServicesTeam@unitrin.com, & KAHITPolicyHomeServicesTeam@unitrin.com per Heat 1487619.
+::	     usgezr  2012-02-13 - Updated Enterprise-Email notifications per Heat #1494865.
+::	     usgezr  2011-11-27 - Removed  old RPW-Acord-Forms.
+::	     usgezr  2011-11-28 - Added Infogix bankrecon lookup and propertyfile lifecycle automation.
+::	     usgezr  2011-11-27 - Replaced RPW6-Acord-Forms.
+::	     kahezr  2011-10-11 - Changed trigger file processing to indicate that an appliation is running.
+::	     usgezr  2011-09-26 - Added HomePlateStaticContent lifecycle.
+::	     usgimh  2011-04-15 - HT01375459 - Changed uid notification from twallace@ekemper.com (no longer
+::                                with the company) to ajohnson@ekemper.com for Enterprise-Email.
+::	     kahezr  2011-02-07 - Added EBillBatch lifecycle.
+::	     kahezr  2011-02-03 - Moving IDM-Forms from static content deploy to build and deploy.
+::	     kahezr  2010-12-20 - Adding Hudson lifecycle to automation.
+::	     kahezr  2010-12-06 - Adding new Customer-Web-Audit lifecycle to automation.
+::	     kahezr  2010-11-29 - Re-prioritize environments to make PROD first.
+::           kahrem  2010-11-19 - Added Agency-Download.
+::           kahrem  2010-11-03 - Updated Outlook mail group for AgencyDownload(Batch & TransX) changed USG to KAH          
+::	     kahimh  2010-03-15 - Added USG-EnterpriseStyles
+::	     kahezr  2010-03-08 - Adding ExceedJ Documentation and Presentation lifecycles.
+::				  Also adding BASE state/environment to script.
+::	     kahezr  2009-11-24 - Further updates for new deploy process.
+::	     kahezr  2009-10-XX - Added AgencyDownload to automation; converted over to usgobtdeploy40 new automation processes.
+::-------------------------------------------------------------------------------------------
+
+
+Echo Process Log started at:  > J:\SCMtools\Logs\StaticContent_Deployment.log
+Date /t  >> J:\SCMtools\Logs\StaticContent_Deployment.log
+Time /t  >> J:\SCMtools\Logs\StaticContent_Deployment.log
+ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+
+set who=USGITSCMTeam@unitrin.com
+::set who=erasmussen@eKemper.com,ihunley@ekemper.com
+set SCMBROKER=usgjaxscm45
+set DEPLOYSERVER=usgdeploymentserver
+
+:setenv
+::-----------------------------
+:: If any files ending with .wb1 reside in any of the path locations indicated below, set the variables for that path location
+if exist J:\SCMtools\Scripts\Deploy\PROD\*.wb1 (
+        set STATE=PROD
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\UAT\*.wb1 (
+        set STATE=UAT
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\INT\*.wb1 (
+        set STATE=INT
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\SYSTEST\*.wb1 (
+        set STATE=SYSTEST
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\DEV\*.wb1 (
+        set STATE=DEV
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\DEV1\*.wb1 (
+        set STATE=DEV1
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\DEV2\*.wb1 (
+        set STATE=DEV2
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\DEV3\*.wb1 (
+        set STATE=DEV3
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\BASE\*.wb1 (
+        set STATE=BASE
+	goto setapp
+) 
+goto ProgramEnd
+
+:setapp
+::***********************************************
+::Copying this file allows us to send an email if there is a problem with the content-deploy portion of code:
+xcopy /r /y "J:\SCMtools\Scripts\Deploy\Development\StaticContentDeploy.txt" "J:\SCMtools\Scripts"
+
+::Copying this file sets a flag to send the email output to SCM only when a PROD deployment has occurred:
+if %STATE%==PROD (
+xcopy /r /y "J:\SCMtools\Scripts\Deploy\Development\Static-Cntnt-dply_PROD.txt" "J:\SCMtools\Scripts\Deploy\RUN"
+)
+
+:: If the processing is here, a .wb1 file was found in one of the path locations. Now, if the specific file is found 
+:: in any of the path locations indicated below, set the variables for that path location...
+::--------------------------------- Customer-Web -----------------------------------------------
+if exist J:\SCMtools\Scripts\Deploy\%STATE%\ekempercontent.wb1            (
+    set LC=Customer-Web
+    set VP="\CustomerWeb\customer\httpdocs"
+    set FOLDER=ekempercontent
+    set DPLYACTION=Copy
+    set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\Acord.wb1     (
+::--------------------------------- RPW6-Acord-Forms -----------------------------------------------
+    set LC=RPW6-Acord-Forms
+    set VP="\RPW6-Acord-Forms"
+    set FOLDER=Acord
+    set DPLYACTION=Copy
+    set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITEAS-AgencyInterface@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+    if %STATE%==DEV1 (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    if %STATE%==SYSTEST (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\FASTB.wb1            (
+::--------------------------------- FASTB-Automation -----------------------------------------------
+    set LC=FASTB-Automation
+    set VP="\FASTB-Automation\FASTB"
+    set FOLDER=FASTB
+    set DPLYACTION=Copy
+    set MAIL=KSGEQAAuto@Kemper.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\KSG-EQA-Auto.wb1     (
+::--------------------------------- KSG-EQA-Auto -----------------------------------------------
+    set LC=KSG-EQA-Auto
+    set VP="\KSG-EQA-Auto"
+    set FOLDER=KSG-EQA-Auto
+    set DPLYACTION=Copy
+    set MAIL=KSGEQAAuto@Kemper.com
+    if %STATE%==DEV1 (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    if %STATE%==SYSTEST (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PrintBundling.wb1              (
+::--------------------------------- EAS_PrintBundling -----------------------------------------------
+    set LC=EAS_PrintBundling
+    set VP="\EAS_PrintBundling\PrintBundlingDeploy\PrintBundling"
+    set FOLDER=PrintBundling
+    set DPLYACTION=Copy
+    set MAIL=USGEASDevelopers@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ecavertxtra.wb1       (
+::--------------------------------- ECA Vertical-Extranet -----------------------------------------------
+    set LC=ECAVertical-Extranet
+    set VP="\ECA Vertical Extranet Repository\EXTRANET\HTDOCS"
+    set FOLDER=ecavertxtra
+    set DPLYACTION=Copy
+    set MAIL=KAHITEnterpriseWebSolutions@unitrin.com;KAHAIContentProdSupport@kemper.com
+    if %STATE%==DEV1 (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    if %STATE%==SYSTEST (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\Customer-Web-Audit.wb1            (
+::--------------------------------- Customer-Web-Audit -----------------------------------------------
+    set LC=Customer-Web-Audit
+    set VP="\Customer-Web-Audit"
+    set FOLDER=Customer-Web-Audit
+    set DPLYACTION=Copy
+    set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\Enterprise_Email.wb1            (
+::--------------------------------- Enterprise-Email -----------------------------------------------
+    set LC=Enterprise-Email
+    set VP="\Enterprise-Email"
+    set FOLDER=Enterprise_Email
+    set DPLYACTION=Copy
+    set MAIL=KAHITEnterpriseWebSolutions@unitrin.com;dgreenburg@kemper.com;skicklighter@kemper.com;dmboston@kemper.com;lkolleda@kemper.com;wflask@kemper.com;lplate@kemper.com;sdempsey@kemper.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CalETL.wb1            (
+::--------------------------------- ProducerMGTSYS-Batch -----------------------------------------------
+    set LC=ProducerMGTSYS-Batch
+    set VP="\ProducerMGTSYS-Batch\CalETL"
+    set FOLDER=CalETL
+    set DPLYACTION=Copy
+    set MAIL=USGEnterpriseProducerServices@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\HomePlateStaticContent.wb1              (
+::--------------------------------- USGFormsServiceBatch -----------------------------------------------
+    set LC=HomePlateStaticContent
+    set VP="\HomePlateStaticContent"
+    set FOLDER=HomePlateStaticContent
+    set DPLYACTION=Copy
+    set MAIL=USGEnterpriseSharedServices@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DFDC.wb1              (
+::--------------------------------- USG-PolSS-Batch -----------------------------------------------
+    set LC=USG-PolSS-Batch
+    set VP="\USG-PolSS-Batch\DwellingFire"
+    set FOLDER=DFDC
+    set DPLYACTION=Copy
+    set MAIL=USGITPolicySharedServices@Unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\LocServBat.wb1              (
+::--------------------------------- USG-PolSS-Batch -----------------------------------------------
+    set LC=USG-PolSS-Batch
+    set VP="\USG-PolSS-Batch\LocationServiceBatch"
+    set FOLDER=LocServBat
+    set DPLYACTION=Copy
+    set MAIL=USGITPolicySharedServices@Unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\Agency-Download.wb1              (
+::--------------------------------- Agency-Download -----------------------------------------------
+    set LC=Agency-Download
+    set VP="\Agency-Download"
+    set FOLDER=Agency-Download
+    set DPLYACTION=Copy
+    set MAIL=KAHITEAIDeploys@unitrin.com
+    if %STATE%==DEV1 (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    if %STATE%==SYSTEST (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ThemePolicies.wb1              (
+::--------------------------------- PortalThemePolicies -----------------------------------------------
+    set LC=PortalThemePolicies
+    set VP="\PortalThemePolicies\ThemePolicies"
+    set FOLDER=ThemePolicies
+    set DPLYACTION=Portal
+    set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\MasterBuildScripts.wb1              (
+::--------------------------------- USGFormsServiceBatch -----------------------------------------------
+    set LC=USG-MasterBuildShared
+    set VP="\USG-MasterBuildShared\MasterBuildScripts"
+    set FOLDER=MasterBuildScripts
+    set DPLYACTION=Copy
+    set MAIL=USGITPolicySharedServices@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\USG-EnterpriseStyles.wb1              (
+::--------------------------------- USG-EnterpriseStyles -----------------------------------------------
+    set LC=USG-EnterpriseStyles
+    set VP="\USG-EnterpriseStyles\EnterpriseStyles"
+    set FOLDER=EnterpriseStyles
+    set DPLYACTION=Copy
+    set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\Informatica.wb1              (
+::--------------------------------- EDWS-Informatica -----------------------------------------------
+    set LC=EDWS-Informatica
+    set VP="\Informatica"
+    set FOLDER=Informatica
+    set DPLYACTION=Copy
+    set MAIL=%who%
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\INFOGIX-BR-Lookup.wb1            (
+::--------------------------------- USG-INFOGIX-BankRecon-Lookup -----------------------------------------------
+    set LC=USG-INFOGIX-BankRecon-Lookup-%STATE%
+    set VP="\USG-INFOGIX-BankRecon-Lookup-%STATE%"
+    set FOLDER=INFOGIX-BR-Lookup
+    set DPLYACTION=Copy
+    set MAIL=USGFINBankRecon@unitrin.com;USGEASInfogix@unitrin.com
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\INFOGIX-BR-PropFile.wb1            (
+::--------------------------------- USG-INFOGIX-PropertyFile-Lookup -----------------------------------------------
+    set LC=USG-INFOGIX-BankRecon-PropertyFile-%STATE%
+    set VP="\USG-INFOGIX-BankRecon-PropertyFile-%STATE%"
+    set FOLDER=INFOGIX-BR-PropFile
+    set DPLYACTION=Copy
+    set MAIL=USGFINBankRecon@unitrin.com;USGEASInfogix@unitrin.com
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\INFOGIX-EC-Lookup.wb1            (
+::--------------------------------- USG-INFOGIX-EnterpriseControls-Lookup -----------------------------------------------
+    set LC=USG-INFOGIX-EnterpriseControls-Lookup-%STATE%
+    set VP="\USG-INFOGIX-EnterpriseControls-Lookup-%STATE%"
+    set FOLDER=INFOGIX-EC-Lookup
+    set DPLYACTION=Copy
+    set MAIL=USGFINBankRecon@unitrin.com;USGEASInfogix@unitrin.com
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\INFOGIX-PR-Lookup.wb1            (
+::--------------------------------- USG-INFOGIX-PremRecon-Lookup -----------------------------------------------
+    set LC=USG-INFOGIX-PremRecon-Lookup-%STATE%
+    set VP="\USG-INFOGIX-PremRecon-Lookup-%STATE%"
+    set FOLDER=INFOGIX-PR-Lookup
+    set DPLYACTION=Copy
+    set MAIL=USGFINBankRecon@unitrin.com;USGEASInfogix@unitrin.com
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\INFOGIX-Assure-Scripts.wb1            (
+::--------------------------------- USG-INFOGIX-Assure-Scripts -----------------------------------------------
+    set LC=USG-INFOGIX-Assure-Scripts-%STATE%
+    set VP="\USG-INFOGIX-Assure-Scripts-%STATE%"
+    set FOLDER=INFOGIX-Assure-Scripts
+    set DPLYACTION=Copy
+    set MAIL=USGFINBankRecon@unitrin.com;USGEASInfogix@unitrin.com
+    goto content-deploy
+ )  else if exist J:\SCMtools\Scripts\Deploy\%STATE%\INFOGIX-IT-Lookup.wb1            (
+::--------------------------------- USG-INFOGIX-IT-Lookup -----------------------------------------------
+    set LC=USG-INFOGIX-IT-Lookup-%STATE%
+    set VP="\USG-INFOGIX-IT-Lookup-%STATE%"
+    set FOLDER=INFOGIX-IT-Lookup
+    set DPLYACTION=Copy
+    set MAIL=USGFINBankRecon@unitrin.com;USGEASInfogix@unitrin.com
+    goto content-deploy
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\VINServPolk.wb1     (
+::--------------------------------- VINService -----------------------------------------------
+    set LC=VINService
+    set VP="\VINService"
+    set FOLDER=VINServPolk
+    set DPLYACTION=Copy
+    set MAIL=USGITPolicyCore@unitrin.com;KAHPolicyProdSupport@eKemper.com
+    if %STATE%==DEV1 (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    if %STATE%==SYSTEST (
+	set LC=!LC!-LT
+	goto content-deploy
+	)
+    goto content-deploy
+ ) else (
+:: If a trigger exists but is not configured in the script, send a message and get out...
+ECHO No Automation configured for trigger file in J:\SCMtools\Scripts\Deploy\%STATE%! >> J:\SCMtools\Logs\StaticContent_Deployment.log
+ECHO ******************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+goto ProgramEnd
+)
+::---------------------------------------------------------------------------------------------------------------
+
+:content-deploy
+::***********************************************
+::Obtain date and time to create checkout process logs:
+set datestr=%date:~-4,4%%date:~-10,2%%date:~-7,2%
+set hr=%time:~-11,2%
+if %hr% lss 10 set hr=0%time:~-10,1%
+set mn=%time:~-8,2%
+if %mn% lss 10 set mn=0%time:~-7,1%
+set sc=%time:~-5,2%
+if %sc% lss 10 set sc=0%time:~-4,1%
+set ms=%time:~-2,2%
+::set timestr=%hr%%mn%%sc%%ms%
+set timestr=%hr%%mn%%sc%
+@echo %datestr%-%timestr%
+
+::This log documents each step in the process so the results can easily be seen in one log file.
+Echo Checkout Log started at:  > J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+Date /t  >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+Time /t  >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+Echo Processing %LC% in %STATE%: >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log 
+ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+ECHO Beginning Deploy of %LC% in %STATE%..... >> J:\SCMtools\Logs\StaticContent_Deployment.log
+
+::Rename trigger file for respective state:
+attrib -r J:\SCMtools\Scripts\Deploy\%STATE%\%FOLDER%.*
+ren J:\SCMtools\Scripts\Deploy\%STATE%\%FOLDER%.* %FOLDER%.running
+
+::ECHO Check for existing Content folder %FOLDER%... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+::if exist \\%DEPLOYSERVER%\staging$\%STATE%%DPLYACTION%\%FOLDER% (
+::ECHO Folder exists, exiting script as a deploy must be running >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+::ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+::ECHO Content Folder %FOLDER% exists, exiting script as a deploy must be running.  Checking for more deploy requests... >> J:\SCMtools\Logs\StaticContent_Deployment.log
+::ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+::goto deltrigger
+::)
+
+::ECHO No Content folder for %FOLDER% exists.  Beginning local cleanup and checkout process... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+ECHO Begin cleanup of local content folder, if it exists %FOLDER%... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+if exist J:\ref_dir\%LC%\%STATE%\%FOLDER% (
+	ECHO Folder exists, beginning cleanup... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	Del /f /s /q J:\ref_dir\%LC%\%STATE%\*.* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO Cleanup of local StaticContent folder %FOLDER% completed. >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	)
+	
+ECHO Begin Checkout of all content to local folder at J:\ref_dir\%LC%\%STATE%\%FOLDER%... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+::hco -b %SCMBROKER% -en %LC% -st %STATE% -vp %VP% -cp "\\%DEPLOYSERVER%\staging$\%STATE%%DPLYACTION%\%FOLDER%" -pn "Check Out for Browse" -o J:\SCMtools\Logs\%STATE%\%FOLDER%-StaticCont-HCO_All-%datestr%-%timestr%.log -s * -usr harvpublic -pw harvpublic -br
+hco -b %SCMBROKER% -en %LC% -st %STATE% -vp %VP% -cp "J:\ref_dir\%LC%\%STATE%\%FOLDER%" -pn "Check Out for Browse" -o J:\SCMtools\Logs\%STATE%\%FOLDER%-StaticCont-HCO_All-%datestr%-%timestr%.log -s * -usr harvpublic -pw harvpublic -br
+if errorlevel 0 goto HCOsuccess
+goto HCOfailed
+
+:HCOfailed
+	ECHO HCO Error Level: %errorlevel% >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO Content for %FOLDER% Failed to check out to SCM41!  Check the log for errors. >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO Content for %FOLDER% Failed to check out to SCM41!  Check the log for errors. >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	goto deltrigger ;
+
+:HCOsuccess
+	ECHO %LC% %FOLDER% local checkout successful. >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	
+	ECHO Beginning XCOPY to deploy server... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO Establish network mapping to deploy server... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	net use \\%DEPLOYSERVER%\staging$ /user:scm_group Kemper@2 >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	
+	ECHO Starting XCOPY process... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	XCOPY "J:\ref_dir\%LC%\%STATE%\*.*" "\\%DEPLOYSERVER%\staging$\%STATE%%DPLYACTION%" /S /I /K /Y >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+	
+	if exist \\%DEPLOYSERVER%\staging$\%STATE%%DPLYACTION%\%FOLDER% (
+		goto CopySuccess
+		) else (
+		goto CopyFailure
+		)
+		
+		:CopyFailure
+		ECHO Deleting network mapping... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		net use /d \\%DEPLOYSERVER%\staging$ >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		ECHO %FOLDER% content failed to copy to \\%DEPLOYSERVER%\staging$\%STATE%%DPLYACTION%!  Check the logs for errors. >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		ECHO %FOLDER% content failed to copy to \\%DEPLOYSERVER%\staging$\%STATE%%DPLYACTION%!  Check the logs for errors. >> J:\SCMtools\Logs\StaticContent_Deployment.log
+		ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+		goto deltrigger ;
+		
+		:CopySuccess
+		ECHO XCOPY process completed successfully. >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		ECHO Deleting network mapping... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		net use /d \\%DEPLOYSERVER%\staging$ >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		
+		::See line 57 and 58; deleting this file before the VisBuild process indicates that SCM automation worked.
+		::When we can capture errors from this process we may add another trigger to send an email to the dev team.
+		Del /q J:\SCMtools\Scripts\StaticContentDeploy.txt
+		
+		::*START DEPLOY HERE*
+		ECHO Begin VisBuildPro deploy process... >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		ECHO Pre-deploy error level is: %errorlevel% >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		J:\VisBuildPro7\VisBuildCmd.exe "env=%STATE%%DPLYACTION%" "app=%FOLDER%" /b J:\promotion\bin\RemoteDeploy.bld > J:\SCMtools\Logs\%STATE%\%LC%-VisBuild-%datestr%-%timestr%.log
+		ECHO Post-deploy error level is: %errorlevel% >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+		if errorlevel 1 (
+				goto VisBuildFailed
+			) else (
+				goto VisBuildSuccess
+			)
+		
+		:VisBuildFailed
+			Echo %LC% Deploy FAILED in %STATE%.  Click link below for deploy log. >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+			Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%FOLDER%.html >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+			Echo %LC% Deploy FAILED in %STATE%.  Click link below for deploy log >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%FOLDER%.html >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			Echo Checking for more deploy requests... >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+			ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			::This next command tells the script to send SCM an email when a deployment occurs.
+			xcopy /Y J:\SCMtools\Scripts\Deploy\Development\StaticContEnd.txt J:\SCMtools\Scripts\Deploy\eMail
+			
+			::Upon deploy completion, send email to teams with link to log file.
+			ECHO FYI… >J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO - >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO A deploy FAILED for %LC% into %STATE%.  Click link below for deploy log. >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%FOLDER%.html >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO - >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO - >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO *** DO NOT REPLY TO THIS MESSAGE.  THIS MAILBOX NOT MONITORED FOR REPLIES. *** >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			J:\SCMtools\email\tcmail -s "%LC% Deploy FAILED in %STATE%" %MAIL% < J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			Del /q J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			goto deltrigger ;
+			
+		:VisBuildSuccess
+			Echo %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+			Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%FOLDER%.html >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+			Echo %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%FOLDER%.html >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			Echo Checking for more deploy requests... >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+			ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+			::This next command tells the script to send SCM an email when a deployment occurs.
+			xcopy /Y J:\SCMtools\Scripts\Deploy\Development\StaticContEnd.txt J:\SCMtools\Scripts\Deploy\eMail
+			
+			::Upon deploy completion, send email to teams with link to log file.
+			ECHO FYI… >J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO - >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%FOLDER%.html >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO - >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO - >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			ECHO *** DO NOT REPLY TO THIS MESSAGE.  THIS MAILBOX NOT MONITORED FOR REPLIES. *** >>J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			J:\SCMtools\email\tcmail -s "%LC% Successfully deployed to %STATE%" %MAIL% < J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			Del /q J:\SCMtools\Scripts\MailTemp\StatCont-%datestr%-%timestr%.txt
+			
+			::-----PROD Deploy Actions-----::
+			:: This command promotes packages in the PROD state to Archive.
+			if %STATE%==PROD ( 
+				ECHO Create package group: >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+				hpg -b %SCMBROKER% -en %LC% -pg %LC%-%STATE%-ROLL-GROUP-%datestr%-%timestr% -usr kahEQA -pw kahEQA -st %STATE% -cpg
+				ECHO Add packages in %STATE% to group: >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+				hpg -b %SCMBROKER% -en %LC% -pg %LC%-%STATE%-ROLL-GROUP-%datestr%-%timestr% -usr kahEQA -pw kahEQA -st %STATE% -app "*"
+				ECHO Promote package group in %STATE% to %STATE%-Completed: >> J:\SCMtools\Logs\%STATE%\%LC%-StaticContent-%datestr%-%timestr%.log
+				hpp -pg %LC%-%STATE%-ROLL-GROUP-%datestr%-%timestr% -b %SCMBROKER% -en %LC% -st %STATE% -usr kahEQA -pw kahEQA
+			)
+			goto deltrigger ;
+
+::***********************************************
+
+:deltrigger
+attrib -r J:\SCMtools\Scripts\Deploy\%STATE%\%FOLDER%.*
+Del /f /s /q J:\SCMtools\Scripts\Deploy\%STATE%\%FOLDER%.*
+goto setenv ;
+
+:ProgramEnd
+::-----------------------::
+if exist J:\SCMtools\Scripts\StaticContentDeploy.txt (
+	ECHO No more deployments requested.  Exiting and sending out error log. >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	J:\SCMtools\email\tcmail -s "SCM ACTION REQUIRED:  StaticContent deploy process encountered a problem!  See this message for details." %who% < J:\SCMtools\Logs\StaticContent_Deployment.log
+	Del /q J:\SCMtools\Scripts\StaticContentDeploy.txt
+	del /q J:\SCMtools\Scripts\Deploy\RUN\Static-Cntnt-dply_PROD.txt
+) else if exist J:\SCMtools\Scripts\Deploy\eMail\StaticContEnd.txt (
+	ECHO No more deployments requested.  Exiting and sending out deployment summary. >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	ECHO Process finished at: >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	Time /t  >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	ECHO ************************* >> J:\SCMtools\Logs\StaticContent_Deployment.log
+	del /q J:\SCMtools\Scripts\Deploy\eMail\StaticContEnd.txt
+	if exist J:\SCMtools\Scripts\Deploy\RUN\Static-Cntnt-dply_PROD.txt (
+	J:\SCMtools\email\tcmail -s "Static Content Deploy tasks have Completed Successfully" %who% < J:\SCMtools\Logs\StaticContent_Deployment.log
+	del /q J:\SCMtools\Scripts\Deploy\RUN\Static-Cntnt-dply_PROD.txt
+	)
+) else (
+	Echo No staging triggered or no errors found with stage and deploy script.  >>J:\SCMtools\Logs\StaticContent_Deployment.log
+)
+exit

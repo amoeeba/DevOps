@@ -1,0 +1,142 @@
+::-------------------------------UPDATES SECTION----------------------------------------
+:: Updates:   UID    Date       - Explanation
+::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
+::	     kahezr  2010-11-29 - Re-prioritize environments to make PROD first.
+::	     kahezr  2009-07-28 - Finishe rewriting entire automation to support Callidus and FormsMaster.
+::	     kahezr  2009-05-26 - Added automation to support SYSTEST and UAT.
+::	     kahezr  2009-05-26 - Refactored script to make logging more consistant
+::				  and enhance error catching.
+::
+::-------------------------------END UPDATES SECTION------------------------------------
+
+Echo Process Log started at:  > J:\SCMtools\Logs\DatabaseBackupRestore.log
+Date /t  >>J:\SCMtools\Logs\DatabaseBackupRestore.log
+Time /t  >>J:\SCMtools\Logs\DatabaseBackupRestore.log
+::set who=erasmussen@unitrin.com
+set who=KAHITSCMTeam@eKemper.com
+
+
+:setenv
+::-----------------------------
+if exist J:\SCMtools\Scripts\Deploy\PROD\*.dbbr  (
+	set STATE=PROD
+	set SERVER=kahobtsql42
+	goto settype 
+) else if exist J:\SCMtools\Scripts\Deploy\UAT\*.dbbr (
+	set STATE=UAT
+	set SERVER=kahobtsql92
+	goto settype 
+) else if exist J:\SCMtools\Scripts\Deploy\INT\*.dbbr (
+	set STATE=INT
+	set SERVER=kahobtsql92
+	goto settype 
+) else if exist J:\SCMtools\Scripts\Deploy\SYSTEST\*.dbbr (
+	set STATE=SYSTEST
+	set SERVER=kahobtsql92
+	goto settype 
+) else if exist J:\SCMtools\Scripts\Deploy\DEV\*.dbbr (
+	set STATE=DEV
+	set SERVER=kahobtsql92
+	goto settype 
+) else if exist J:\SCMtools\Scripts\Deploy\DEV1\*.dbbr (
+	set STATE=DEV1
+	set SERVER=kahobtsql92
+	goto settype
+)
+goto ProgramEnd
+
+
+:settype
+::-----------------------------
+::Copying this file allows us to send an email if there is a problem with the -type or -app portions of the script:
+xcopy /r /y "J:\SCMtools\Scripts\Deploy\Development\DatabaseBackupRestore.txt" "J:\SCMtools\Scripts"
+
+if exist J:\SCMtools\Scripts\Deploy\%STATE%\*-backup.dbbr (
+	set TYPE=backup
+	goto setapp
+) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\*-restore.dbbr (
+	set TYPE=restore
+	goto setapp
+)
+
+:setapp
+::-----------------------------
+if exist J:\SCMtools\Scripts\Deploy\%STATE%\Callidus-%TYPE%.dbbr (
+	set LC=CalladusGoldCopy
+	set DESTINATION=CAL_%STATE%_ACTION
+	set TRIGGER=Callidus
+	set USR=kahscm
+	set PASSWD=Gold#5Cntl
+	goto putfile
+) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\FrmMstr-%TYPE%.dbbr (
+	set LC=USGFormsMaster
+	set DESTINATION=%STATE%_ACTION
+	set TRIGGER=FrmMstr
+	set USR=kahscm
+	set PASSWD=Gold#5Cntl
+	goto putfile
+)
+:: If a trigger exists but is not configured in the script, send a message and get out...
+ECHO No Automation configured for trigger file in J:\SCMtools\Scripts\Deploy\%STATE%! >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+goto ProgramEnd
+
+
+::-----------------------------::
+:putfile
+::-----------------------------::
+Echo Process Log started at:  > J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+Date /t  >>J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+Time /t  >>J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+del /f /q J:\SCMtools\Scripts\Deploy\%STATE%\%TRIGGER%-%TYPE%.dbbr >>J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+
+ECHO Begin drive mapping: >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+net use /d \\%SERVER%\%DESTINATION% >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+net use \\%SERVER%\%DESTINATION% /user:%USR% %PASSWD% >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+@if errorlevel==1 goto ErrorMapping
+ECHO Drive mapping completed. >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+
+ECHO Begin trigger file copy to server: >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+xcopy /Y "J:\SCMtools\Scripts\Deploy\Development\%TYPE%" "\\%SERVER%\%DESTINATION%" >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+if NOT exist \\%SERVER%\%DESTINATION%\%TYPE% (
+	ECHO DB Trigger File "%TYPE%" failed to copy to \\%SERVER%\%DESTINATION% for %LC%! >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+	J:\SCMtools\email\tcmail -s "SCM ACTION REQUIRED:  Database Backup/Deploy script contains errors for %LC% in %STATE%!" %who% < J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+	::cscript J:\SCMtools\email\email.vbs %who% "Problem with \\%SERVER%\%DESTINATION%\%type% copy." "See attached build output file for more info." "J:\SCMtools\Logs\%STATE%\%LC%_BUILD.log"
+	goto setenv
+)
+if exist \\%SERVER%\%DESTINATION%\%TYPE% (
+	ECHO Copy of %TYPE% to %DESTINATION% on %SERVER% Complete. >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+	ECHO Copy of %TYPE% to %STATE% on %SERVER% Complete. >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+	ECHO Trigger to %TYPE% project %LC% in %STATE% successful. >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+	ECHO ------------------------------------------- >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+	Del /q J:\SCMtools\Scripts\DatabaseBackupRestore.txt
+	::This next command tells the script to send SCM an email when a deployment occurs.
+	xcopy /Y J:\SCMtools\Scripts\Deploy\Development\DBBREnd.txt J:\SCMtools\Scripts\Deploy\eMail
+)
+goto setenv
+::-----------------------------::
+
+
+::-----------------------::
+:ErrorMapping
+::-----------------------::
+ECHO Error mapping network drive: \\%SERVER%\%DESTINATION% for %LC% in %STATE%!! >> J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+ECHO Error mapping network drive: \\%SERVER%\%DESTINATION% for %LC% in %STATE%!! >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+ECHO ------------------------------------------- >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+J:\SCMtools\email\tcmail -s "SCM ACTION REQUIRED:  Database Backup/Restore Drive Mapping error!  See this message for details." %who% < J:\SCMtools\Logs\%STATE%\%TRIGGER%-%TYPE%-dbbr.log
+goto setenv
+
+
+
+:ProgramEnd
+::-----------------------::
+if exist J:\SCMtools\Scripts\DatabaseBackupRestore.txt (
+	J:\SCMtools\email\tcmail -s "SCM ACTION REQUIRED:  Database Backup/Restore Script contains errors!  See this message for details." %who% < J:\SCMtools\Logs\DatabaseBackupRestore.log
+	Del /q J:\SCMtools\Scripts\DatabaseBackupRestore.txt
+) else if exist J:\SCMtools\Scripts\Deploy\eMail\DBBREnd.txt (
+	del /q J:\SCMtools\Scripts\Deploy\eMail\DBBREnd.txt
+	J:\SCMtools\email\tcmail -s "Database Backup/Restore Process has Completed Successfully" %who% < J:\SCMtools\Logs\DatabaseBackupRestore.log
+) else (
+	Echo No staging triggered or no errors found with stage and deploy script.  >> J:\SCMtools\Logs\DatabaseBackupRestore.log
+)
+
+exit
