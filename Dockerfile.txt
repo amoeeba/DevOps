@@ -1,5 +1,5 @@
-FROM te-docker.docker-registry.tools.springer-sbm.com/fig-env-java8-node-ruby-python
-MAINTAINER Joviano Dias <joviano.dias@springer.com>
+FROM te-docker.docker-registry.tools.epringer-sbm.com/fig-env-java8-node-ruby-python
+MAINTAINER admin <test@epringer.com>
 
 RUN apt-get update && apt-get install -y apt-utils libfontconfig1-dev libjpeg-dev
 
@@ -14,7 +14,7 @@ RUN curl -sSL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOM
 RUN ln -s /phantomjs-$PHANTOM_JS_VERSION/bin/phantomjs /usr/bin/phantomjs
 
 ###########
-# Below is from https://github.com/tgjonestx/capybaraDemo/blob/master/dockerImage/Dockerfile
+# Below is from https://github.com/etgjonestx/blob/master/dockerImage/Dockerfile
 # Get the basic set of dev tools
 # Add more(firefox,chrome) from this link as and when needed
 RUN	apt-get update -qq && apt-get install -y -q build-essential wget unzip make libxml2 libxslt1-dev libxml2-dev zlib1g-dev
