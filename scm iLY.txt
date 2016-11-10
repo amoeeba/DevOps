@@ -1,6 +1,6 @@
 ::-------------------------------UPDATES SECTION----------------------------------------
 :: Updates:   UID    Date       - Explanation
-::	     usgpyv  2014-06-18 - Added USG-iLytics deploy process.
+::(prakash)  usgpyv  2014-06-18 - Added USG-iLytics deploy process.
 ::           usgezr  2012-03-22 - Changed error handling as a flag file was not being deleted after successful deployment.
 ::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
 ::	     kahezr  2010-11-29 - Re-prioritize environments to make PROD first.
@@ -138,7 +138,7 @@ if errorlevel 1 (
 	xcopy /Y J:\SCMtools\Scripts\Deploy\Development\iLyticsdeploy.txt J:\SCMtools\Scripts\Deploy\eMail
 	
 	::Upon deploy completion, send email to teams with link to log file.
-	ECHO FYI… >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO FYIâ€¦ >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO A deploy FAILED for %LC% into %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
@@ -164,7 +164,7 @@ if errorlevel 1 (
 	Del /q J:\SCMtools\Scripts\iLyticsdeploy.txt
 	
 	::Upon deploy completion, send email to teams with link to log file.
-	ECHO FYI… >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO FYIâ€¦ >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
