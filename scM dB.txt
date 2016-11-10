@@ -1,11 +1,6 @@
 ::-------------------------------UPDATES SECTION----------------------------------------
 :: Updates:   UID    Date       - Explanation
-::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
-::	     kahezr  2010-11-29 - Re-prioritize environments to make PROD first.
-::	     kahezr  2009-07-28 - Finishe rewriting entire automation to support Callidus and FormsMaster.
-::	     kahezr  2009-05-26 - Added automation to support SYSTEST and UAT.
-::	     kahezr  2009-05-26 - Refactored script to make logging more consistant
-::				  and enhance error catching.
+::           prakash  2015-03-01 - Changed email notification to only send SCM messages when an error occurs.
 ::
 ::-------------------------------END UPDATES SECTION------------------------------------
 
