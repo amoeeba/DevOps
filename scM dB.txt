@@ -8,7 +8,7 @@ Echo Process Log started at:  > J:\SCMtools\Logs\DatabaseBackupRestore.log
 Date /t  >>J:\SCMtools\Logs\DatabaseBackupRestore.log
 Time /t  >>J:\SCMtools\Logs\DatabaseBackupRestore.log
 ::set who=erasmussen@unitrin.com
-set who=KAHITSCMTeam@eKemper.com
+set who=KAHITSCMTeam@euni.com
 
 
 :setenv
