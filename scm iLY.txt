@@ -13,8 +13,8 @@ Date /t  >> J:\SCMtools\Logs\iLytics_deploy.log
 Time /t  >> J:\SCMtools\Logs\iLytics_deploy.log
 ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
 
-set who=USGITSCMTeam@unitrin.com
-::set who=erasmussen@eKemper.com,ihunley@ekemper.com
+set who=USGITSCMTeam@unit.com
+::set who=erasmussen@euni.com,ihunley@euni.com
 set SCMBROKER=usgjaxscm45
 set DEPLOYSERVER=usgdeploymentserver
 
@@ -71,7 +71,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\iLytics.iLytics           	(
   set TYPE=iLytics
   set ArtifactVar=!ARTNM!.!TYPE!
   set DPLYACTION=iLytics
-  set MAIL=USGITPolicyBillingServices@unitrin.com
+  set MAIL=USGITPolicyBillingServices@unit.com
   ::Delete trigger file for respective state:
   attrib -r J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
   Del /q J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
@@ -91,7 +91,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\iLytics.iLytics           	(
   set TYPE=iLytics
   set ArtifactVar=!ARTNM!.!TYPE!
   set DPLYACTION=iLytics
-  set MAIL=USGITPolicyBillingServices@unitrin.com
+  set MAIL=USGITPolicyBillingServices@unit.com
   ::Delete trigger file for respective state:
   attrib -r J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
   Del /q J:\SCMtools\Scripts\Deploy\%STATE%\!ARTNM!.!TYPE!
@@ -126,11 +126,11 @@ if errorlevel 1 (
 
 :VisBuildFailed
 	Echo %LC% Deploy FAILED in %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
-	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Echo http://%DEPLOYSERVER%.unitinc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	ECHO Process finished at: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	Time /t  >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	Echo %LC% Deploy FAILED in %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\iLytics_deploy.log
-	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\iLytics_deploy.log
+	Echo http://%DEPLOYSERVER%.unitinc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\iLytics_deploy.log
 	Echo Checking for more deploy requests... >> J:\SCMtools\Logs\iLytics_deploy.log
 	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
@@ -141,7 +141,7 @@ if errorlevel 1 (
 	ECHO FYI… >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO A deploy FAILED for %LC% into %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
-	ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO http://%DEPLOYSERVER%.unitinc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO *** DO NOT REPLY TO THIS MESSAGE.  THIS MAILBOX NOT MONITORED FOR REPLIES. *** >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
@@ -151,11 +151,11 @@ if errorlevel 1 (
 	
 :VisBuildSuccess
 	Echo %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
-	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
+	Echo http://%DEPLOYSERVER%.unitinc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	ECHO Process finished at: >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	Time /t  >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	Echo %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >> J:\SCMtools\Logs\iLytics_deploy.log
-	Echo http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\iLytics_deploy.log
+	Echo http://%DEPLOYSERVER%.unitinc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >> J:\SCMtools\Logs\iLytics_deploy.log
 	Echo Checking for more deploy requests... >> J:\SCMtools\Logs\iLytics_deploy.log
 	ECHO ************************* >> J:\SCMtools\Logs\%STATE%\%LC%-iLyticsDeploy-%datestr%-%timestr%.log
 	ECHO ************************* >> J:\SCMtools\Logs\iLytics_deploy.log
@@ -167,7 +167,7 @@ if errorlevel 1 (
 	ECHO FYI… >J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO %LC% Successfully deployed to %STATE%.  Click link below for deploy log: >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
-	ECHO http://%DEPLOYSERVER%.unitrininc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
+	ECHO http://%DEPLOYSERVER%.unitinc.com/logs/%STATE%%DPLYACTION%/%ArtifactVar%.html >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO - >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
 	ECHO *** DO NOT REPLY TO THIS MESSAGE.  THIS MAILBOX NOT MONITORED FOR REPLIES. *** >>J:\SCMtools\Scripts\MailTemp\ArtDeploy-%datestr%-%timestr%.txt
