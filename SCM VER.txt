@@ -11,8 +11,8 @@ Date /t  >> J:\SCMtools\Logs\Artifact_versioning.log
 Time /t  >> J:\SCMtools\Logs\Artifact_versioning.log
 ECHO ************************* >> J:\SCMtools\Logs\Artifact_versioning.log
 
-set who=USGITSCMTeam@unitrin.com
-::set who=usgpyv@eKemper.com,ihunley@ekemper.com
+set who=USGITSCMTeam@unit.com
+::set who=usgpyv@euni.com,ihunley@euni.com
 set SCMBROKER=usgjaxscm45
 set DEPLOYSERVER=usgdeploymentserver
 
@@ -40,7 +40,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AI-Docs
   set ARTNM=AIDocumentEar
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerAPP.txt             	(
 ::----------------------------- ProducerServiceLegacy -----------------------------::
@@ -48,7 +48,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ProducerServiceLegacy
   set ARTNM=ProducerAPP
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\RPW_APP.txt                 	(
 ::----------------------------- RPW_APP -----------------------------::
@@ -56,7 +56,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=RPW_APP
   set ARTNM=RPW_APP
   set TYPE=ear
-  set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+  set MAIL=KAHITRPWTeam@unit.com;KAHITRPWProdSupport@unit.com;KAHITPolicyAutoServicesTeam@unit.com;KAHITPolicyHomeServicesTeam@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\RpwQtDocumentSvcWAR.txt          	(
 ::----------------------------- RPW-QuotingDocumentService -----------------------------::
@@ -64,15 +64,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=RPW-QuotingDocumentService
   set ARTNM=RpwQtDocumentSvcWAR
   set TYPE=war
-  set MAIL=KAHITRPWDevelopers@ekemper.com
+  set MAIL=KAHITRPWDevelopers@euni.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustomerProfile.txt     	(
-::----------------------------- KemperCustomer -----------------------------::
-  set LC=KemperCustomer
-  set RP=KemperCustomer
-  set ARTNM=KemperCustomerProfile
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniCustomerProfile.txt     	(
+::----------------------------- uniCustomer -----------------------------::
+  set LC=uniCustomer
+  set RP=uniCustomer
+  set ARTNM=uniCustomerProfile
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyContactCenter.txt     	(
 ::----------------------------- Agency-ContactCenter -----------------------------::
@@ -80,7 +80,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Agency-ContactCenter
   set ARTNM=AgencyContactCenter
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentAlerts.txt          	(
  ::----------------------------- Agent-Alerts -----------------------------::
@@ -88,7 +88,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Agent-Alerts
   set ARTNM=AgentAlerts
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EBillBatch.txt          	(
  ::----------------------------- EBill-Batch -----------------------------::
@@ -96,7 +96,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EBill-Batch
   set ARTNM=EBillBatch
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentAlerts-Batch.txt          	(
  ::----------------------------- AgentAlerts-Batch -----------------------------::
@@ -104,7 +104,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AgentAlerts-Batch
   set ARTNM=AgentAlerts-Batch
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\LocServBat.txt          	(
  ::----------------------------- USG-PolSS-Batch-LocationSvc-OnRamp -----------------------------::
@@ -112,7 +112,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-PolSS-Batch-LocationSvc-OnRamp
   set ARTNM=LocServBat
   set TYPE=zip
-  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  set MAIL=KSGEnterpriseServicesITOperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DFDC.txt          	(
  ::----------------------------- USG-PolSS-Batch-DwellFire-OnRamp -----------------------------::
@@ -120,7 +120,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-PolSS-Batch-DwellFire-OnRamp
   set ARTNM=DFDC
   set TYPE=zip
-  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  set MAIL=KSGEnterpriseServicesITOperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentDocuments.txt          	(
  ::----------------------------- Agent-Documents -----------------------------::
@@ -128,7 +128,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Agent-Documents
   set ARTNM=AgentDocuments
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentInsideApp.txt          	(
 ::----------------------------- AgentInsideApp -----------------------------::
@@ -136,7 +136,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AgentInsideApp
   set ARTNM=AgentInsideApp
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PolicyWebService.txt          	(
 ::----------------------------- PolicyWebService -----------------------------::
@@ -144,7 +144,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PolicyWebService
   set ARTNM=PolicyWebService
   set TYPE=ear
-  set MAIL=USGISServicePolicyInquiryPIT@unitrin.com
+  set MAIL=USGISServicePolicyInquiryPIT@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyXML.txt          	(
 ::----------------------------- AgencyXML -----------------------------::
@@ -152,7 +152,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AgencyXML
   set ARTNM=AgencyXML
   set TYPE=ear
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMIBL.txt                   	(
 ::----------------------------- AMIBilling -----------------------------::
@@ -160,7 +160,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AMIBilling
   set ARTNM=AMIBL
   set TYPE=ear
-  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  set MAIL=KAHITEAS-AgencyInterface@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMICL.txt                   	(
 ::----------------------------- AMIClaim -----------------------------::
@@ -168,7 +168,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AMIClaim
   set ARTNM=AMICL
   set TYPE=ear
-  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  set MAIL=KAHITEAS-AgencyInterface@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMIEND.txt                  	(
 ::----------------------------- AMIEndorsement -----------------------------::
@@ -176,7 +176,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AMIEndorsement
   set ARTNM=AMIEND
   set TYPE=ear
-  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  set MAIL=KAHITEAS-AgencyInterface@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AMIPL.txt                   	(
 ::----------------------------- AMIPolicy -----------------------------::
@@ -184,7 +184,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AMIPolicy
   set ARTNM=AMIPL
   set TYPE=ear
-  set MAIL=KAHITEAS-AgencyInterface@eKemper.com
+  set MAIL=KAHITEAS-AgencyInterface@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyDownloadDeployV2.txt            	(
 ::----------------------------- Agency-Download-DeployV2 -----------------------------::
@@ -192,7 +192,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Agency-Download-DeployV2
   set ARTNM=AgencyDownloadDeployV2
   set TYPE=zip
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build 
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Agency-Download-JAVA.txt            	(
 ::----------------------------- Agency-Download-JAVA -----------------------------::
@@ -200,7 +200,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Agency-Download-JAVA
   set ARTNM=Agency-Download-JAVA
   set TYPE=zip
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build 
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommon.txt            	(
 ::----------------------------- PortalCommon -----------------------------::
@@ -208,7 +208,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalCommon
   set ARTNM=PortalCommon
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build 
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommon7.txt            	(
 ::----------------------------- PortalCommon7 -----------------------------::
@@ -216,23 +216,23 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalCommon7
   set ARTNM=PortalCommon7
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalKemperAgentCommon.txt            	(
-::----------------------------- PortalKemperAgentCommon -----------------------------::
-  set LC=PortalKemperAgentCommon
-  set RP=PortalKemperAgentCommon
-  set ARTNM=PortalKemperAgentCommon
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortaluniAgentCommon.txt            	(
+::----------------------------- PortaluniAgentCommon -----------------------------::
+  set LC=PortaluniAgentCommon
+  set RP=PortaluniAgentCommon
+  set ARTNM=PortaluniAgentCommon
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommonKemperAgentv2.txt            	(
-::----------------------------- PortalCommonKemperAgentv2 -----------------------------::
-  set LC=PortalCommonKemperAgentv2
-  set RP=PortalCommonKemperAgentv2
-  set ARTNM=PortalCommonKemperAgentv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalCommonuniAgentv2.txt            	(
+::----------------------------- PortalCommonuniAgentv2 -----------------------------::
+  set LC=PortalCommonuniAgentv2
+  set RP=PortalCommonuniAgentv2
+  set ARTNM=PortalCommonuniAgentv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalUSGCommon.txt           	(
 ::----------------------------- PortalUSGCommon -----------------------------::
@@ -240,15 +240,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalUSGCommon
   set ARTNM=PortalUSGCommon
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustomerPortalFilter.txt           	(
-::----------------------------- PortalFilterKemperCustomer -----------------------------::
-  set LC=PortalFilterKemperCustomer
-  set RP=PortalFilterKemperCustomer
-  set ARTNM=KemperCustomerPortalFilter
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniCustomerPortalFilter.txt           	(
+::----------------------------- PortalFilteruniCustomer -----------------------------::
+  set LC=PortalFilteruniCustomer
+  set RP=PortalFilteruniCustomer
+  set ARTNM=uniCustomerPortalFilter
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortletService.txt          	(
 ::----------------------------- PortletServiceUserActivity -----------------------------::
@@ -256,7 +256,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletServiceUserActivity
   set ARTNM=UserActivityPortletService
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentHelloPort.txt          	(
 ::----------------------------- PortletAgentHome -----------------------------::
@@ -264,7 +264,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletAgentHome
   set ARTNM=AgentHelloPort
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\BecomeAnAgentPortlet.txt          	(
 ::----------------------------- PortletBecomeAnAgent -----------------------------::
@@ -272,7 +272,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletBecomeAnAgent
   set ARTNM=BecomeAnAgentPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerWebeStatic.txt          	(
 ::----------------------------- CustomerWebeStatic -----------------------------::
@@ -280,7 +280,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerWebeStatic
   set ARTNM=CustomerWebeStatic
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECAVertical.txt          	(
 ::----------------------------- ECAVertical -----------------------------::
@@ -288,15 +288,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECAVertical
   set ARTNM=ECAVertical
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContactKemper.txt          	(
-::----------------------------- PortletContactKemper -----------------------------::
-  set LC=PortletContactKemper
-  set RP=PortletContactKemper
-  set ARTNM=ContactKemper
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\Contactuni.txt          	(
+::----------------------------- PortletContactuni -----------------------------::
+  set LC=PortletContactuni
+  set RP=PortletContactuni
+  set ARTNM=Contactuni
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CorporateLandingPage.txt            	(
 ::----------------------------- PortletCorporateEmployee -----------------------------::
@@ -304,7 +304,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletCorporateEmployee
   set ARTNM=CorporateLandingPage
   set TYPE=zip
-  set MAIL=usgenterprisesharedservices@unitrin.com
+  set MAIL=usgenterprisesharedservices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CorporateIntranet.txt            	(
 ::----------------------------- PortletCorporateIntranet -----------------------------::
@@ -312,7 +312,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletCorporateIntranet
   set ARTNM=CorporateIntranet
   set TYPE=zip
-  set MAIL=usgenterprisesharedservices@unitrin.com
+  set MAIL=usgenterprisesharedservices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerLoginPortlet.txt          	(
 ::----------------------------- PortletCustomerLogin -----------------------------::
@@ -320,7 +320,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletCustomerLogin
   set ARTNM=CustomerLoginPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerRelationsPortletApp.txt          	(
 ::----------------------------- PortletCustomerRelations -----------------------------::
@@ -328,7 +328,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletCustomerRelations
   set ARTNM=CustomerRelationsPortletApp
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FindAgentPortlet.txt          	(
 ::----------------------------- PortletFindAgent -----------------------------::
@@ -336,7 +336,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletFindAgent
   set ARTNM=FindAgentPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FindRepairCtrPortlet.txt          	(
 ::----------------------------- PortletFindRepairCenter -----------------------------::
@@ -344,55 +344,55 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletFindRepairCenter
   set ARTNM=FindRepairCtrPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperClaimsPort.txt          	(
-::----------------------------- PortletKemperClaimsInfo -----------------------------::
-  set LC=PortletKemperClaimsInfo
-  set RP=PortletKemperClaimsInfo
-  set ARTNM=KemperClaimsPort
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniClaimsPort.txt          	(
+::----------------------------- PortletuniClaimsInfo -----------------------------::
+  set LC=PortletuniClaimsInfo
+  set RP=PortletuniClaimsInfo
+  set ARTNM=uniClaimsPort
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperClaimsPortv2.txt          	(
-::----------------------------- PortletKemperClaimsInfov2 -----------------------------::
-  set LC=PortletKemperClaimsInfov2
-  set RP=PortletKemperClaimsInfov2
-  set ARTNM=KemperClaimsPortv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniClaimsPortv2.txt          	(
+::----------------------------- PortletuniClaimsInfov2 -----------------------------::
+  set LC=PortletuniClaimsInfov2
+  set RP=PortletuniClaimsInfov2
+  set ARTNM=uniClaimsPortv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCoNewsPort.txt          	(
-::----------------------------- PortletKemperCompanyNews -----------------------------::
-  set LC=PortletKemperCompanyNews
-  set RP=PortletKemperCompanyNews
-  set ARTNM=KemperCoNewsPort
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniCoNewsPort.txt          	(
+::----------------------------- PortletuniCompanyNews -----------------------------::
+  set LC=PortletuniCompanyNews
+  set RP=PortletuniCompanyNews
+  set ARTNM=uniCoNewsPort
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCoNewsPortv2.txt          	(
-::----------------------------- PortletKemperCompanyNewsv2 -----------------------------::
-  set LC=PortletKemperCompanyNewsv2
-  set RP=PortletKemperCompanyNewsv2
-  set ARTNM=KemperCoNewsPortv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniCoNewsPortv2.txt          	(
+::----------------------------- PortletuniCompanyNewsv2 -----------------------------::
+  set LC=PortletuniCompanyNewsv2
+  set RP=PortletuniCompanyNewsv2
+  set ARTNM=uniCoNewsPortv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustPort.txt          	(
-::----------------------------- PortletKemperCustomerInfo -----------------------------::
-  set LC=PortletKemperCustomerInfo
-  set RP=PortletKemperCustomerInfo
-  set ARTNM=KemperCustPort
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniCustPort.txt          	(
+::----------------------------- PortletuniCustomerInfo -----------------------------::
+  set LC=PortletuniCustomerInfo
+  set RP=PortletuniCustomerInfo
+  set ARTNM=uniCustPort
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperCustPortv2.txt          	(
-::----------------------------- PortletKemperCustomerInfov2 -----------------------------::
-  set LC=PortletKemperCustomerInfov2
-  set RP=PortletKemperCustomerInfov2
-  set ARTNM=KemperCustPortv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniCustPortv2.txt          	(
+::----------------------------- PortletuniCustomerInfov2 -----------------------------::
+  set LC=PortletuniCustomerInfov2
+  set RP=PortletuniCustomerInfov2
+  set ARTNM=uniCustPortv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletLocationv2-MK.txt          	(
 ::----------------------------- PortletLocationv2-MK -----------------------------::
@@ -400,71 +400,71 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletLocationv2-MK
   set ARTNM=PortletLocationv2-MK
   set TYPE=zip
-  set MAIL=KSGECommerceAnalytics@kemper.com 
+  set MAIL=KSGECommerceAnalytics@uni.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperDocPort.txt          	(
-::----------------------------- PortletKemperDocuments -----------------------::
-  set LC=PortletKemperDocuments
-  set RP=PortletKemperDocuments
-  set ARTNM=KemperDocPort
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniDocPort.txt          	(
+::----------------------------- PortletuniDocuments -----------------------::
+  set LC=PortletuniDocuments
+  set RP=PortletuniDocuments
+  set ARTNM=uniDocPort
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperDocPortv2.txt          	(
-::----------------------------- PortletKemperDocumentsv2 -----------------------::
-  set LC=PortletKemperDocumentsv2
-  set RP=PortletKemperDocumentsv2
-  set ARTNM=KemperDocPortv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniDocPortv2.txt          	(
+::----------------------------- PortletuniDocumentsv2 -----------------------::
+  set LC=PortletuniDocumentsv2
+  set RP=PortletuniDocumentsv2
+  set ARTNM=uniDocPortv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperPrdLchPort.txt          	(
-::----------------------------- PortletKemperProductLauncher -----------------------------::
-  set LC=PortletKemperProductLauncher
-  set RP=PortletKemperProductLauncher
-  set ARTNM=KemperPrdLchPort
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniPrdLchPort.txt          	(
+::----------------------------- PortletuniProductLauncher -----------------------------::
+  set LC=PortletuniProductLauncher
+  set RP=PortletuniProductLauncher
+  set ARTNM=uniPrdLchPort
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperPrdLchPortv2.txt          	(
-::----------------------------- PortletKemperProductLauncherv2 -----------------------------::
-  set LC=PortletKemperProductLauncherv2
-  set RP=PortletKemperProductLauncherv2
-  set ARTNM=KemperPrdLchPortv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniPrdLchPortv2.txt          	(
+::----------------------------- PortletuniProductLauncherv2 -----------------------------::
+  set LC=PortletuniProductLauncherv2
+  set RP=PortletuniProductLauncherv2
+  set ARTNM=uniPrdLchPortv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperWidgetsPortlet.txt          	(
-::----------------------------- PortletKemperWidgets -----------------------------::
-  set LC=PortletKemperWidgets
-  set RP=PortletKemperWidgets
-  set ARTNM=KemperWidgetsPortlet
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniWidgetsPortlet.txt          	(
+::----------------------------- PortletuniWidgets -----------------------------::
+  set LC=PortletuniWidgets
+  set RP=PortletuniWidgets
+  set ARTNM=uniWidgetsPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperVIN.txt          	(
-::----------------------------- PortletKemperVIN -----------------------------::
-  set LC=PortletKemperVIN
-  set RP=PortletKemperVIN
-  set ARTNM=PortletKemperVIN
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletuniVIN.txt          	(
+::----------------------------- PortletuniVIN -----------------------------::
+  set LC=PortletuniVIN
+  set RP=PortletuniVIN
+  set ARTNM=PortletuniVIN
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperVINv2.txt          	(
-::----------------------------- PortletKemperVINv2 -----------------------------::
-  set LC=PortletKemperVINv2
-  set RP=PortletKemperVINv2
-  set ARTNM=PortletKemperVINv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletuniVINv2.txt          	(
+::----------------------------- PortletuniVINv2 -----------------------------::
+  set LC=PortletuniVINv2
+  set RP=PortletuniVINv2
+  set ARTNM=PortletuniVINv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com 
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com 
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperVINv2-MK.txt          	(
-::----------------------------- PortletKemperVINv2-MK -----------------------------::
-  set LC=PortletKemperVINv2-MK
-  set RP=PortletKemperVINv2-MK
-  set ARTNM=PortletKemperVINv2-MK
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletuniVINv2-MK.txt          	(
+::----------------------------- PortletuniVINv2-MK -----------------------------::
+  set LC=PortletuniVINv2-MK
+  set RP=PortletuniVINv2-MK
+  set ARTNM=PortletuniVINv2-MK
   set TYPE=zip
-  set MAIL=KSGECommerceAnalytics@kemper.com 
+  set MAIL=KSGECommerceAnalytics@uni.com 
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\LocationPortFaces.txt          	(
 ::----------------------------- PortletLocationFaces -----------------------------::
@@ -472,7 +472,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletLocationFaces
   set ARTNM=LocationPortFaces
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\LocationPortFacesv2.txt          	(
 ::----------------------------- PortletLocationv2 -----------------------------::
@@ -480,7 +480,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletLocationv2
   set ARTNM=LocationPortFacesv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PaymentsPortlet.txt          	(
 ::----------------------------- PortletPayments -----------------------------::
@@ -488,7 +488,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletPayments
   set ARTNM=PaymentsPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\QuotingPortlet.txt          	(
 ::----------------------------- PortletQuoting -----------------------------::
@@ -496,7 +496,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletQuoting
   set ARTNM=QuotingPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ReportClaimPortlet.txt          	(
 ::----------------------------- PortletReportClaim -----------------------------::
@@ -504,7 +504,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletReportClaim
   set ARTNM=ReportClaimPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PersonalizedLinkPortlet.txt            	(
 ::----------------------------- PortletUSGEmployeeHome -----------------------------::
@@ -512,7 +512,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletUSGEmployeeHome
   set ARTNM=PersonalizedLinkPortlet
   set TYPE=zip
-  set MAIL=usgenterprisesharedservices@unitrin.com
+  set MAIL=usgenterprisesharedservices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletWATTools.txt            	(
 ::----------------------------- PortletWATTools -----------------------------::
@@ -520,7 +520,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletWATTools
   set ARTNM=PortletWATTools
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletWCMSupportTool7.txt            	(
 ::----------------------------- PortletWCMSupportTool7 -----------------------------::
@@ -528,15 +528,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletWCMSupportTool7
   set ARTNM=PortletWCMSupportTool7
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperStockTicker.txt            	(
-::----------------------------- PortletKemperStockTicker -----------------------------::
-  set LC=PortletKemperStockTicker
-  set RP=PortletKemperStockTicker
-  set ARTNM=KemperStockTicker
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniStockTicker.txt            	(
+::----------------------------- PortletuniStockTicker -----------------------------::
+  set LC=PortletuniStockTicker
+  set RP=PortletuniStockTicker
+  set ARTNM=uniStockTicker
   set TYPE=ear
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
 ) else if exist J:\SCMtools\Scripts\Deploy\VER\ConsumerPolicyQuery.txt            	(
 ::----------------------------- ConsumerPolicyQuery -----------------------------::
@@ -544,7 +544,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ConsumerPolicyQuery
   set ARTNM=ConsumerPolicyQuery
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\IDMServicePortlets.txt          	(
 ::----------------------------- PortletIDMServices -----------------------------::
@@ -552,7 +552,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletIDMServices
   set ARTNM=IDMServicePortlets
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\KSGLinksPortlet.txt          	(
 ::----------------------------- PortletCLPLinks -----------------------------::
@@ -560,7 +560,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletCLPLinks
   set ARTNM=KSGLinksPortlet
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemes.txt          	(
 ::----------------------------- PortalThemes -----------------------------::
@@ -568,15 +568,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalThemes
   set ARTNM=PortalThemes
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperCorporate.txt          	(
-::----------------------------- PortalThemeKemperCorporate -----------------------------::
-  set LC=PortalThemeKemperCorporate
-  set RP=PortalThemeKemperCorporate
-  set ARTNM=PortalThemeKemperCorporate
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeuniCorporate.txt          	(
+::----------------------------- PortalThemeuniCorporate -----------------------------::
+  set LC=PortalThemeuniCorporate
+  set RP=PortalThemeuniCorporate
+  set ARTNM=PortalThemeuniCorporate
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeCorporateEmployee.txt          	(
 ::----------------------------- PortalThemeCorporateEmployee -----------------------------::
@@ -584,39 +584,39 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalThemeCorporateEmployee
   set ARTNM=PortalThemeCorporateEmployee
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperAgent.txt          	(
-::----------------------------- PortalThemeKemperAgent -----------------------------::
-  set LC=PortalThemeKemperAgent
-  set RP=PortalThemeKemperAgent
-  set ARTNM=PortalThemeKemperAgent
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeuniAgent.txt          	(
+::----------------------------- PortalThemeuniAgent -----------------------------::
+  set LC=PortalThemeuniAgent
+  set RP=PortalThemeuniAgent
+  set ARTNM=PortalThemeuniAgent
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperAgentv2.txt          	(
-::----------------------------- PortalThemeKemperAgentv2 -----------------------------::
-  set LC=PortalThemeKemperAgentv2
-  set RP=PortalThemeKemperAgentv2
-  set ARTNM=PortalThemeKemperAgentv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeuniAgentv2.txt          	(
+::----------------------------- PortalThemeuniAgentv2 -----------------------------::
+  set LC=PortalThemeuniAgentv2
+  set RP=PortalThemeuniAgentv2
+  set ARTNM=PortalThemeuniAgentv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperCustomer.txt          	(
-::----------------------------- PortalThemeKemperCustomer -----------------------------::
-  set LC=PortalThemeKemperCustomer
-  set RP=PortalThemeKemperCustomer
-  set ARTNM=PortalThemeKemperCustomer
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeuniCustomer.txt          	(
+::----------------------------- PortalThemeuniCustomer -----------------------------::
+  set LC=PortalThemeuniCustomer
+  set RP=PortalThemeuniCustomer
+  set ARTNM=PortalThemeuniCustomer
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeKemperEmployee.txt          	(
-::----------------------------- PortalThemeKemperEmployee -----------------------------::
-  set LC=PortalThemeKemperEmployee
-  set RP=PortalThemeKemperEmployee
-  set ARTNM=PortalThemeKemperEmployee
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalThemeuniEmployee.txt          	(
+::----------------------------- PortalThemeuniEmployee -----------------------------::
+  set LC=PortalThemeuniEmployee
+  set RP=PortalThemeuniEmployee
+  set ARTNM=PortalThemeuniEmployee
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\HomePlateTheme.txt          	(
 ::----------------------------- PortalThemeHomePlate -----------------------------::
@@ -624,31 +624,31 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalThemeHomePlate
   set ARTNM=HomePlateTheme
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalPagesKemperAgentv2.txt          	(
-::----------------------------- PortalPagesKemper -----------------------------::
-  set LC=PortalPagesKemperAgentv2
-  set RP=PortalPagesKemperAgentv2
-  set ARTNM=PortalPagesKemperAgentv2
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortalPagesuniAgentv2.txt          	(
+::----------------------------- PortalPagesuni -----------------------------::
+  set LC=PortalPagesuniAgentv2
+  set RP=PortalPagesuniAgentv2
+  set ARTNM=PortalPagesuniAgentv2
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExportedKemperPages.txt          	(
-::----------------------------- PortalPagesKemper -----------------------------::
-  set LC=PortalPagesKemper
-  set RP=PortalPagesKemper
-  set ARTNM=ExportedKemperPages
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExporteduniPages.txt          	(
+::----------------------------- PortalPagesuni -----------------------------::
+  set LC=PortalPagesuni
+  set RP=PortalPagesuni
+  set ARTNM=ExporteduniPages
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExportedKemperPreferredPages.txt          	(
-::----------------------------- PortalPagesKemperPreferred -----------------------------::
-  set LC=PortalPagesKemperPreferred
-  set RP=PortalPagesKemperPreferred
-  set ARTNM=ExportedKemperPreferredPages
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExporteduniPreferredPages.txt          	(
+::----------------------------- PortalPagesuniPreferred -----------------------------::
+  set LC=PortalPagesuniPreferred
+  set RP=PortalPagesuniPreferred
+  set ARTNM=ExporteduniPreferredPages
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\webClippingv2.txt          	(
 ::----------------------------- PortletWebClippingsv2 -----------------------------::
@@ -656,15 +656,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortletWebClippingsv2
   set ARTNM=webClippingv2
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletKemperBilling.txt            	(
-::----------------------------- PortletKemperBilling -----------------------------::
-  set LC=PortletKemperBilling
-  set RP=PortletKemperBilling
-  set ARTNM=PortletKemperBilling
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\PortletuniBilling.txt            	(
+::----------------------------- PortletuniBilling -----------------------------::
+  set LC=PortletuniBilling
+  set RP=PortletuniBilling
+  set ARTNM=PortletuniBilling
   set TYPE=zip
-  set MAIL=KemperOutsourcingExceedTeam@kemper.com
+  set MAIL=uniOutsourcingExceedTeam@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortalRESTApp.txt            	(
 ::----------------------------- PortalRESTUserActivity-LT-----------------------------::
@@ -672,7 +672,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalRESTUserActivity
   set ARTNM=UserActivityPortalRESTApp
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortalRESTApp7.txt            	(
 ::----------------------------- PortalRESTUserActivity -----------------------------::
@@ -680,7 +680,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalRESTUserActivity
   set ARTNM=UserActivityPortalRESTApp7
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\RESTWCMContentPortalService.txt            	(
 ::----------------------------- PortalServiceRESTWCMContent -----------------------------::
@@ -688,7 +688,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalServiceRESTWCMContent
   set ARTNM=RESTWCMContentPortalService
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityPortalRESTAppv2.txt            	(
 ::----------------------------- PortalRESTUserActivity -----------------------------::
@@ -696,7 +696,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PortalRESTUserActivity
   set ARTNM=UserActivityPortalRESTAppv2
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\claiminquiry.txt            	(
 ::----------------------------- Claims-Inquiry -----------------------------::
@@ -704,7 +704,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Claims-Inquiry
   set ARTNM=claiminquiry
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com;USGISClaimProdSupport@kemper.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com;USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimsService.txt           	(
 ::----------------------------- ClaimsService -----------------------------::
@@ -712,7 +712,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ClaimsService
   set ARTNM=ClaimsService
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContentMgmt.txt             	(
 ::----------------------------- ContentMGTService -----------------------------::
@@ -720,7 +720,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ContentMGTService
   set ARTNM=ContentMgmt
   set TYPE=ear
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\LoadValidatorBatch.txt             	(
 ::----------------------------- USG-CM-LoadValidatorBatch -----------------------------::
@@ -728,7 +728,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-CM-LoadValidatorBatch
   set ARTNM=LoadValidatorBatch
   set TYPE=jar
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CMWebiSSO.txt             	(
 ::----------------------------- USG-CM-WEBI-SSO -----------------------------::
@@ -736,7 +736,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-CM-WEBI-SSO
   set ARTNM=CMWebiSSO
   set TYPE=ear
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EDIService.txt            	(
 ::----------------------------- EDIService -----------------------------::
@@ -744,23 +744,23 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EDIService
   set ARTNM=EDIService
   set TYPE=ear
-  set MAIL=ksgitpolicy&financialservices@kemper.com
+  set MAIL=ksgitpolicy&financialservices@uni.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperBillingWebApp.txt            	(
-::----------------------------- KemperBillingWeb -----------------------------::
-  set LC=KemperBillingWeb
-  set RP=KemperBillingWeb
-  set ARTNM=KemperBillingWebApp
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniBillingWebApp.txt            	(
+::----------------------------- uniBillingWeb -----------------------------::
+  set LC=uniBillingWeb
+  set RP=uniBillingWeb
+  set ARTNM=uniBillingWebApp
   set TYPE=ear
-  set MAIL=USGITDigitalExperience@kemper.com
+  set MAIL=USGITDigitalExperience@uni.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ekempercontent.txt          	(
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\eunicontent.txt          	(
 ::----------------------------- Customer-Web -----------------------------::
   set LC=Customer-Web
   set RP=Customer-Web
-  set ARTNM=ekempercontent
+  set ARTNM=eunicontent
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\customer_ear.txt            	(
 ::----------------------------- CustomerWeb -----------------------------::
@@ -768,7 +768,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerWeb
   set ARTNM=customer_ear
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CWNotices.txt            	(
 ::----------------------------- CustomerWeb-Batch -----------------------------::
@@ -776,7 +776,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerWeb-Batch
   set ARTNM=CWNotices
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DataRetentionknp.txt            	(
 ::----------------------------- KNPDataRetention-Batch -----------------------------::
@@ -784,7 +784,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=KNPDataRetention-Batch
   set ARTNM=DataRetentionknp
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DataRetentionCustomer.txt            	(
 ::----------------------------- CustomerDataRetention-Batch -----------------------------::
@@ -792,7 +792,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerDataRetention-Batch
   set ARTNM=DataRetentionCustomer
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\customeronlinequoting.txt   	(
 ::----------------------------- CustomerOnlineQuoting -----------------------------::
@@ -800,7 +800,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerOnlineQuoting
   set ARTNM=customeronlinequoting
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Disbursement.txt            	(
 ::----------------------------- USG-Disbursement-Service -----------------------------::
@@ -808,7 +808,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-Disbursement-Service
   set ARTNM=Disbursement
   set TYPE=ear
-  set MAIL=USGISServiceDisbursement@unitrin.com
+  set MAIL=USGISServiceDisbursement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DMVCC.txt                   	(
 ::----------------------------- DMVCovConf -----------------------------::
@@ -816,7 +816,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=DMV-Coverage-Confirmation
   set ARTNM=DMVCC
   set TYPE=ear
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EventJournal.txt            	(
 ::----------------------------- Event-Journal -----------------------------::
@@ -824,7 +824,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EventJournal
   set ARTNM=EventJournal
   set TYPE=ear
-  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=USGISServiceEventJournal@unit.com;KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EventJournalOnetime.txt            	(
 ::----------------------------- Event-Journal Onetime -----------------------------::
@@ -832,7 +832,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EventJournalOnetime
   set ARTNM=EventJournalOnetime
   set TYPE=jar
-  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=USGISServiceEventJournal@unit.com;KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsLibraryApp.txt         	(
 ::----------------------------- Forms-Library -----------------------------::
@@ -840,7 +840,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Forms-Library
   set ARTNM=FormsLibraryApp
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimCenter-V2.txt             	(
 ::----------------------------- GW-Claim-Center-V2 -----------------------------::
@@ -848,7 +848,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-Claim-Center-V2
   set ARTNM=ClaimCenter-V2
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContactManager.txt             	(
 ::----------------------------- GW-ContactManager -----------------------------::
@@ -856,7 +856,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-ContactManager
   set ARTNM=ContactManager
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimCenter.txt             	(
 ::----------------------------- GWClaim-Center -----------------------------::
@@ -864,7 +864,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-Claim-Center
   set ARTNM=ClaimCenter
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\SafeliteClaimsGlass.txt             	(
 ::----------------------------- GW-SafeliteClaimsGlass-Batch -----------------------------::
@@ -872,7 +872,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-SafeliteClaimsGlass-Batch
   set ARTNM=SafeliteClaimsGlass
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ContactCenter.txt           	(
 ::----------------------------- GWContactCenter ----------------------------::
@@ -880,7 +880,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-ContactCenter
   set ARTNM=ContactCenter
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\HODWeb.txt                  	(
 ::----------------------------- HOD -----------------------------::
@@ -888,7 +888,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=HOD
   set ARTNM=HODWeb
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PymtSvc.txt              	(
 ::----------------------------- KBSPayment -----------------------------::
@@ -896,7 +896,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=KBS
   set ARTNM=PymtSvc
   set TYPE=ear
-  set MAIL=KAHITKBSUnit@eKemper.com;ksgenterpriseservicesitoperations@kemper.com
+  set MAIL=KAHITKBSUnit@euni.com;ksgenterpriseservicesitoperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\KbsWfeEAR.txt               	(
 ::----------------------------- KBSWFE -----------------------------::
@@ -904,7 +904,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=KBS
   set ARTNM=KbsWfeEAR
   set TYPE=ear
-  set MAIL=KAHITKBSUnit@eKemper.com;ksgenterpriseservicesitoperations@kemper.com
+  set MAIL=KAHITKBSUnit@euni.com;ksgenterpriseservicesitoperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasBilling.txt               	(
 ::----------------------------- ThomasBilling -----------------------------::
@@ -912,23 +912,23 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ThomasBilling
   set ARTNM=ThomasBilling
   set TYPE=ear
-  set MAIL=USGFormsServices@kemper.com;ksgenterpriseservicesitoperations@kemper.com
+  set MAIL=USGFormsServices@uni.com;ksgenterpriseservicesitoperations@uni.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperIDM.txt               	(
-::----------------------------- Kemper-IDM -----------------------------::
-  set LC=Kemper-IDM
-  set RP=Kemper-IDM
-  set ARTNM=KemperIDM
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniIDM.txt               	(
+::----------------------------- uni-IDM -----------------------------::
+  set LC=uni-IDM
+  set RP=uni-IDM
+  set ARTNM=uniIDM
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperIDMPublic.txt         	(
-::----------------------------- Kemper-IDMPublic -----------------------------::
-  set LC=Kemper-IDM
-  set RP=Kemper-IDM
-  set ARTNM=KemperIDMPublic
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniIDMPublic.txt         	(
+::----------------------------- uni-IDMPublic -----------------------------::
+  set LC=uni-IDM
+  set RP=uni-IDM
+  set ARTNM=uniIDMPublic
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DocWSEAR.txt                	(
 ::----------------------------- ODWEK-Docs -----------------------------::
@@ -936,7 +936,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ODWEK-Docs
   set ARTNM=DocWSEAR
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Acord.txt                 	(
 ::----------------------------- RPW-Acord-Forms-V2 -----------------------------::
@@ -944,7 +944,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=RPW-Acord-Forms-V2
   set ARTNM=Acord
   set TYPE=zip
-  set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITEAS-AgencyInterface@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+  set MAIL=KAHITRPWTeam@unit.com;KAHITRPWProdSupport@unit.com;KAHITEAS-AgencyInterface@unit.com;KAHITPolicyAutoServicesTeam@unit.com;KAHITPolicyHomeServicesTeam@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\RpwBatchZIP.txt                 	(
 ::----------------------------- RPW6-Batch -----------------------------::
@@ -952,7 +952,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=RPW6-Batch
   set ARTNM=RpwBatchZIP
   set TYPE=zip
-  set MAIL=KAHITRPWTeam@unitrin.com;KAHITRPWProdSupport@unitrin.com;KAHITEAS-AgencyInterface@unitrin.com;KAHITPolicyAutoServicesTeam@unitrin.com;KAHITPolicyHomeServicesTeam@unitrin.com
+  set MAIL=KAHITRPWTeam@unit.com;KAHITRPWProdSupport@unit.com;KAHITEAS-AgencyInterface@unit.com;KAHITPolicyAutoServicesTeam@unit.com;KAHITPolicyHomeServicesTeam@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerSynchBatch.txt                 	(
 ::----------------------------- ProducerSynch-Batch -----::
@@ -960,7 +960,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ProducerSync-Batch
   set ARTNM=ProducerSynchBatch
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com;
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com;
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EnterpriseImages.txt                 	(
 ::----------------------------- EnterpriseImages -----::
@@ -968,7 +968,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EnterpriseImages
   set ARTNM=EnterpriseImages
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\IDMBatch.txt                 	(
 ::----------------------------- IDMBatch ---------::
@@ -976,7 +976,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=IDMBatch
   set ARTNM=IDMBatch
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGBillingMastTrigs.txt                 	(
 ::----------------------------- USG-Billing-MastTrigs-V2 -----::
@@ -984,7 +984,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-Billing-MastTrigs-V2
   set ARTNM=USGBillingMastTrigs
   set TYPE=zip
-  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  set MAIL=KSGEnterpriseServicesITOperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGBillingRoboFTP.txt                 	(
 ::----------------------------- USG-Billing-RoboFTP-V2 -----::
@@ -992,7 +992,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-Billing-RoboFTP-V2
   set ARTNM=USGBillingRoboFTP
   set TYPE=zip
-  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  set MAIL=KSGEnterpriseServicesITOperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGPolSSRoboFTP.txt                 	(
 ::----------------------------- USG-PolSS-RoboFTP-V2 -----::
@@ -1000,7 +1000,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-PolSS-RoboFTP-V2
   set ARTNM=USGPolSSRoboFTP
   set TYPE=zip
-  set MAIL=KSGEnterpriseServicesITOperations@kemper.com
+  set MAIL=KSGEnterpriseServicesITOperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EWS-RoboFTPBatch.txt                 	(
 ::----------------------------- EWS-RoboFTPBatch -----::
@@ -1008,7 +1008,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EWS-RoboFTPBatch
   set ARTNM=EWS-RoboFTPBatch
   set TYPE=zip
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGGatewayEAR.txt           	(
 ::----------------------------- USGGateway -----------------------------::
@@ -1016,7 +1016,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USGGateway
   set ARTNM=USGGatewayEAR
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageSequencer.txt           	(
 ::----------------------------- MessageSequencer -----------------------------::
@@ -1024,7 +1024,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=MessageSequencer
   set ARTNM=MessageSequencer
   set TYPE=ear
-  set MAIL=USGITPERSInfrastructure@unitrin.com
+  set MAIL=USGITPERSInfrastructure@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\XAGApp.txt                  	(
 ::----------------------------- XAGApp -----------------------------::
@@ -1032,7 +1032,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=XAGApp
   set ARTNM=XAGApp
   set TYPE=ear
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EBillGateway.txt            	(
 ::----------------------------- EBillGateway -----------------------------::
@@ -1040,7 +1040,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EBillGateway
   set ARTNM=EBillGateway
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\XAGBridgingApp.txt          	(
 ::----------------------------- XAGBridge -----------------------------::
@@ -1048,7 +1048,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=XAG-Bridge
   set ARTNM=XAGBridgingApp
   set TYPE=ear
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsService.txt          	(
 ::----------------------------- USGFormsService -----------------------------::
@@ -1056,7 +1056,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USGFormsService
   set ARTNM=FormsService
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Payment.txt          	(
 ::----------------------------- USG-Payment-Service -----------------------------::
@@ -1064,7 +1064,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-Payment-Service
   set ARTNM=Payment
   set TYPE=ear
-  set MAIL=USGISServicePayment@unitrin.com
+  set MAIL=USGISServicePayment@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\KSGEntFee.txt          	(
 ::----------------------------- KSG-Fee-Service -----------------------------::
@@ -1072,7 +1072,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=KSG-Fee-Service
   set ARTNM=KSGEntFee
   set TYPE=ear
-  set MAIL=USGISServiceFee@unitrin.com
+  set MAIL=USGISServiceFee@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGProducerService.txt          	(
 ::----------------------------- ProducerCallidus -----------------------------::
@@ -1080,7 +1080,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ProducerCallidus
   set ARTNM=USGProducerService
   set TYPE=ear
-  set MAIL=USGEnterpriseProducerServices@unitrin.com
+  set MAIL=USGEnterpriseProducerServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GWCallback.txt          	(
 ::----------------------------- GW-Callback-Service -----------------------------::
@@ -1088,7 +1088,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-Callback-Service
   set ARTNM=GWCallback
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageManager.txt          	(
 ::----------------------------- USGMessageManager -----------------------------::
@@ -1096,7 +1096,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USGMessageManager
   set ARTNM=MessageManager
   set TYPE=ear
-  set MAIL=USGITPERSInfrastructure@unitrin.com
+  set MAIL=USGITPERSInfrastructure@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsServiceTHUtils.txt          	(
 ::----------------------------- USGFormsServiceBatch -----------------------------::
@@ -1104,31 +1104,31 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FormsServiceTHUtils
   set ARTNM=FormsServiceTHUtils
   set TYPE=zip
-  set MAIL=USGITPolicySharedServices@unitrin.com;USGITFormServiceCore@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com;USGITFormServiceCore@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasKemperPolicy.txt          	(
-::----------------------------- FS-ThomasKemperPolicy -----------------------------::
-  set LC=FS-ThomasKemperPolicy
-  set RP=FS-ThomasKemperPolicy
-  set ARTNM=ThomasKemperPolicy
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasuniPolicy.txt          	(
+::----------------------------- FS-ThomasuniPolicy -----------------------------::
+  set LC=FS-ThomasuniPolicy
+  set RP=FS-ThomasuniPolicy
+  set ARTNM=ThomasuniPolicy
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com;USGITFormServiceCore@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com;USGITFormServiceCore@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasKemperBilling.txt          	(
-::----------------------------- FS-ThomasKemperBilling -----------------------------::
-  set LC=FS-ThomasKemperBilling
-  set RP=FS-ThomasKemperBilling
-  set ARTNM=ThomasKemperBilling
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasuniBilling.txt          	(
+::----------------------------- FS-ThomasuniBilling -----------------------------::
+  set LC=FS-ThomasuniBilling
+  set RP=FS-ThomasuniBilling
+  set ARTNM=ThomasuniBilling
   set TYPE=ear
-  set MAIL=KSGFormsandAutomatedControls@unitrin.com
+  set MAIL=KSGFormsandAutomatedControls@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasKemperClaims.txt          	(
-::----------------------------- Thomas-KemperClaims -----------------------------::
-  set LC=Thomas-KemperClaims
-  set RP=Thomas-KemperClaims
-  set ARTNM=ThomasKemperClaims
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasuniClaims.txt          	(
+::----------------------------- Thomas-uniClaims -----------------------------::
+  set LC=Thomas-uniClaims
+  set RP=Thomas-uniClaims
+  set ARTNM=ThomasuniClaims
   set TYPE=ear
-  set MAIL=usgformsservices@unitrin.com;USGITClaimDevSupport@unitrin.com;USGISClaimProdSupport@kemper.com;usgisclaimdevelopers@kemper.com
+  set MAIL=usgformsservices@unit.com;USGITClaimDevSupport@unit.com;USGISClaimProdSupport@uni.com;usgisclaimdevelopers@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasSpecialtyPolicy.txt          	(
 ::----------------------------- ThomasSpecialtyPolicy -----------------------------::
@@ -1136,7 +1136,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ThomasSpecialtyPolicy
   set ARTNM=ThomasSpecialtyPolicy
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ThomasSpecialtyBilling.txt          	(
 ::----------------------------- ThomasSpecialtyBilling -----------------------------::
@@ -1144,7 +1144,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ThomasSpecialtyBilling
   set ARTNM=ThomasSpecialtyBilling
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniFormsMaster.txt          	(
 ::----------------------------- UniFormsMaster -----------------------------::
@@ -1152,7 +1152,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=UniFormsMaster
   set ARTNM=UniFormsMaster
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniformsCorrespondence.txt          	(
 ::----------------------------- UniformsCorrespondence -----------------------------::
@@ -1160,7 +1160,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=UniformsCorrespondence
   set ARTNM=UniformsCorrespondence
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com;USGITClaimDevSupport@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com;USGITClaimDevSupport@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniformsTracking.txt          	(
 ::----------------------------- UniformsTracking -----------------------------::
@@ -1168,7 +1168,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FS-UniFormsTracking
   set ARTNM=UniFormsTracking
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com;USGITFormServiceCore@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com;USGITFormServiceCore@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniformsCorrespondenceBatch.txt          	(
 ::----------------------------- UniformsCorrespondenceBatch -----------------------------::
@@ -1176,7 +1176,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=UniformsCorrespondenceBatch
   set ARTNM=UniformsCorrespondenceBatch
   set TYPE=zip
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsTracking.txt          	(
 ::----------------------------- FormsTracking -----------------------------::
@@ -1184,7 +1184,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FormsTracking
   set ARTNM=FormsTracking
   set TYPE=ear
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\BookSmart.txt          	(
 ::----------------------------- BookSmart -----------------------------::
@@ -1192,7 +1192,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=BookSmart
   set ARTNM=BookSmart
   set TYPE=war
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PersWebService.txt          	(
 ::----------------------------- PersWebService -----------------------------::
@@ -1200,7 +1200,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PersWebService
   set ARTNM=PersWebService
   set TYPE=ear
-  set MAIL=USGFormsServices@kemper.com
+  set MAIL=USGFormsServices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FormsWebService.txt          	(
 ::----------------------------- FormsWebService -----------------------------::
@@ -1208,7 +1208,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FormsWebService
   set ARTNM=FormsWebService
   set TYPE=ear
-  set MAIL=USGFormsServices@kemper.com
+  set MAIL=USGFormsServices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ResourceCategoryServletClient.txt          	(
 ::----------------------------- FormsResourceCategoryReload-Batch -----------------------------::
@@ -1216,7 +1216,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FormsResourceCategoryReload-Batch
   set ARTNM=ResourceCategoryServletClient
   set TYPE=zip
-  set MAIL=USGFormsServices@kemper.com
+  set MAIL=USGFormsServices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerBatch.txt          	(
 ::----------------------------- ProducerBatch -----------------------------::
@@ -1224,7 +1224,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ProducerBatch
   set ARTNM=ProducerBatch
   set TYPE=zip
-  set MAIL=ksgitpolicy&financialservices@kemper.com
+  set MAIL=ksgitpolicy&financialservices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EDIBatch.txt          	(
 ::----------------------------- EDIBatch -----------------------------::
@@ -1232,7 +1232,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EDIBatch
   set ARTNM=EDIBatch
   set TYPE=zip
-  set MAIL=ksgitpolicy&financialservices@kemper.com
+  set MAIL=ksgitpolicy&financialservices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\MALPOR.txt          	(
 ::----------------------------- MLOnramp -----------------------------::
@@ -1240,7 +1240,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=MLOnramp
   set ARTNM=MALPOR
   set TYPE=zip
-  set MAIL=ksgitpolicy&financialservices@kemper.com
+  set MAIL=ksgitpolicy&financialservices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\IncentivePaymentBatch.txt          	(
 ::----------------------------- IncentivePaymentBatch -----------------------------::
@@ -1248,7 +1248,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=IncentivePaymentBatch
   set ARTNM=IncentivePaymentBatch
   set TYPE=zip
-  set MAIL=USGFormsServices@kemper.com
+  set MAIL=USGFormsServices@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgencyConnect.txt          	(
 ::----------------------------- AgencyConnect -----------------------------::
@@ -1256,7 +1256,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=BookSmart
   set ARTNM=AgencyConnect
   set TYPE=war
-  set MAIL=KAHITEAIDeploys@unitrin.com
+  set MAIL=KAHITEAIDeploys@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ABImport.txt          	(
 ::----------------------------- ABImport -----------------------------::
@@ -1264,7 +1264,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ABImport
   set ARTNM=ABImport
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CoverageConfirmation.txt          	(
 ::----------------------------- CoverageConfirmation -----------------------------::
@@ -1272,7 +1272,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Claims-Batch
   set ARTNM=CoverageConfirmation
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\StatBatch.txt          	(
 ::----------------------------- StatEdits -----------------------------::
@@ -1280,7 +1280,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=StatEdits
   set ARTNM=StatBatch
   set TYPE=zip
-  set MAIL=KAHITStatTeam@eKemper.com;KAHHarvestStatEdits@eKemper.com
+  set MAIL=KAHITStatTeam@euni.com;KAHHarvestStatEdits@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\StatBatchXMLSplitter.txt          	(
 ::----------------------------- StatBatchXMLSplitter -----------------------------::
@@ -1288,7 +1288,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Stat-Edits
   set ARTNM=StatBatchXMLSplitter
   set TYPE=zip
-  set MAIL=KAHITStatTeam@eKemper.com;KAHHarvestStatEdits@eKemper.com
+  set MAIL=KAHITStatTeam@euni.com;KAHHarvestStatEdits@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGBillingBatch.txt          	(
 ::----------------------------- USGBillingBatch -----------------------------::
@@ -1296,7 +1296,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USGBillingBatch
   set ARTNM=USGBillingBatch
   set TYPE=zip
-  set MAIL=USGISServicePayment@unitrin.com
+  set MAIL=USGISServicePayment@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\POMBatch.txt            	(
 ::----------------------------- PeaceOfMind-Batch -----------------------------::
@@ -1304,7 +1304,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PeaceOfMind-Batch
   set ARTNM=POMBatch
   set TYPE=zip
-  set MAIL=USGISServiceLocation@unitrin.com
+  set MAIL=USGISServiceLocation@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\KbsBatchZIP.txt          	(
 ::----------------------------- KBSBatch -----------------------------::
@@ -1312,7 +1312,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=KBS-Batch
   set ARTNM=KbsBatchZIP
   set TYPE=zip
-  set MAIL=USGISServiceDisbursement@kemper.com
+  set MAIL=USGISServiceDisbursement@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FinanceRoboFTPV2.txt          	(
 ::----------------------------- FinanceRoboFTPV2 -----------------------------::
@@ -1320,7 +1320,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FinanceRoboFTPV2
   set ARTNM=FinanceRoboFTPV2
   set TYPE=zip
-  set MAIL=USGISServiceDisbursement@kemper.com;KAHITCEDAS@kemper.com
+  set MAIL=USGISServiceDisbursement@uni.com;KAHITCEDAS@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\StatRoboFTPV2.txt          	(
 ::----------------------------- StatRoboFTPV2 -----------------------------::
@@ -1328,7 +1328,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=StatRoboFTPV2
   set ARTNM=StatRoboFTPV2
   set TYPE=zip
-  set MAIL=USGISServiceDisbursement@kemper.com;KAHITCEDAS@kemper.com
+  set MAIL=USGISServiceDisbursement@uni.com;KAHITCEDAS@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\KBS-Batch-RoboFTP.txt          	(
 ::----------------------------- KBS-Batch-RoboFTP -----------------------------::
@@ -1336,7 +1336,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=KBS-Batch-RoboFTP
   set ARTNM=KBS-Batch-RoboFTP
   set TYPE=zip
-  set MAIL=USGISServiceDisbursement@kemper.com
+  set MAIL=USGISServiceDisbursement@uni.com
   goto build
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PolicyRoboFTP.txt          	(
@@ -1345,7 +1345,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Policy-RoboFTP
   set ARTNM=PolicyRoboFTP
   set TYPE=zip
-  set MAIL=KAHPolicyProdSupport@kemper.com
+  set MAIL=KAHPolicyProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DisbursementJavaBatch.txt          	(
 ::----------------------------- USG-DisbServiceJavaBatch -----------------------------::
@@ -1353,7 +1353,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-DisbServiceJavaBatch
   set ARTNM=DisbursementJavaBatch
   set TYPE=zip
-  set MAIL=USGISServiceDisbursement@unitrin.com
+  set MAIL=USGISServiceDisbursement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Control-M.txt            	(
 ::----------------------------- Control-M -----------------------------::
@@ -1361,7 +1361,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Control-M
   set ARTNM=Control-M
   set TYPE=zip
-  set MAIL=usgittecharch@kemper.com
+  set MAIL=usgittecharch@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\VINService.txt            	(
 ::----------------------------- VINService.aar -----------------------------::
@@ -1369,7 +1369,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=VINService
   set ARTNM=VINService
   set TYPE=aar
-  set MAIL=USGISServiceVIN@unitrin.com;KAHPolicyProdSupport@eKemper.com
+  set MAIL=USGISServiceVIN@unit.com;KAHPolicyProdSupport@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\HLDIapp.txt            	(
 ::----------------------------- HLDIapp.war -----------------------------::
@@ -1377,7 +1377,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=VINService
   set ARTNM=HLDIapp
   set TYPE=war
-  set MAIL=USGISServiceVIN@unitrin.com;KAHPolicyProdSupport@eKemper.com
+  set MAIL=USGISServiceVIN@unit.com;KAHPolicyProdSupport@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AuditsControl.txt            	(
 ::----------------------------- AuditsAndControls -----------------------------::
@@ -1385,7 +1385,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AuditsAndControls
   set ARTNM=AuditsControl
   set TYPE=ear
-  set MAIL=USGITPERSInfrastructure@unitrin.com
+  set MAIL=USGITPERSInfrastructure@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AuditsControlsBatch.txt            	(
 ::----------------------------- AuditsandControlsBatch -----------------------------::
@@ -1393,7 +1393,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=AuditsandControlsBatch
   set ARTNM=AuditsControlsBatch
   set TYPE=zip
-  set MAIL=USGITPERSInfrastructure@unitrin.com
+  set MAIL=USGITPERSInfrastructure@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-CMS.txt          	(
 ::----------------------------- GW-CMS-Batch -----------------------------::
@@ -1401,7 +1401,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-CMS-Batch
   set ARTNM=GW-CMS
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-PCN.txt          	(
 ::----------------------------- GW-PCN-Batch -----------------------------::
@@ -1409,7 +1409,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-PCN-Batch
   set ARTNM=GW-PCN
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UWReferrals.txt          	(
 ::----------------------------- GW-UWReferrals-Batch -----------------------------::
@@ -1417,7 +1417,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-UWReferrals-Batch
   set ARTNM=UWReferrals
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\NYNoFault.txt          	(
 ::----------------------------- GW-NYNoFault-Batch -----------------------------::
@@ -1425,7 +1425,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-NYNoFault-Batch
   set ARTNM=NYNoFault
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-RENTAL.txt          	(
 ::----------------------------- GW-RENTAL-BATCH -----------------------------::
@@ -1433,7 +1433,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-RENTAL-BATCH
   set ARTNM=GW-RENTAL
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-SNAPSHOT.txt          	(
 ::----------------------------- GW-SNAPSHOT-BATCH -----------------------------::
@@ -1441,7 +1441,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-SNAPSHOT-BATCH
   set ARTNM=GW-SNAPSHOT
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-AVAYAFNOL.txt          	(
 ::----------------------------- GW-AVAYAFNOL-BATCH -----------------------------::
@@ -1449,7 +1449,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-AVAYAFNOL-BATCH
   set ARTNM=GW-AVAYAFNOL
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GW-MBR.txt          	(
 ::----------------------------- GW-Callback-Service -----------------------------::
@@ -1457,7 +1457,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-MBR-Batch
   set ARTNM=GW-MBR
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@kemper.com
+  set MAIL=USGISClaimProdSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsuranceNotifyRobo.txt          	(
 ::----------------------------- USG-InsuranceNotification-RoboFTP -----------------------------::
@@ -1465,7 +1465,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-InsuranceNotification-RoboFTP
   set ARTNM=InsuranceNotifyRobo
   set TYPE=zip
-  set MAIL=USGDMV@unitrin.com
+  set MAIL=USGDMV@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\SimpleBatch.txt           	(
 ::----------------------------- SimpleBatch -----------------------------::
@@ -1473,7 +1473,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=SimpleBatch
   set ARTNM=SimpleBatch
   set TYPE=zip
-  set MAIL=USGITEnterpriseArchitecture@kemper.com
+  set MAIL=USGITEnterpriseArchitecture@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PrintBundling.txt           	(
 ::----------------------------- PrintBundlingBatch -----------------------------::
@@ -1481,7 +1481,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=PrintBundling
   set ARTNM=PrintBundling
   set TYPE=zip
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UniFormsMaster-Report.txt           	(
 ::----------------------------- UniFormsMaster-Report -----------------------------::
@@ -1489,7 +1489,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=UniFormsMaster-Report
   set ARTNM=UniFormsMaster-Report
   set TYPE=zip
-  set MAIL=USGITFormServiceExceed@unitrin.com;USGITFormServiceCore@unitrin.com
+  set MAIL=USGITFormServiceExceed@unit.com;USGITFormServiceCore@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageAssuranceService.txt           	(
 ::----------------------------- USG-MessageAssuranceService -----------------------------::
@@ -1497,7 +1497,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-MessageAssuranceService
   set ARTNM=MessageAssuranceService
   set TYPE=ear
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\MessageAssuranceBatch.txt           	(
 ::----------------------------- USG-MessageAssuranceService -----------------------------::
@@ -1505,7 +1505,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-MessageAssuranceBatch
   set ARTNM=MessageAssuranceBatch
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CoatCheck.txt           	(
 ::----------------------------- USG-CoatCheck -----------------------------::
@@ -1513,7 +1513,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-CoatCheck
   set ARTNM=CoatCheck
   set TYPE=ear
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\iExpenseBatch.txt           	(
 ::----------------------------- iExpenseBatch -----------------------------::
@@ -1521,7 +1521,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=iExpenseBatch
   set ARTNM=iExpenseBatch
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EventJournalMessageBuilder.txt           	(
 ::----------------------------- EventJournal-Batch -----------------------------::
@@ -1529,7 +1529,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EventJournal-Batch
   set ARTNM=EventJournalMessageBuilder
   set TYPE=zip
-  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=USGISServiceEventJournal@unit.com;KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsNotifyILBatch.txt            	(
 ::----------------------------- USG-InsuranceNotificationIL-Batch -----------------------------::
@@ -1537,7 +1537,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-InsuranceNotificationIL-Batch
   set ARTNM=InsNotifyILBatch
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsuranceNotify.txt            	(
 ::----------------------------- USG-InsuranceNotification -----------------------------::
@@ -1545,7 +1545,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-InsuranceNotification
   set ARTNM=InsuranceNotify
   set TYPE=ear
-  set MAIL=USGEnterpriseSharedServices@unitrin.com;KSGEnterpriseServiceITOperations@kemper.com
+  set MAIL=USGEnterpriseSharedServices@unit.com;KSGEnterpriseServiceITOperations@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\InsuranceNotifyBatch.txt            	(
 ::----------------------------- USG-InsuranceNotification-Batch -----------------------------::
@@ -1553,7 +1553,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-InsuranceNotification-Batch
   set ARTNM=InsuranceNotifyBatch
   set TYPE=zip
-  set MAIL=USGEnterpriseSharedServices@unitrin.com
+  set MAIL=USGEnterpriseSharedServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ProducerCallidusBatch.txt            	(
 ::----------------------------- ProducerCallidus-Batch -----------------------------::
@@ -1561,7 +1561,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ProducerCallidus-Batch
   set ARTNM=ProducerCallidusBatch
   set TYPE=zip
-  set MAIL=USGEnterpriseProducerServices@unitrin.com
+  set MAIL=USGEnterpriseProducerServices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\LargeFileImporter.txt            	(
 ::----------------------------- USG-CM-LargeFileImport -----------------------------::
@@ -1569,7 +1569,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-CM-LargeFileImport
   set ARTNM=LargeFileImporter
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com;vpuli@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com;vpuli@unit.com
   goto build 
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GWAuditControl.txt             	(
 ::----------------------------- GW-AuditControl -----------------------------::
@@ -1577,7 +1577,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-AuditControl
   set ARTNM=GWAuditControl
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@unitrin.com
+  set MAIL=USGISClaimProdSupport@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\GWAudit-Control.txt             	(
 ::----------------------------- GW-Audit-Control -----------------------------::
@@ -1585,7 +1585,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-Audit-Control
   set ARTNM=GWAudit-Control
   set TYPE=zip
-  set MAIL=USGISClaimProdSupport@unitrin.com
+  set MAIL=USGISClaimProdSupport@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ClaimsISOGateway.txt             	(
 ::----------------------------- GW-ISO-Gateway -----------------------------::
@@ -1593,7 +1593,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=GW-ISO-Gateway
   set ARTNM=ClaimsISOGateway
   set TYPE=ear
-  set MAIL=USGISClaimProdSupport@unitrin.com
+  set MAIL=USGISClaimProdSupport@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EvJ-Onetime.txt            	(
 ::----------------------------- Event-Journal-Onetime -----------------------------::
@@ -1601,7 +1601,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EventJournal-Onetime
   set ARTNM=EvJ-Onetime
   set TYPE=zip
-  set MAIL=USGISServiceEventJournal@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=USGISServiceEventJournal@unit.com;KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGMonitor.txt            	(
 ::----------------------------- USG-Monitor -----------------------------::
@@ -1609,7 +1609,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-Monitor
   set ARTNM=USGMonitor
   set TYPE=zip
-  set MAIL=KAHITTECHARC@unitrin.com
+  set MAIL=KAHITTECHARC@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGMonitor85.txt            	(
 ::----------------------------- USG-Monitor-85 -----------------------------::
@@ -1617,7 +1617,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-Monitor-85
   set ARTNM=USGMonitor85
   set TYPE=zip
-  set MAIL=KAHITTECHARC@unitrin.com
+  set MAIL=KAHITTECHARC@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PolicyConversion.txt                 	(
 ::----------------------------- RPW-InternalApps -----------------------------::
@@ -1625,7 +1625,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=RPW-InternalApps
   set ARTNM=PolicyConversion
   set TYPE=ear
-  set MAIL=KAHITRPWDevelopers@ekemper.com;KAHPLISROLLIMPTEAM@ekemper.com;KAHPolicyProdSupport@ekemper.com
+  set MAIL=KAHITRPWDevelopers@euni.com;KAHPLISROLLIMPTEAM@euni.com;KAHPolicyProdSupport@euni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerWebService.txt            	(
 ::----------------------------- CustomerWebService -----------------------------::
@@ -1633,7 +1633,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerWebService
   set ARTNM=CustomerWebService
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\AgentCrat.txt            	(
 ::----------------------------- CommissionReportAccessTool -----------------------------::
@@ -1641,7 +1641,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CommissionReportAccessTool
   set ARTNM=AgentCrat
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerMgmtSvc.txt            	(
 ::----------------------------- CustomerMgmtService -----------------------------::
@@ -1649,7 +1649,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerMgmtService
   set ARTNM=CustomerMgmtSvc
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EOD.txt            	(
 ::----------------------------- EOD-PERS-RealTime -----------------------------::
@@ -1657,7 +1657,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EOD-PERS-RealTime
   set ARTNM=EOD
   set TYPE=ear
-  set MAIL=USGISServicePERSEOD@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=USGISServicePERSEOD@unit.com;KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EODPERSBatch.txt            	(
 ::----------------------------- EOD-PERS-Batch -----------------------------::
@@ -1665,15 +1665,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EOD-PERS-Batch
   set ARTNM=EODPERSBatch
   set TYPE=zip
-  set MAIL=USGISServicePERSEOD@unitrin.com;KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=USGISServicePERSEOD@unit.com;KAHITEnterpriseWebSolutions@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\KemperEBillService.txt            	(
-::----------------------------- KemperEBillService -----------------------------::
-  set LC=KemperEBillService
-  set RP=KemperEBillService
-  set ARTNM=KemperEBillService
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\uniEBillService.txt            	(
+::----------------------------- uniEBillService -----------------------------::
+  set LC=uniEBillService
+  set RP=uniEBillService
+  set ARTNM=uniEBillService
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserActivityService.txt            	(
 ::----------------------------- UserActivityService -----------------------------::
@@ -1681,7 +1681,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=UserActivityService
   set ARTNM=UserActivityService
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\USG-CM-IPAL.txt             	(
 ::----------------------------- USG-CM-IPAL -----------------------------::
@@ -1689,15 +1689,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-CM-IPAL
   set ARTNM=USG-CM-IPAL
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\Unitrin-Internet.txt             	(
-::----------------------------- Unitrin-Internet -----------------------------::
-  set LC=Unitrin-Internet
-  set RP=Unitrin-Internet
-  set ARTNM=Unitrin-Internet
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\unit-Internet.txt             	(
+::----------------------------- unit-Internet -----------------------------::
+  set LC=unit-Internet
+  set RP=unit-Internet
+  set ARTNM=unit-Internet
   set TYPE=zip
-  set MAIL=usgenterprisesharedservices@unitrin.com
+  set MAIL=usgenterprisesharedservices@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-IPAL-BATCH.txt             	(
 ::----------------------------- ECM-IPAL-BATCH -----------------------------::
@@ -1705,7 +1705,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECM-IPAL-BATCH
   set ARTNM=ECM-IPAL-BATCH
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-RRD-BATCH.txt             	(
 ::----------------------------- ECM-RRD-BATCH -----------------------------::
@@ -1713,7 +1713,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECM-RRD-BATCH
   set ARTNM=ECM-RRD-BATCH
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-OB-BATCH.txt             	(
 ::----------------------------- ECM-OB-BATCH -----------------------------::
@@ -1721,7 +1721,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECM-OB-BATCH
   set ARTNM=ECM-OB-BATCH
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-CMSNotification-Batch.txt             	(
 ::----------------------------- ECM-CMSNotification-Batch -----------------------------::
@@ -1729,7 +1729,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECM-CMSNotification-Batch
   set ARTNM=ECM-CMSNotification-Batch
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-CMS-Transformation-Batch.txt             	(
 ::----------------------------- ECM-CMS-Transformation-Batch -----------------------------::
@@ -1737,7 +1737,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECM-CMS-Transformation-Batch
   set ARTNM=ECM-CMS-Transformation-Batch
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ECM-CMS-Batch.txt             	(
 ::----------------------------- ECM-CMS-Batch -----------------------------::
@@ -1745,7 +1745,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ECM-CMS-Batch
   set ARTNM=ECM-CMS-Batch
   set TYPE=zip
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CMS.txt             	(
 ::----------------------------- ContentMGTService2 -----------------------------::
@@ -1753,7 +1753,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=ContentMGTService2
   set ARTNM=CMS
   set TYPE=ear
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CMSGateway.txt             	(
 ::----------------------------- CM-Gateway -----------------------------::
@@ -1761,7 +1761,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CM-Gateway
   set ARTNM=CMSGateway
   set TYPE=ear
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EBillCSAPIService.txt     	(
 ::----------------------------- EBillCSAPIService -----------------------------::
@@ -1769,7 +1769,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=EBillCSAPIService
   set ARTNM=EBillCSAPIService
   set TYPE=war
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\MAudit.txt     	(
 ::----------------------------- MAudit -----------------------------::
@@ -1777,7 +1777,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=MAudit
   set ARTNM=MAudit
   set TYPE=war
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\SAR.txt            	(
 ::----------------------------- SAR -----------------------------::
@@ -1785,7 +1785,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=SAR
   set ARTNM=SAR
   set TYPE=war
-  set MAIL=USGEnterpriseSharedServices@unitrin.com;USGITSAR@kemper.com
+  set MAIL=USGEnterpriseSharedServices@unit.com;USGITSAR@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\FSTHConfig.txt           	(
 ::----------------------------- FormsServiceTHConfigurations -----------------------------::
@@ -1793,15 +1793,15 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=FormsServiceTHConfigurations
   set ARTNM=FSTHConfig
   set TYPE=zip
-  set MAIL=USGITPolicySharedServices@unitrin.com
+  set MAIL=USGITPolicySharedServices@unit.com
   goto build
- ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGINFOGIXKemperScripts.txt           	(
-::----------------------------- USG-INFOGIX-KemperScripts -----------------------------::
-  set LC=USG-INFOGIX-KemperScripts
-  set RP=USG-INFOGIX-KemperScripts
-  set ARTNM=USGINFOGIXKemperScripts
+ ) else if exist J:\SCMtools\Scripts\Deploy\VER\USGINFOGIXuniScripts.txt           	(
+::----------------------------- USG-INFOGIX-uniScripts -----------------------------::
+  set LC=USG-INFOGIX-uniScripts
+  set RP=USG-INFOGIX-uniScripts
+  set ARTNM=USGINFOGIXuniScripts
   set TYPE=zip
-  set MAIL=USGInfogixSupport@kemper.com
+  set MAIL=USGInfogixSupport@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\CustomerMgmtSvc.txt            	(
 ::----------------------------- CustomerMgmtService -----------------------------::
@@ -1809,7 +1809,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=CustomerMgmtService
   set ARTNM=CustomerMgmtSvc
   set TYPE=ear
-  set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+  set MAIL=KAHITEnterpriseWebSolutions@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\DocViewerEar.txt             	(
 ::----------------------------- USG-CMSDocViewer -----------------------------::
@@ -1817,7 +1817,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-CMSDocViewer
   set ARTNM=DocViewerEar
   set TYPE=ear
-  set MAIL=USGEnterpriseContentManagement@unitrin.com
+  set MAIL=USGEnterpriseContentManagement@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\PERSDataValidationServ.txt            	(
 ::----------------------------- USG-PERS-Data-Validation -----------------------------::
@@ -1825,7 +1825,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=USG-PERS-Data-Validation
   set ARTNM=PERSDataValidationServ
   set TYPE=ear
-  set MAIL=USGITPERSInfrastructure@unitrin.com
+  set MAIL=USGITPERSInfrastructure@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\LOCSVCBatch.txt            	(
 ::----------------------------- LocationServiceBatch -----------------------------::
@@ -1833,7 +1833,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=LocationServiceBatch
   set ARTNM=LOCSVCBatch
   set TYPE=zip
-  set MAIL=USGISServicePayment@unitrin.com
+  set MAIL=USGISServicePayment@unit.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-bpconfig.SLI.txt           	(
 :: **************************************************** NEW SLI EXCEED LIFECYCLES **************************************************** ::
@@ -1842,7 +1842,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BP-Config
   set ARTNM=exceedj-bpconfig
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ParmCards.txt           	(
 ::----------------------------- Exceed-SLI-Batch-Parm-Cards  -----------------------------::
@@ -1850,7 +1850,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-Batch-Parm-Cards 
   set ARTNM=ParmCards
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Exceed_SLI_Reports.SLI.txt           	(
 ::----------------------------- Exceed-SLI-Batch-Reports -----------------------------::
@@ -1858,7 +1858,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-Batch-Reports
   set ARTNM=Exceed_SLI_Reports
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExceedJCommFW.SLI.txt           	(
 ::----------------------------- Exceed-SLI-CommunicationLayer -----------------------------::
@@ -1866,7 +1866,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-CommunicationLayer
   set ARTNM=ExceedJCommFW
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EXCEEDJ-Pres.SLI.txt           	(
 ::----------------------------- Exceed-SLI-PresentationLayer -----------------------------::
@@ -1874,7 +1874,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-PresentationLayer
   set ARTNM=EXCEEDJ-Pres
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-iocData.SLI.txt           	(
 ::----------------------------- Exceed-SLI-BusinessLayer-IOC -----------------------------::
@@ -1882,7 +1882,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BusinessLayer-IOC
   set ARTNM=exceedj-iocData
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EXCEEDJ-Doc.SLI.txt           	(
 ::----------------------------- Exceed-SLI-Documentation -----------------------------::
@@ -1890,7 +1890,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-Documentation
   set ARTNM=EXCEEDJ-Doc
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserExit.SLI.txt           	(
 ::----------------------------- Exceed-SLI-BP-UserExit -----------------------------::
@@ -1898,7 +1898,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BP-UserExit
   set ARTNM=UserExit
   set TYPE=jar
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Billing-ux.SLI.txt           	(
 ::----------------------------- Exceed-SLI-Billing-UX -----------------------------::
@@ -1906,7 +1906,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-Billing-UX
   set ARTNM=Billing-ux
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpcode.SLI.txt           	(
 ::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
@@ -1914,7 +1914,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BusinessLayer
   set ARTNM=exceedj-tbpcode
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpdata.SLI.txt           	(
 ::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
@@ -1922,7 +1922,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BusinessLayer
   set ARTNM=exceedj-tbpdata
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-pm.SLI.txt           	(
 ::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
@@ -1930,7 +1930,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BusinessLayer
   set ARTNM=exceedj-pm
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-online.SLI.txt           	(
 ::----------------------------- Exceed-SLI-BusinessLayer -----------------------------::
@@ -1938,7 +1938,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-SLI-BusinessLayer
   set ARTNM=exceedj-online
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-bpconfig.KP.txt           	(
 :: **************************************************** NEW KP EXCEED LIFECYCLES **************************************************** ::
@@ -1947,7 +1947,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BP-Config
   set ARTNM=exceedj-bpconfig
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\Exceed_KP_Reports.KP.txt           	(
 ::----------------------------- Exceed-KP-Batch-Reports -----------------------------::
@@ -1955,7 +1955,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-Batch-Reports
   set ARTNM=Exceed_KP_Reports
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\ExceedJCommFW.KP.txt           	(
 ::----------------------------- Exceed-KP-CommunicationLayer -----------------------------::
@@ -1963,7 +1963,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-CommunicationLayer
   set ARTNM=ExceedJCommFW
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\EXCEEDJ-Pres.KP.txt           	(
 ::----------------------------- Exceed-KP-PresentationLayer -----------------------------::
@@ -1971,7 +1971,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-PresentationLayer
   set ARTNM=EXCEEDJ-Pres
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-iocData.KP.txt           	(
 ::----------------------------- Exceed-KP-BusinessLayer-IOC -----------------------------::
@@ -1979,7 +1979,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BusinessLayer-IOC
   set ARTNM=exceedj-iocData
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\UserExit.KP.txt           	(
 ::----------------------------- Exceed-KP-BP-UserExit -----------------------------::
@@ -1987,7 +1987,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BP-UserExit
   set ARTNM=UserExit
   set TYPE=jar
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpcode.KP.txt           	(
 ::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
@@ -1995,7 +1995,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BusinessLayer
   set ARTNM=exceedj-tbpcode
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-tbpdata.KP.txt           	(
 ::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
@@ -2003,7 +2003,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BusinessLayer
   set ARTNM=exceedj-tbpdata
   set TYPE=zip
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-pm.KP.txt           	(
 ::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
@@ -2011,7 +2011,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BusinessLayer
   set ARTNM=exceedj-pm
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\exceedj-online.KP.txt           	(
 ::----------------------------- Exceed-KP-BusinessLayer -----------------------------::
@@ -2019,7 +2019,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=Exceed-KP-BusinessLayer
   set ARTNM=exceedj-online
   set TYPE=ear
-  set MAIL=USGITExceedPolicyandBilling@kemper.com
+  set MAIL=USGITExceedPolicyandBilling@uni.com
   goto build
  ) else if exist J:\SCMtools\Scripts\Deploy\VER\SimpleArch.txt     	(
 ::----------------------------- SimpleArch -----------------------------::
@@ -2027,7 +2027,7 @@ if exist J:\SCMtools\Scripts\Deploy\VER\AIDocumentEar.txt           	(
   set RP=SimpleArch
   set ARTNM=SimpleArch
   set TYPE=ear
-  set MAIL=rwadhams@kemper.com
+  set MAIL=rwadhams@uni.com
   goto build
  ) else (
 :: If a trigger exists but is not configured in the script, send a message and get out...
