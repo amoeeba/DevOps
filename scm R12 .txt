@@ -110,7 +110,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Utility.DataXtendService_2013
      set applpre=DataXtendService_2013
-     set MAIL=KAHITEAS-AgencyInterface@euni.com;USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGITPolicyBillingServices@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGITPolicyBillingServices@unit.com
      goto settask        
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\HttpPostServ.eb1  (
      set LC=USGESB
@@ -138,7 +138,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Utility.WorkbasketListener
      set applpre=WorkbasketListener
-     set MAIL=USGISClaimProdSupport@uni.com;usgecmdevelopment@unitrin.com;usgenterprisecontentmanagement@unitrin.com;usgitenterprisearchitecture@uni.com
+     set MAIL=USGISClaimProdSupport@uni.com;usgecmdevelopment@unit.com;usgenterprisecontentmanagement@unit.com;usgitenterprisearchitecture@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\LdapService.eb1  (
      set LC=USGESB
@@ -152,7 +152,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Utility.AxisService
      set applpre=AxisService
-     set MAIL=USGITPolicySharedServices@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\IlyticsPostLocateService.eb1  (
      set LC=USGESB
@@ -173,21 +173,21 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Utility_MseqService
      set applpre=UtilMseqService
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\UtilPersPreProcServ.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_PersPreProcessorService
      set applpre=UtilPersPreProcServ
-     set MAIL=USGITFormServiceCore@unitrin.com;USGITFormServiceExceed@unitrin.com;usgitpersin;KSGEnterpriseServicesITOperation@uni.comfrastructure@uni.com
+     set MAIL=USGITFormServiceCore@unit.com;USGITFormServiceExceed@unit.com;usgitpersin;KSGEnterpriseServicesITOperation@uni.comfrastructure@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\JpmcSUAService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_JpmcSUAService
      set applpre=JpmcSUAService
-     set MAIL=USGEnterpriseApplicationServices@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGEnterpriseApplicationServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\360ValueService.eb1  (
      set LC=USGESB
@@ -210,89 +210,89 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set applpre=DXSIEDWOffRamp
      set MAIL=USGITEDWOff-Ramp@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
- ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIUnitrinClaims.eb1  (
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIunitClaims.eb1  (
      set LC=USGESB
      set RP=USGESB
-     set appl=DXSI.UnitrinClaims
-     set applpre=DXSIUnitrinClaims
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGISClaimProdSupport@uni.com
+     set appl=DXSI.unitClaims
+     set applpre=DXSIunitClaims
+     set MAIL=USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGISClaimProdSupport@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIRatingHome.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=DXSI.RatingHome
      set applpre=DXSIRatingHome
-     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPERSInfrastructure@unitrin.com;KSGPORPUS@uni.com
+     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPERSInfrastructure@unit.com;KSGPORPUS@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIRatingAuto.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=DXSI.RatingAuto
      set applpre=DXSIRatingAuto
-     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPERSInfrastructure@unitrin.com;KSGPORPUS@uni.com
+     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPERSInfrastructure@unit.com;KSGPORPUS@uni.com
      goto settask 
- ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIUnitrinPolicy.eb1  (
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIunitPolicy.eb1  (
      set LC=USGESB
      set RP=USGESB
-     set appl=DXSI.UnitrinPolicy
-     set applpre=DXSIUnitrinPolicy
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGPORPUS@uni.com
+     set appl=DXSI.unitPolicy
+     set applpre=DXSIunitPolicy
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGPORPUS@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\VINService.eb1       (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.VINService
      set applpre=VINService
-     set MAIL=USGISServiceVIN@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGISServiceVIN@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AMI-DXSI.eb1  (
      set LC=AMI-DXSI
      set RP=AMI-DXSI
      set appl=DXSI.AMIService
      set applpre=AMI-DXSI
-     set MAIL=KAHITEAS-AgencyInterface@euni.com;KAHITEAIDeploys@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;KAHITEAIDeploys@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\LocationService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.LocationService
      set applpre=LocationService
-     set MAIL=USGISServiceLocation@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGISServiceLocation@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AuditsControls.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.AuditsAndControls
      set applpre=AuditsControls
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectMSEQ.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.MSEQ
      set applpre=ConnectMSEQ
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PERS.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PERS
      set applpre=PERS
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PERSDataVal.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PERS.DataValidation
      set applpre=PERSDataVal
-     set MAIL=USGITPERSInfrastructure@unitrin.com;USGDataValidationDevelopment@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPERSInfrastructure@unit.com;USGDataValidationDevelopment@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnPersPreProcServ.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PersPreProcessorService
      set applpre=ConnPersPreProcServ
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectEDWOffRamp.eb1  (
      set LC=USGESB
@@ -306,14 +306,14 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Connect.ProducerService
      set applpre=ProducerService
-     set MAIL=USGEnterpriseProducerServices@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGEnterpriseProducerServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ExactTrac.eb1        (
      set LC=USGESB
      set RP=USGESB
      set appl=ExtConnect.ExactTrac
      set applpre=ExactTrac
-     set MAIL=USGITPolicySharedServices@unitrin.com;bmontgomery@euni.com;gfiore@euni.co;KSGEnterpriseServicesITOperation@uni.comm;USGISServiceDisbursement@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;bmontgomery@euni.com;gfiore@euni.co;KSGEnterpriseServicesITOperation@uni.comm;USGISServiceDisbursement@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectBlngOrchSvc.eb1  (
      set LC=USGESB
@@ -327,63 +327,63 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Connect.FeeGetFees
      set applpre=ConnectFeeGetFees
-     set MAIL=USGISServiceFee@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGISServiceFee@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask  
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\FormsService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.FormsService
      set applpre=FormsService
-     set MAIL=USGITPolicySharedServices@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PaymentService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PaymentService
      set applpre=PaymentService
-     set MAIL=USGITPolicyBillingServices@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPolicyBillingServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PolicyService.eb1            (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PolicyService
      set applpre=PolicyService
-     set MAIL=bmontgomery@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=bmontgomery@unit.com;USGISServicePolicyInquiryPIT@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\FormsLibrary.eb1     (
      set LC=USGESB
      set RP=USGESB
      set appl=ExtConnect.FormsLibrary
      set applpre=FormsLibrary
-     set MAIL=USGITPolicySharedServices@unitrin.com;KSGEnterpriseServicesITOperation@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ContentMgmt.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.ContentManagement
      set applpre=ContentMgmt
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CMSExceedOnRamp.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.CMS.Exceed.OnRamp
      set applpre=CMSExceedOnRamp
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGECMDevelopment@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGECMDevelopment@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectExceed.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.Exceed
      set applpre=ConnectExceed
-     set MAIL=USGITExceedPolicyandBilling@unitrin.com
+     set MAIL=USGITExceedPolicyandBilling@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectIOC.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.IOC
      set applpre=ConnectIOC
-     set MAIL=USGEnterpriseSharedServices@unitrin.com;USGITExceedPolicyAndBilling@uni.com
+     set MAIL=USGEnterpriseSharedServices@unit.com;USGITExceedPolicyAndBilling@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CCFilePickupOnRamp.eb1  (
      set LC=USGESB
@@ -397,7 +397,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Connect.BTOC
      set applpre=ConnectBTOC
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISClaimProdSupport@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISClaimProdSupport@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CCFormCallback.eb1  (
      set LC=USGESB
@@ -439,161 +439,161 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=USGESB
      set appl=Connect.Xactnet
      set applpre=Xactnet
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISClaimProdSupport@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISClaimProdSupport@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectEBill.eb1    (
      set LC=USG-EBillService-ESB
      set RP=USG-EBillService-ESB
      set appl=Connect.EBill
      set applpre=ConnectEBill
-     set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+     set MAIL=KAHITEnterpriseWebSolutions@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\IntellAgentService.eb1    (
      set LC=AgentAlerts-ESB
      set RP=AgentAlerts-ESB
      set appl=Connect.IntellAgentService
      set applpre=IntellAgentService
-     set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+     set MAIL=KAHITEnterpriseWebSolutions@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\QuoteService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.QuoteService
      set applpre=QuoteService
-     set MAIL=KAHITEAIDeploys@unitrin.com;KAHITRPWTeam@euni.com
+     set MAIL=KAHITEAIDeploys@unit.com;KAHITRPWTeam@euni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PolicyInquiry.eb1    (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PolicyInquiry
      set applpre=PolicyInquiry
-     set MAIL=USGITPolicySharedServices@unitrin.com;KAHITEAIDevelopers@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;KAHITEAIDevelopers@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\RatingService.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.RatingService
      set applpre=RatingService
-     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPolicySharedServices@unitrin.com;USGISServicePERSAssignedRisk@unitrin.com;KSGPORPUS@uni.com
+     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPolicySharedServices@unit.com;USGISServicePERSAssignedRisk@unit.com;KSGPORPUS@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PERSOnRamp.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PERS.OnRamp
      set applpre=PERSOnRamp
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISServicePERSAssignedRisk@unitrin.com;KSGPORPUS@uni.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISServicePERSAssignedRisk@unit.com;KSGPORPUS@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AMI-ESB.eb1  (
      set LC=AMI-ESB
      set RP=AMI-ESB
      set appl=Connect.AMIService
      set applpre=AMI-ESB
-     set MAIL=KAHITEAS-AgencyInterface@euni.com;KAHITEAIDeploys@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;KAHITEAIDeploys@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AddressServices.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.AddressServices
      set applpre=AddressServices
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ContentMgmt2.0.eb1      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.ContentManagement.2.0
      set applpre=ContentMgmt2.0
-     set MAIL=USGEnterpriseContentManager@unitrin.com
+     set MAIL=USGEnterpriseContentManager@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\QueueMessageDelete.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.QueueMessageDelete
      set applpre=QueueMessageDelete
-     set MAIL=USGEnterpriseProducerServices@unitrin.com
+     set MAIL=USGEnterpriseProducerServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DataXtendSrv.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.DataXtendService
      set applpre=DataXtendSrv
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGITPolicyBillingServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGITPolicyBillingServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DataXtendService_84.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.DataXtendService_84
      set applpre=DataXtendService_84
-     set MAIL=KAHITEAS-AgencyInterface@euni.com;USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGITPolicyBillingServices@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGITPolicyBillingServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\SOAPClient.eb1       (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.AddressServices.SOAPClient
      set applpre=SOAPClient
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\BlazeService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.BlazeService
      set applpre=BlazeService
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\JpmcService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_JpmcService
      set applpre=JpmcService
-     set MAIL=USGISServiceDisbursement@unitrin.com
+     set MAIL=USGISServiceDisbursement@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\StatBlaze.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.StatBlaze
      set applpre=StatBlaze
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\JMSTestClient.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=JMSTestClient
      set applpre=JMSTestClient
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\MQTestClient.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=MQTestClient
      set applpre=MQTestClient
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\MQCorrelation.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Test.MQCorrelation
      set applpre=MQCorrelation
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\BaseService.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_BaseService
      set applpre=BaseService
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CLI.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.CLI
      set applpre=CLI
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\EnrichmntSchema.eb1  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_EnrichmentSchema
      set applpre=EnrichmntSchema
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnPersMsgTest.eb1  (
      set LC=USGESB
@@ -607,7 +607,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.eb1  (
      set RP=CustomerMgmtService-ESB
      set appl=Connect.CustomerMgmtSvc
      set applpre=CustomerMgmtSvc
-     set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+     set MAIL=KAHITEnterpriseWebSolutions@unit.com
      goto settask
  )    
 
