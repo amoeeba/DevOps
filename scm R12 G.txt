@@ -33,10 +33,10 @@ Date /t  >> J:\SCMtools\Logs\USGESB_Deploy-09.log
 Time /t  >> J:\SCMtools\Logs\USGESB_Deploy-09.log
 ECHO * * * * * * * * * * * * * * * * * * * * * * >> J:\SCMtools\Logs\USGESB_Deploy-09.log
 
-::set who=rwadhams@kemper.com
-set who=KAHITSCMTeam@eKemper.com
-::set MAIL=ihunley@eKemper.com;erasmussen@ekemper.com
-::set who=erasmussen@ekemper.com
+::set who=rwadhams@uni.com
+set who=KAHITSCMTeam@euni.com
+::set MAIL=ihunley@euni.com;erasmussen@euni.com
+::set who=erasmussen@euni.com
 
 
 :setvar
@@ -76,550 +76,550 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set RP=USGESB
      set appl=Utility.WilyConnector
      set applpre=WilyConnector
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-wilyconnector.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-wilyconnector.git
      set gitf=utility-wilyconnector
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\KAHBaseServices.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=KAHBaseServices
      set applpre=KAHBaseServices
-     set git=ssh://git@stash.kemperi.com:7999/esb/kah-base-services.git
+     set git=ssh://git@stash.unii.com:7999/esb/kah-base-services.git
      set gitf=kah-base-services
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\EnrichmtServ.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_EnrichmentService
      set applpre=EnrichmtServ
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-enrichment-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-enrichment-service.git
      set gitf=utility-enrichment-service
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\WMQListener.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.WMQListener
      set applpre=WMQListener
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-wmqlistener.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-wmqlistener.git
      set gitf=utility-wmqlistener
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\WMQSender.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.WMQSender
      set applpre=WMQSender
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-wmqsender.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-wmqsender.git
      set gitf=utility-wmqsender
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DataXtendService_2013.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.DataXtendService_2013
      set applpre=DataXtendService_2013
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-dataxtend-service-2013.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-dataxtend-service-2013.git
      set gitf=utility-dataxtend-service-2013
-     set MAIL=KAHITEAS-AgencyInterface@eKemper.com;USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGITPolicyBillingServices@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGITPolicyBillingServices@unit.com
      goto settask        
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\HttpPostServ.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_HttpGetPostService
      set applpre=HttpPostServ
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-httpgetpost-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-httpgetpost-service.git
      set gitf=utility-httpgetpost-service
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\UtQueueBrowser.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.QueueBrowser
      set applpre=UtQueueBrowser
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-queuebrowser.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-queuebrowser.git
      set gitf=utility-queuebrowser
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\XactNetHTTP.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.XactNetHTTPPost
      set applpre=XactNetHTTP
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-xactnet-httppost.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-xactnet-httppost.git
      set gitf=utility-xactnet-httppost
-     set MAIL=usgitenterprisearchitecture@kemper.com;USGISClaimProdSupport@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com;USGISClaimProdSupport@uni.com
      goto settask   
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\WorkbasketListener.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.WorkbasketListener
      set applpre=WorkbasketListener
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-workbasketlistener.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-workbasketlistener.git
      set gitf=utility-workbasketlistener
-     set MAIL=KAHITCLAIMDEV@unitrin.com;usgecmdevelopment@unitrin.com;usgenterprisecontentmanagement@unitrin.com;usgitenterprisearchitecture@kemper.com
+     set MAIL=KAHITCLAIMDEV@unit.com;usgecmdevelopment@unit.com;usgenterprisecontentmanagement@unit.com;usgitenterprisearchitecture@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\LdapService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.LdapService
      set applpre=LdapService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-ldap-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-ldap-service.git
      set gitf=utility-ldap-service
-     set MAIL=usgitenterprisearchitecture@kemper.com
+     set MAIL=usgitenterprisearchitecture@uni.com
      goto settask  
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AxisService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.AxisService
      set applpre=AxisService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-axis-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-axis-service.git
      set gitf=utility-axis-service
-     set MAIL=USGITPolicySharedServices@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPolicySharedServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\IlyticsPostLocateService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_IlyticsPostLocateService
      set applpre=IlyticsPostLocateService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-ilytics-postlocate-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-ilytics-postlocate-service.git
      set gitf=utility-ilytics-postlocate-service
-     set MAIL=usgisservicelocation@kemper.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=usgisservicelocation@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PPCSplitterService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_PPCSplitterService
      set applpre=PPCSplitterService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-ppcsplitter-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-ppcsplitter-service.git
      set gitf=utility-ppcsplitter-service
-     set MAIL=usgisservicelocation@kemper.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=usgisservicelocation@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\UtilMseqService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_MseqService
      set applpre=UtilMseqService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-mseq-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-mseq-service.git
      set gitf=utility-mseq-service
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\UtilPersPreProcServ.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_PersPreProcessorService
      set applpre=UtilPersPreProcServ
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-perspreprocessor-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-perspreprocessor-service.git
      set gitf=utility-perspreprocessor-service
-     set MAIL=USGITFormServiceCore@unitrin.com;USGITFormServiceExceed@unitrin.com;usgitpersin;KSGEnterpriseServicesITOperation@kemper.comfrastructure@kemper.com
+     set MAIL=USGITFormServiceCore@unit.com;USGITFormServiceExceed@unit.com;usgitpersin;KSGEnterpriseServicesITOperation@uni.comfrastructure@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\JpmcSUAService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_JpmcSUAService
      set applpre=JpmcSUAService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-jmpcsua-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-jmpcsua-service.git
      set gitf=utility-jmpcsua-service
-     set MAIL=USGEnterpriseApplicationServices@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGEnterpriseApplicationServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\360ValueService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_360ValueWebService
      set applpre=360ValueService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-360value-webservice.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-360value-webservice.git
      set gitf=utility-360value-webservice
-     set MAIL=usgisservicelocation@kemper.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=usgisservicelocation@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\UtilClaimInqSvc.gitesb    (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_ClaimsInquiryService
      set applpre=UtilClaimInqSvc
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-claimsinquiry-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-claimsinquiry-service.git
      set gitf=utility-claimsinquiry-service
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIEDWOffRamp.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=DXSI.EDW.OffRamp
      set applpre=DXSIEDWOffRamp
-     set git=ssh://git@stash.kemperi.com:7999/esb/dxsi-edw-offramp.git
+     set git=ssh://git@stash.unii.com:7999/esb/dxsi-edw-offramp.git
      set gitf=dxsi-edw-offramp
-     set MAIL=USGITEDWOff-Ramp@kemper.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITEDWOff-Ramp@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
- ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIUnitrinClaims.gitesb  (
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIunitClaims.gitesb  (
      set LC=USGESB
      set RP=USGESB
-     set appl=DXSI.UnitrinClaims
-     set applpre=DXSIUnitrinClaims
-     set git=ssh://git@stash.kemperi.com:7999/esb/dxsi-unitrin-claims.git
-     set gitf=dxsi-unitrin-claims
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;KAHITCLAIMDEV@unitrin.com
+     set appl=DXSI.unitClaims
+     set applpre=DXSIunitClaims
+     set git=ssh://git@stash.unii.com:7999/esb/dxsi-unit-claims.git
+     set gitf=dxsi-unit-claims
+     set MAIL=USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIRatingHome.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=DXSI.RatingHome
      set applpre=DXSIRatingHome
-     set git=ssh://git@stash.kemperi.com:7999/esb/dxsi-rating-home.git
+     set git=ssh://git@stash.unii.com:7999/esb/dxsi-rating-home.git
      set gitf=dxsi-rating-home
-     set MAIL=KSGITPolicy&FinancialServices@kemper.com;USGITPERSInfrastructure@unitrin.com;KSGPORPUS@kemper.com
+     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPERSInfrastructure@unit.com;KSGPORPUS@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIRatingAuto.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=DXSI.RatingAuto
      set applpre=DXSIRatingAuto
-     set git=ssh://git@stash.kemperi.com:7999/esb/dxsi-rating-auto.git
+     set git=ssh://git@stash.unii.com:7999/esb/dxsi-rating-auto.git
      set gitf=dxsi-rating-auto
-     set MAIL=KSGITPolicy&FinancialServices@kemper.com;USGITPERSInfrastructure@unitrin.com;KSGPORPUS@kemper.com
+     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPERSInfrastructure@unit.com;KSGPORPUS@uni.com
      goto settask 
- ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIUnitrinPolicy.gitesb  (
+ ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DXSIunitPolicy.gitesb  (
      set LC=USGESB
      set RP=USGESB
-     set appl=DXSI.UnitrinPolicy
-     set applpre=DXSIUnitrinPolicy
-     set git=ssh://git@stash.kemperi.com:7999/esb/dxsi-unitrin-policy.git
-     set gitf=dxsi-unitrin-policy
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGPORPUS@kemper.com
+     set appl=DXSI.unitPolicy
+     set applpre=DXSIunitPolicy
+     set git=ssh://git@stash.unii.com:7999/esb/dxsi-unit-policy.git
+     set gitf=dxsi-unit-policy
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGPORPUS@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\VINService.gitesb       (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.VINService
      set applpre=VINService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-vin-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-vin-service.git
      set gitf=connect-vin-service
-     set MAIL=USGISServiceVIN@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGISServiceVIN@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AMI-DXSI.gitesb  (
      set LC=AMI-DXSI
      set RP=AMI-DXSI
      set appl=DXSI.AMIService
      set applpre=AMI-DXSI
-     set git=ssh://git@stash.kemperi.com:7999/esb/dxsi-ami-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/dxsi-ami-service.git
      set gitf=dxsi-ami-service
-     set MAIL=KAHITEAS-AgencyInterface@eKemper.com;KAHITEAIDeploys@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;KAHITEAIDeploys@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\LocationService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.LocationService
      set applpre=LocationService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-location-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-location-service.git
      set gitf=connect-location-service
-     set MAIL=USGISServiceLocation@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGISServiceLocation@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AuditsControls.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.AuditsAndControls
      set applpre=AuditsControls
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-audits-and-controls.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-audits-and-controls.git
      set gitf=connect-audits-and-controls
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectMSEQ.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.MSEQ
      set applpre=ConnectMSEQ
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-mseq.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-mseq.git
      set gitf=connect-mseq
-     set MAIL=rwadhams@kemper.com
-     set MAIL2=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=rwadhams@uni.com
+     set MAIL2=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PERS.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PERS
      set applpre=PERS
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-pers.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-pers.git
      set gitf=connect-pers
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PERSDataVal.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PERS.DataValidation
      set applpre=PERSDataVal
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-pers-datavalidation.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-pers-datavalidation.git
      set gitf=connect-pers-datavalidation
-     set MAIL=USGITPERSInfrastructure@unitrin.com;USGDataValidationDevelopment@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPERSInfrastructure@unit.com;USGDataValidationDevelopment@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnPersPreProcServ.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PersPreProcessorService
      set applpre=ConnPersPreProcServ
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-perspreprocessor-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-perspreprocessor-service.git
      set gitf=connect-perspreprocessor-service
-     set MAIL=USGITPERSInfrastructure@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPERSInfrastructure@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectEDWOffRamp.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.EDW.OffRamp
      set applpre=ConnectEDWOffRamp
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-edw-offramp.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-edw-offramp.git
      set gitf=connect-edw-offramp
-     set MAIL=USGITEDWOff-Ramp@kemper.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITEDWOff-Ramp@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ProducerService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.ProducerService
      set applpre=ProducerService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-producer-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-producer-service.git
      set gitf=connect-producer-service
-     set MAIL=USGEnterpriseProducerServices@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGEnterpriseProducerServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ExactTrac.gitesb        (
      set LC=USGESB
      set RP=USGESB
      set appl=ExtConnect.ExactTrac
      set applpre=ExactTrac
-     set git=ssh://git@stash.kemperi.com:7999/esb/extconnect-exacttrac.git
+     set git=ssh://git@stash.unii.com:7999/esb/extconnect-exacttrac.git
      set gitf=extconnect-exacttrac
-     set MAIL=USGITPolicySharedServices@unitrin.com;bmontgomery@ekemper.com;gfiore@ekemper.co;KSGEnterpriseServicesITOperation@kemper.comm;USGISServiceDisbursement@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;bmontgomery@euni.com;gfiore@euni.co;KSGEnterpriseServicesITOperation@uni.comm;USGISServiceDisbursement@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectBlngOrchSvc.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.BillingOrchestrationService
      set applpre=ConnectBlngOrchSvc
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-billing-orchestration-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-billing-orchestration-service.git
      set gitf=connect-billing-orchestration-service
-     set MAIL=USGISServiceDisbursement@kemper.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGISServiceDisbursement@uni.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectFeeGetFees.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.FeeGetFees
      set applpre=ConnectFeeGetFees
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-feegetfees.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-feegetfees.git
      set gitf=connect-feegetfees
-     set MAIL=USGISServiceFee@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGISServiceFee@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask  
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\FormsService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.FormsService
      set applpre=FormsService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-forms-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-forms-service.git
      set gitf=connect-forms-service
-     set MAIL=USGITPolicySharedServices@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPolicySharedServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PaymentService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PaymentService
      set applpre=PaymentService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-payment-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-payment-service.git
      set gitf=connect-payment-service
-     set MAIL=USGITPolicyBillingServices@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPolicyBillingServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PolicyService.gitesb            (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PolicyService
      set applpre=PolicyService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-policy-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-policy-service.git
      set gitf=connect-policy-service
-     set MAIL=bmontgomery@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=bmontgomery@unit.com;USGISServicePolicyInquiryPIT@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask 
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\FormsLibrary.gitesb     (
      set LC=USGESB
      set RP=USGESB
      set appl=ExtConnect.FormsLibrary
      set applpre=FormsLibrary
-     set git=ssh://git@stash.kemperi.com:7999/esb/extconnect-formslibrary.git
+     set git=ssh://git@stash.unii.com:7999/esb/extconnect-formslibrary.git
      set gitf=extconnect-formslibrary
-     set MAIL=USGITPolicySharedServices@unitrin.com;KSGEnterpriseServicesITOperation@kemper.com
+     set MAIL=USGITPolicySharedServices@unit.com;KSGEnterpriseServicesITOperation@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ContentMgmt.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.ContentManagement
      set applpre=ContentMgmt
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-contentmanagement.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-contentmanagement.git
      set gitf=connect-contentmanagement
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CMSExceedOnRamp.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.CMS.Exceed.OnRamp
      set applpre=CMSExceedOnRamp
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-cms-exceed-onramp.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-cms-exceed-onramp.git
      set gitf=connect-cms-exceed-onramp
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGECMDevelopment@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGECMDevelopment@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectExceed.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.Exceed
      set applpre=ConnectExceed
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-exceed.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-exceed.git
      set gitf=connect-exceed
-     set MAIL=USGITExceedPolicyandBilling@unitrin.com
+     set MAIL=USGITExceedPolicyandBilling@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectIOC.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.IOC
      set applpre=ConnectIOC
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-ioc.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-ioc.git
      set gitf=connect-ioc
-     set MAIL=USGEnterpriseSharedServices@unitrin.com;USGITExceedPolicyAndBilling@kemper.com
+     set MAIL=USGEnterpriseSharedServices@unit.com;USGITExceedPolicyAndBilling@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CCFilePickupOnRamp.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.Claims.Filepickup.OnRamp
      set applpre=CCFilePickupOnRamp
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-claims-filepickup-onramp.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-claims-filepickup-onramp.git
      set gitf=connect-claims-filepickup-onramp
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectBTOC.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.BTOC
      set applpre=ConnectBTOC
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-btoc.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-btoc.git
      set gitf=connect-btoc
-     set MAIL=USGITPolicySharedServices@unitrin.com;KAHITCLAIMDEV@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CCFormCallback.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.Claims.FormCallbackService
      set applpre=CCFormCallback
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-claims-formcallback-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-claims-formcallback-service.git
      set gitf=connect-claims-formcallback-service
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ClaimsAdminService-ESB.gitesb    (
      set LC=ClaimsAdminService-ESB
      set RP=ClaimsAdminService-ESB
      set appl=Connect.ClaimsAdmin
      set applpre=ClaimsAdminService-ESB
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-claims-admin.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-claims-admin.git
      set gitf=connect-claims-admin
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CCNOnRamp.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.ClaimsContentNotification.OnRamp
      set applpre=CCNOnRamp
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-claims-contentnotification-onramp.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-claims-contentnotification-onramp.git
      set gitf=connect-claims-contentnotification-onramp
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ClaimsGlassService-ESB.gitesb    (
      set LC=ClaimsGlassService-ESB
      set RP=ClaimsGlassService-ESB
      set appl=Connect.ClaimsGlass
      set applpre=ClaimsGlassService-ESB
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-claims-glass.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-claims-glass.git
      set gitf=connect-claims-glass
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ClaimsInquiry.gitesb    (
      set LC=ClaimsInquiryService-ESB
      set RP=ClaimsInquiryService-ESB
      set appl=Connect.ClaimsInquiry
      set applpre=ClaimsInquiry
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-claims-inquiry.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-claims-inquiry.git
      set gitf=connect-claims-inquiry
-     set MAIL=KAHITCLAIMDEV@unitrin.com
+     set MAIL=KAHITCLAIMDEV@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\Xactnet.gitesb          (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.Xactnet
      set applpre=Xactnet
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-xactnet.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-xactnet.git
      set gitf=connect-xactnet
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISClaimProdSupport@kemper.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISClaimProdSupport@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnectEBill.gitesb    (
      set LC=USG-EBillService-ESB
      set RP=USG-EBillService-ESB
      set appl=Connect.EBill
      set applpre=ConnectEBill
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-ebill.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-ebill.git
      set gitf=connect-ebill
-     set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+     set MAIL=KAHITEnterpriseWebSolutions@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\IntellAgentService.gitesb    (
      set LC=AgentAlerts-ESB
      set RP=AgentAlerts-ESB
      set appl=Connect.IntellAgentService
      set applpre=IntellAgentService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-intellagent-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-intellagent-service.git
      set gitf=connect-intellagent-service
-     set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+     set MAIL=KAHITEnterpriseWebSolutions@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\QuoteService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.QuoteService
      set applpre=QuoteService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-quote-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-quote-service.git
      set gitf=connect-quote-service
-     set MAIL=KAHITEAIDeploys@unitrin.com;KAHITRPWTeam@ekemper.com
+     set MAIL=KAHITEAIDeploys@unit.com;KAHITRPWTeam@euni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PolicyInquiry.gitesb    (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PolicyInquiry
      set applpre=PolicyInquiry
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-policyinquiry.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-policyinquiry.git
      set gitf=connect-policyinquiry
-     set MAIL=USGITPolicySharedServices@unitrin.com;KAHITEAIDevelopers@kemper.com
+     set MAIL=USGITPolicySharedServices@unit.com;KAHITEAIDevelopers@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\RatingService.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.RatingService
      set applpre=RatingService
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-rating-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-rating-service.git
      set gitf=connect-rating-service
-     set MAIL=KSGITPolicy&FinancialServices@kemper.com;USGITPolicySharedServices@unitrin.com;USGISServicePERSAssignedRisk@unitrin.com;KSGPORPUS@kemper.com
+     set MAIL=KSGITPolicy&FinancialServices@uni.com;USGITPolicySharedServices@unit.com;USGISServicePERSAssignedRisk@unit.com;KSGPORPUS@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\PERSOnRamp.gitesb      (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.PERS.OnRamp
      set applpre=PERSOnRamp
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-pers-onramp.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-pers-onramp.git
      set gitf=connect-pers-onramp
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISServicePERSAssignedRisk@unitrin.com;KSGPORPUS@kemper.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISServicePERSAssignedRisk@unit.com;KSGPORPUS@uni.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AMI-ESB.gitesb  (
      set LC=AMI-ESB
      set RP=AMI-ESB
      set appl=Connect.AMIService
      set applpre=AMI-ESB
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-ami-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-ami-service.git
      set gitf=connect-ami-service
-     set MAIL=KAHITEAS-AgencyInterface@eKemper.com;KAHITEAIDeploys@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;KAHITEAIDeploys@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\AddressServices.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.AddressServices
      set applpre=AddressServices
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-address-services.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-address-services.git
      set gitf=connect-address-services
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ContentMgmt2.0.gitesb      (
      set LC=USGESB
@@ -627,16 +627,16 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=Connect.ContentManagement.2.0
      set applpre=ContentMgmt2.0
      set git=
-     set MAIL=USGEnterpriseContentManager@unitrin.com
+     set MAIL=USGEnterpriseContentManager@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\QueueMessageDelete.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.QueueMessageDelete
      set applpre=QueueMessageDelete
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-queuemessagedelete.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-queuemessagedelete.git
      set gitf=utility-queuemessagedelete
-     set MAIL=USGEnterpriseProducerServices@unitrin.com
+     set MAIL=USGEnterpriseProducerServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DataXtendSrv.gitesb  (
      set LC=USGESB
@@ -644,7 +644,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=Utility.DataXtendService
      set applpre=DataXtendSrv
      set git=
-     set MAIL=USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGITPolicyBillingServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGITPolicyBillingServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\DataXtendService_84.gitesb  (
      set LC=USGESB
@@ -652,7 +652,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=Utility.DataXtendService_84
      set applpre=DataXtendService_84
      set git=
-     set MAIL=KAHITEAS-AgencyInterface@eKemper.com;USGITPolicySharedServices@unitrin.com;USGISServicePERSPLIS@unitrin.com;USGISServicePolicyInquiryPIT@unitrin.com;USGITPolicyBillingServices@unitrin.com
+     set MAIL=KAHITEAS-AgencyInterface@euni.com;USGITPolicySharedServices@unit.com;USGISServicePERSPLIS@unit.com;USGISServicePolicyInquiryPIT@unit.com;USGITPolicyBillingServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\SOAPClient.gitesb       (
      set LC=USGESB
@@ -660,34 +660,34 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=Connect.AddressServices.SOAPClient
      set applpre=SOAPClient
      set git=
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\BlazeService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.BlazeService
      set applpre=BlazeService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-blaze-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-blaze-service.git
      set gitf=utility-blaze-service
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\JpmcService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_JpmcService
      set applpre=JpmcService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-jpmc-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-jpmc-service.git
      set gitf=utility-jpmc-service
-     set MAIL=USGISServiceDisbursement@unitrin.com
+     set MAIL=USGISServiceDisbursement@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\StatBlaze.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Connect.StatBlaze
      set applpre=StatBlaze
-     set git=ssh://git@stash.kemperi.com:7999/esb/connect-statblaze.git
+     set git=ssh://git@stash.unii.com:7999/esb/connect-statblaze.git
      set gitf=connect-statblaze
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\JMSTestClient.gitesb  (
      set LC=USGESB
@@ -695,7 +695,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=JMSTestClient
      set applpre=JMSTestClient
      set git=
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\MQTestClient.gitesb  (
      set LC=USGESB
@@ -703,43 +703,43 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=MQTestClient
      set applpre=MQTestClient
      set git=
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\MQCorrelation.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Test.MQCorrelation
      set applpre=MQCorrelation
-     set git=ssh://git@stash.kemperi.com:7999/esb/test-mq-correlation.git
+     set git=ssh://git@stash.unii.com:7999/esb/test-mq-correlation.git
      set gitf=test-mq-correlation
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\BaseService.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_BaseService
      set applpre=BaseService
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-base-service.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-base-service.git
      set gitf=utility-base-service
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CLI.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility.CLI
      set applpre=CLI
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-cli.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-cli.git
      set gitf=utility-cli
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\EnrichmntSchema.gitesb  (
      set LC=USGESB
      set RP=USGESB
      set appl=Utility_EnrichmentSchema
      set applpre=EnrichmntSchema
-     set git=ssh://git@stash.kemperi.com:7999/esb/utility-enrichment-schema.git
+     set git=ssh://git@stash.unii.com:7999/esb/utility-enrichment-schema.git
      set gitf=utility-enrichment-schema
-     set MAIL=USGITPolicySharedServices@unitrin.com
+     set MAIL=USGITPolicySharedServices@unit.com
      goto settask
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\ConnPersMsgTest.gitesb  (
      set LC=USGESB
@@ -747,7 +747,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=Connect.PersistentMsgTest
      set applpre=ConnPersMsgTest
      set git=
-     set MAIL=gkothari@ekemper.com
+     set MAIL=gkothari@euni.com
      goto settask                                
  ) else if exist J:\SCMtools\Scripts\Deploy\%STATE%\CustomerMgmtSvc.gitesb    (
      set LC=CustomerMgmtService-ESB
@@ -755,7 +755,7 @@ if exist J:\SCMtools\Scripts\Deploy\%STATE%\WilyConnector.gitesb  (
      set appl=Connect.CustomerMgmtSvc
      set applpre=CustomerMgmtSvc
      set git=
-     set MAIL=KAHITEnterpriseWebSolutions@unitrin.com
+     set MAIL=KAHITEnterpriseWebSolutions@unit.com
      goto settask
  )    
 
@@ -835,7 +835,7 @@ ECHO %LC% - %STATE%: Git Clone and Checkout Complete >>J:\SCMtools\Logs\%STATE%\
 ECHO ************************************************** >>J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
 ECHO This is the log from the %LC% - %STATE% BUILD >>J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
 ECHO ************************************************** >>J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
-CALL build%STATE%.bat USGXRM Kemper@2 1>"J:\SCMtools\Logs\%STATE%\%LC%_%appl%_BuildOut.log" 2>"J:\SCMtools\Logs\%STATE%\%LC%_%appl%_BuildErr.log"
+CALL build%STATE%.bat USGXRM uni@2 1>"J:\SCMtools\Logs\%STATE%\%LC%_%appl%_BuildOut.log" 2>"J:\SCMtools\Logs\%STATE%\%LC%_%appl%_BuildErr.log"
 TYPE "J:\SCMtools\Logs\%STATE%\%LC%_%appl%_BuildOut.log" >>J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
 TYPE "J:\SCMtools\Logs\%STATE%\%LC%_%appl%_BuildErr.log" >>J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
 goto success
@@ -865,7 +865,7 @@ Echo %LC% Deployed %appl% to %STATE% >> J:\SCMtools\Logs\Agile_ESB_Deploys-09.lo
 Echo ------------------------- >>J:\SCMtools\Logs\Agile_ESB_Deploys-09.log
 
 :: This command sends an email to PLIS ROLL IMP TEAM mail group when a roll to PROD occurs:
-J:\SCMtools\email\tcmail -s "ESB Service %appl% has been deployed to %STATE%" KAHPLISROLLIMPTEAM@ekemper.com < J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
+J:\SCMtools\email\tcmail -s "ESB Service %appl% has been deployed to %STATE%" KAHPLISROLLIMPTEAM@euni.com < J:\SCMtools\Logs\%STATE%\%LC%_%appl%.log
 )
 
 :deltrigger
