@@ -1,6 +1,6 @@
 ::-------------------------------UPDATES SECTION----------------------------------------
 :: Updates:   UID       Date    - Explanation
-::           Prakash  2016-10-05 - Harvest to Git Migration
+::           Prakash  2016-10-05 - Harvest to Git Migration with new deployment script
 ::-------------------------------------------------------------------------------------------
 ::*****************************************************************************************
 :: 2009-JUN-10 Eric Rasmussen
