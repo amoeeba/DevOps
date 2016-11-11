@@ -1,6 +1,6 @@
 ::-------------------------------UPDATES SECTION----------------------------------------
 :: Updates:   UID    Date       - Explanation
-::(prakash)  usgpyv  2014-06-18 - Added USG-iLytics deploy process.
+::(prakash)  usgpyv  2015-06-18 - Added USG-iLytics deploy process..
 ::           usgezr  2012-03-22 - Changed error handling as a flag file was not being deleted after successful deployment.
 ::           usgezr  2012-03-01 - Changed email notification to only send SCM messages when an error occurs.
 ::	     kahezr  2010-11-29 - Re-prioritize environments to make PROD first.
