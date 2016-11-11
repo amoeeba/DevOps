@@ -1,6 +1,6 @@
 ::-------------------------------UPDATES SECTION----------------------------------------
 :: Updates:   UID       Date    - Explanation
-::                   2015-04-02 - Changed Outlook group for ClaimsService lifecycle to: USGISClaimProdSupport@uni.com per Heat
+::          prakash    2015-04-02 - new artifact deployment 
 ::-------------------------------------------------------------------------------------------
 ::*****************************************************************************************
 :: 2009-JUN-10 Eric Rasmussen
