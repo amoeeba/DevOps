@@ -1,6 +1,6 @@
 ::-------------------------------UPDATES SECTION----------------------------------------
 :: Updates:   UID     Date       - Explanation
-::           Prakash  2016-09-29 - Adding ECAVertical-Extranet-LT lifecycle.
+::           Prakash  2016-09-29 - Added new deploy process.
 ::-------------------------------------------------------------------------------------------
 
 
