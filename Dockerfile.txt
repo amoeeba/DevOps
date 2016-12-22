@@ -1,5 +1,5 @@
-FROM te-docker.docker-registry.tools.epringer-sbm.com/fig-env-java8-node-ruby-python
-MAINTAINER admin <test@epringer.com>
+FROM te-docker.docker-registry.tools.amoeeba-sbm.com/fig-env-java8-node-ruby-python
+MAINTAINER admin <test@amoeeba.com>
 
 RUN apt-get update && apt-get install -y apt-utils libfontconfig1-dev libjpeg-dev
 
