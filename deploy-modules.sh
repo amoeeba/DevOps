@@ -2,7 +2,7 @@
 #
 # Use this script in apps that want to deploy modules to ML.
 #
-# curl -q -fsSL "https://bitbucket.org/springersbm/ml-deploy/raw/master/extras/deploy-modules.sh" | bash /dev/stdin -a my-app
+# curl -q -fsSL "https://bitbucket.org/amoeeba/ml-deploy/raw/master/extras/deploy-modules.sh" | bash /dev/stdin -a my-app
 #
 set -e
 
