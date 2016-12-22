@@ -33,7 +33,7 @@ usage () {
   ---------
   Deploying published modules version 0.42 to http://ml.dev:7655/my-app/0.3.
   ./deploy-modules.sh -a my-app -v 0.3 -t ml.dev -p 0.42
-  Deploying a locally built modules to http://ml.local.springer-sbm.com:7655/my-app/LOCAL.
+  Deploying a locally built modules to http://ml.local.amoeeba-sbm.com:7655/my-app/LOCAL.
   ./deploy-modules.sh -a my-app -f target/my-modules.zip
 EOM
 }
